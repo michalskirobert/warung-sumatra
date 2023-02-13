@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Navbar, Container, Nav, Offcanvas } from "react-bootstrap";
-import { LANGUAGE_HELPER, NAV_HELPER, STYLED_SELECT } from "./utils";
+import { LANGUAGE_HELPER, STYLED_SELECT } from "./utils";
 import { useHeaderService } from "./service";
 
 import Select from "react-select";
@@ -9,7 +9,7 @@ import Select from "react-select";
 import * as C from "@utils/constants";
 
 export const Header = () => {
-  const { menuColor, isLinkActive } = useHeaderService();
+  const { menuColor, isLinkActive, menuContent } = useHeaderService();
   return (
     <Navbar fixed="top" bg={menuColor} variant="dark" expand={"xxl"}>
       <Container fluid>
@@ -29,8 +29,11 @@ export const Header = () => {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="me-auto">
-              {NAV_HELPER.map(({ label, path }) => (
-                <Nav.Link {...{ href: path, active: isLinkActive(path) }}>
+              {menuContent.map(({ label, path }) => (
+                <Nav.Link
+                  key={path}
+                  {...{ href: path, active: isLinkActive(path) }}
+                >
                   {label}
                 </Nav.Link>
               ))}
