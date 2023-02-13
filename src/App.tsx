@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { ROUTES } from "./store/routes";
 import { Header } from "@components/layout/header";
+import { Wrapper } from "@components/styles";
 
 const App = () => {
   if (window.location.pathname.includes("/admin")) {
