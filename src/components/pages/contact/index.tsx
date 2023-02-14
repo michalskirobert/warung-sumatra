@@ -63,7 +63,8 @@ export const Contact = () => {
                   {...{
                     src: "https://www.advancedcustomfields.com/wp-content/uploads/2013/11/acf-google-map-field-interface.png",
                     style: {
-                      maxWidth: "500px",
+                      minWidth: "150px",
+                      maxWidth: "400px",
                       margin: "5px auto",
                       objectFit: "cover",
                     },
