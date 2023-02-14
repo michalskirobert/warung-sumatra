@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 
 import { Dashboard } from "@pages/dashboard";
 import { Menu } from "@pages/menu";
+import { Contact } from "@components/pages/contact";
 
 import * as C from "@utils/constants";
 
@@ -15,5 +16,5 @@ export const ROUTES: readonly TRoutes[] = [
   { path: C.MENU_ROUTE, component: <Menu /> },
   { path: C.RESERVATION_ROUTE, component: null },
   { path: C.ABOUT_ROUTE, component: null },
-  { path: C.CONTACT_ROUTE, component: null },
+  { path: C.CONTACT_ROUTE, component: <Contact /> },
 ];
