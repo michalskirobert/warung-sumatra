@@ -1,8 +1,10 @@
 import React from "react";
 
 import Select, { SingleValue } from "react-select";
+import { Link } from "react-router-dom";
 
 import { Navbar, Container, Nav, Offcanvas } from "react-bootstrap";
+
 import { LANGUAGE_HELPER, STYLED_SELECT } from "./utils";
 import { useHeaderService } from "./service";
 import { setLanguage } from "@store/actions/global-config";
@@ -38,10 +40,7 @@ export const Header = () => {
           <Offcanvas.Body>
             <Nav className="me-auto">
               {menuContent.map(({ label, path }) => (
-                <Nav.Link
-                  key={path}
-                  {...{ href: path, active: isLinkActive(path) }}
-                >
+                <Nav.Link {...{ active: isLinkActive(path), href: path }}>
                   {label}
                 </Nav.Link>
               ))}

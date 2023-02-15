@@ -1,4 +1,4 @@
-
+@import "./reset";
 
 .appContainer {
     display: flex;
@@ -14,4 +14,8 @@
     color: #ffffff;
     text-shadow: 1px 3px 8px black;
  }
+}
+
+a {
+   text-decoration: none;
 }
