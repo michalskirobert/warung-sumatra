@@ -1,15 +1,23 @@
 import React from "react";
 
+import Select, { SingleValue } from "react-select";
+
 import { Navbar, Container, Nav, Offcanvas } from "react-bootstrap";
 import { LANGUAGE_HELPER, STYLED_SELECT } from "./utils";
 import { useHeaderService } from "./service";
-
-import Select from "react-select";
+import { setLanguage } from "@store/actions/global-config";
+import { NGlobalConfig } from "src/typings/global-config";
 
 import * as C from "@utils/constants";
 
+type TOption = SingleValue<{
+  label: NGlobalConfig.TLanguageLabels | any;
+  value: NGlobalConfig.TLangCode | any;
+}>;
+
 export const Header = () => {
-  const { menuColor, isLinkActive, menuContent } = useHeaderService();
+  const { menuColor, isLinkActive, menuContent, dispatch, language } =
+    useHeaderService();
   return (
     <Navbar fixed="top" bg={menuColor} variant="dark" expand={"xxl"}>
       <Container fluid>
@@ -44,6 +52,11 @@ export const Header = () => {
                   styles: STYLED_SELECT,
                   options: LANGUAGE_HELPER,
                   defaultValue: LANGUAGE_HELPER[0],
+                  value: language,
+                  onChange: (option: TOption) =>
+                    dispatch(
+                      setLanguage(option || { label: "Polski", value: "pl" })
+                    ),
                 }}
               />
             </Nav>

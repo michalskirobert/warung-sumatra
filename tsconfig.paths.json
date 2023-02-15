@@ -12,7 +12,8 @@
         "@shared/*": ["./src/components/shared/*"],
         "@helpers/*": ["./src/helpers/*"],
         "@fire*": ["./src/firebase*"],
-        "@api/*": ["./src/api/*"]
+        "@api/*": ["./src/api/*"],
+        "@store/*": ["./src/store/*"]
       }
     }
   }
