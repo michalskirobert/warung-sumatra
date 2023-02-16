@@ -8,7 +8,7 @@ export const FORM_HELPER: {
     id: string;
     col: number;
     colType: "sm" | "md" | "xl" | "xxl";
-    label: "name" | "phone" | "email" | "date" | "time";
+    label: "name" | "phone" | "email" | "date" | "time" | "restaurant";
     type: InputType;
   }[];
 }[] = [
@@ -40,10 +40,17 @@ export const FORM_HELPER: {
     subItems: [
       {
         id: crypto.randomUUID(),
-        col: 12,
+        col: 6,
         colType: "md",
         label: "email",
         type: "email",
+      },
+      {
+        id: crypto.randomUUID(),
+        col: 6,
+        colType: "md",
+        label: "restaurant",
+        type: "select",
       },
     ],
   },

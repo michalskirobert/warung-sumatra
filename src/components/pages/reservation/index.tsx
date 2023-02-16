@@ -21,7 +21,14 @@ export const Reservate = () => {
   return (
     <Formik
       {...{
-        initialValues: { name: "", phone: "", email: "", date: "", time: "" },
+        initialValues: {
+          name: "",
+          phone: "",
+          email: "",
+          date: "",
+          time: "",
+          restaurant: "",
+        },
         onSubmit: (values) => console.log(values),
         validateOnChange: true,
         validateOnBlur: true,
