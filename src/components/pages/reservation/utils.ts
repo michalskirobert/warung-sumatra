@@ -19,17 +19,24 @@ export const FORM_HELPER: {
     subItems: [
       {
         id: crypto.randomUUID(),
-        col: 6,
+        col: 4,
         colType: "md",
         label: "name",
         type: "text",
       },
       {
         id: crypto.randomUUID(),
-        col: 6,
+        col: 4,
         colType: "md",
         label: "phone",
         type: "tel",
+      },
+      {
+        id: crypto.randomUUID(),
+        col: 4,
+        colType: "md",
+        label: "email",
+        type: "email",
       },
     ],
   },
@@ -40,14 +47,7 @@ export const FORM_HELPER: {
     subItems: [
       {
         id: crypto.randomUUID(),
-        col: 6,
-        colType: "md",
-        label: "email",
-        type: "email",
-      },
-      {
-        id: crypto.randomUUID(),
-        col: 6,
+        col: 12,
         colType: "md",
         label: "restaurant",
         type: "select",
