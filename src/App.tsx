@@ -4,9 +4,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { ROUTES } from "./store/routes";
 import { Header } from "@components/layout/header";
+import { useAppService } from "./service";
 
 const App = () => {
-  if (window.location.pathname.includes("/admin")) {
+  const { isAdmingPage } = useAppService();
+
+  if (isAdmingPage) {
     return <div>Works</div>;
   }
 

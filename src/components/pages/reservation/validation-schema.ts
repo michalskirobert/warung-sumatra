@@ -1,4 +1,4 @@
-import { formatPhoneNumber } from "@helpers/useful-functions/format-phone-number";
+import { formatPhoneNumber } from "@helpers/useful-functions";
 import * as yup from "yup";
 
 export const validationSchema = yup.object().shape({

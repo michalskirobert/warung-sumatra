@@ -15,7 +15,7 @@ import { Formik } from "formik";
 
 import { validationSchema } from "./validation-schema";
 import { FORM_HELPER } from "./utils";
-import { formatPhoneNumber } from "@helpers/useful-functions/format-phone-number";
+import { formatPhoneNumber } from "@helpers/useful-functions";
 
 export const Reservate = () => {
   return (
