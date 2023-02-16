@@ -5,6 +5,7 @@ import { Menu } from "@pages/menu";
 import { Contact } from "@components/pages/contact";
 
 import * as C from "@utils/constants";
+import { Reservate } from "@components/pages/reservation";
 
 interface TRoutes {
   path: string;
@@ -14,7 +15,7 @@ interface TRoutes {
 export const ROUTES: readonly TRoutes[] = [
   { path: C.DASHBOARD_ROUTE, component: <Dashboard /> },
   { path: C.MENU_ROUTE, component: <Menu /> },
-  { path: C.RESERVATION_ROUTE, component: null },
+  { path: C.RESERVATION_ROUTE, component: <Reservate /> },
   { path: C.ABOUT_ROUTE, component: null },
   { path: C.CONTACT_ROUTE, component: <Contact /> },
 ];

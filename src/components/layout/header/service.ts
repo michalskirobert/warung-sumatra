@@ -17,7 +17,7 @@ export const useHeaderService = () => {
 
   const menuColor = isDashboard ? "transparent" : "dark";
 
-  const isLinkActive = (path: string) => path === pathname;
+  const isLinkActive = (path: string) => (path === pathname ? "active" : "");
 
   return { menuColor, isLinkActive, menuContent, language, dispatch };
 };

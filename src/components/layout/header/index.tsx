@@ -40,9 +40,11 @@ export const Header = () => {
           <Offcanvas.Body>
             <Nav className="me-auto">
               {menuContent.map(({ label, path }) => (
-                <Nav.Link {...{ active: isLinkActive(path), href: path }}>
+                <Link
+                  {...{ to: path, className: `nav-link ${isLinkActive(path)}` }}
+                >
                   {label}
-                </Nav.Link>
+                </Link>
               ))}
             </Nav>
             <Nav>
