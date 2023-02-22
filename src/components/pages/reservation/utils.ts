@@ -94,7 +94,7 @@ export const FORM_HELPER: NCommonTypes.TForm[] = [
     rowType: "md",
     subItems: [
       {
-        id: "date",
+        id: "content",
         col: 12,
         colType: "md",
         label: "Szczegóły",
