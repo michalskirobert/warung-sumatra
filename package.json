@@ -1,7 +1,10 @@
 {
   "name": "warung-sumatra",
+  "author": "Robert Michalski",
+  "email": "robert.michalski@digimonkeys.com",
+  "license": "MIT",
   "version": "0.5.5",
-  "private": false,
+  "private": true,
   "dependencies": {
     "@firebase/auth": "^0.21.0",
     "@firebase/auth-types": "^0.10.3",
