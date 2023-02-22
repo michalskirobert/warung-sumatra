@@ -23,7 +23,7 @@ export const Menu = () => {
         <CardGroup>
           <Row md={5}>
             {INIT_MENU.map(({ desc, img, price, title }) => (
-              <Col>
+              <Col key={crypto.randomUUID()}>
                 <Card
                   style={{
                     marginTop: "15px",

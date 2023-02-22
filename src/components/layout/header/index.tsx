@@ -41,6 +41,7 @@ export const Header = () => {
             <Nav className="me-auto">
               {menuContent.map(({ label, path }) => (
                 <Link
+                  key={label}
                   {...{ to: path, className: `nav-link ${isLinkActive(path)}` }}
                 >
                   {label}

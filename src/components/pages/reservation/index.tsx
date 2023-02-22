@@ -1,13 +1,4 @@
-import {
-  Button,
-  Col,
-  Form,
-  FormFeedback,
-  FormGroup,
-  Input,
-  Label,
-  Row,
-} from "reactstrap";
+import { Button, Col, Form, Row } from "reactstrap";
 
 import { FormContainer, Header } from "./styles";
 
@@ -15,7 +6,7 @@ import { Formik } from "formik";
 
 import { validationSchema } from "./validation-schema";
 import { FORM_HELPER } from "./utils";
-import { formatPhoneNumber } from "@helpers/useful-functions";
+import { CustomForm } from "@components/shared";
 
 export const Reservate = () => {
   return (
@@ -45,38 +36,17 @@ export const Reservate = () => {
         values,
       }) => (
         <FormContainer>
-          <Header>Make reservation</Header>
+          <Header>Zrób rezerwację</Header>
           <Form onSubmit={handleSubmit}>
-            {FORM_HELPER.map(({ id, row, rowType, subItems }) => (
-              <Row key={id} {...{ [rowType]: row, subItems }}>
-                {subItems.map(({ id, col, colType, label, type }) => (
-                  <Col key={id} {...{ [colType]: col }}>
-                    <FormGroup>
-                      <Label>{label}</Label>
-                      <Input
-                        {...{
-                          id: label,
-                          name: label,
-                          type,
-                          value: values[label],
-                          onBlur: (e) => {
-                            if (label !== "phone") return;
-
-                            setFieldValue(
-                              label,
-                              formatPhoneNumber(e.currentTarget.value)
-                            );
-                          },
-                          invalid: !!errors[label],
-                          onChange: handleChange,
-                        }}
-                      />
-                      <FormFeedback>{errors[label]}</FormFeedback>
-                    </FormGroup>
-                  </Col>
-                ))}
-              </Row>
-            ))}
+            <CustomForm
+              {...{
+                form: FORM_HELPER,
+                errors,
+                handleChange,
+                setFieldValue,
+                values,
+              }}
+            />
             <Row>
               <Col>
                 <Button
@@ -86,7 +56,7 @@ export const Reservate = () => {
                     disabled: !isValid || !dirty,
                   }}
                 >
-                  Send
+                  Wyślij rezerwację
                 </Button>
               </Col>
             </Row>

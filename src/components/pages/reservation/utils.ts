@@ -1,42 +1,43 @@
-import { InputType } from "reactstrap/types/lib/Input";
+import { NCommonTypes } from "@namespace/commonTypes";
 
-export const FORM_HELPER: {
-  id: string;
-  row: number;
-  rowType: "sm" | "md" | "xl" | "xxl";
-  subItems: {
-    id: string;
-    col: number;
-    colType: "sm" | "md" | "xl" | "xxl";
-    label: "name" | "phone" | "email" | "date" | "time" | "restaurant";
-    type: InputType;
-  }[];
-}[] = [
+import * as C from "@utils/constants";
+
+const TEMP_OPTIONS: NCommonTypes.TOptions[] = [
+  { label: "Poznań", value: "Poznań" },
+  { label: "Warszawa", value: "Warsaw" },
+];
+
+export const FORM_HELPER: NCommonTypes.TForm[] = [
   {
     id: crypto.randomUUID(),
     row: 2,
     rowType: "md",
     subItems: [
       {
-        id: crypto.randomUUID(),
+        id: "name",
         col: 4,
         colType: "md",
-        label: "name",
+        label: "Imię",
         type: "text",
+        isRequired: true,
       },
       {
-        id: crypto.randomUUID(),
+        id: "phone",
         col: 4,
         colType: "md",
-        label: "phone",
-        type: "tel",
+        label: "Telefon",
+        type: "mask",
+        mask: C.MASK_TYPE_MOBILE_PHONE,
+        maskChar: null,
+        isRequired: true,
       },
       {
-        id: crypto.randomUUID(),
+        id: "email",
         col: 4,
         colType: "md",
-        label: "email",
+        label: "E-mail",
         type: "email",
+        isRequired: true,
       },
     ],
   },
@@ -46,32 +47,58 @@ export const FORM_HELPER: {
     rowType: "md",
     subItems: [
       {
-        id: crypto.randomUUID(),
+        id: "restaurant",
         col: 12,
         colType: "md",
-        label: "restaurant",
+        label: "Restauracja",
         type: "select",
+        options: TEMP_OPTIONS,
+        isRequired: true,
       },
     ],
   },
   {
     id: crypto.randomUUID(),
-    row: 2,
+    row: 3,
     rowType: "md",
     subItems: [
       {
-        id: crypto.randomUUID(),
-        col: 6,
+        id: "date",
+        col: 4,
         colType: "md",
-        label: "date",
+        label: "Data",
         type: "date",
+        isRequired: true,
       },
       {
-        id: crypto.randomUUID(),
-        col: 6,
+        id: "timeFrom",
+        col: 4,
         colType: "md",
-        label: "time",
+        label: "Od godziny",
         type: "time",
+        isRequired: true,
+      },
+      {
+        id: "timeTo",
+        col: 4,
+        colType: "md",
+        label: "Do godziny",
+        type: "time",
+        isRequired: true,
+      },
+    ],
+  },
+  {
+    id: crypto.randomUUID(),
+    row: 1,
+    rowType: "md",
+    subItems: [
+      {
+        id: "date",
+        col: 12,
+        colType: "md",
+        label: "Szczegóły",
+        type: "textarea",
       },
     ],
   },

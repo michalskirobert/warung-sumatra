@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Col,
-  Form,
-  FormFeedback,
-  FormGroup,
-  Input,
-  Label,
-  Row,
-} from "reactstrap";
+import { Button, Col, Form, Row } from "reactstrap";
 
 import { Formik } from "formik";
 
@@ -16,6 +7,7 @@ import { CONTACT_FORM_HELPER } from "./utils";
 import { validationSchema } from "./validation-schema";
 import { FormContainer } from "./styles";
 import { Image } from "react-bootstrap";
+import { CustomForm } from "@components/shared";
 
 export const Contact = () => {
   return (
@@ -28,26 +20,28 @@ export const Contact = () => {
         validationSchema,
       }}
     >
-      {({ dirty, errors, handleChange, handleSubmit, isValid }) => (
+      {({
+        dirty,
+        errors,
+        handleChange,
+        handleSubmit,
+        isValid,
+        setFieldValue,
+        values,
+      }) => (
         <FormContainer>
           <Form onSubmit={handleSubmit}>
             <Row md={2}>
               <Col>
-                {CONTACT_FORM_HELPER.map(({ label, type }) => (
-                  <FormGroup key={label}>
-                    <Label>{label}</Label>
-                    <Input
-                      {...{
-                        id: label,
-                        name: label,
-                        type,
-                        invalid: !!errors[label],
-                        onChange: handleChange,
-                      }}
-                    />
-                    <FormFeedback>{errors[label]}</FormFeedback>
-                  </FormGroup>
-                ))}
+                <CustomForm
+                  {...{
+                    form: CONTACT_FORM_HELPER,
+                    errors,
+                    handleChange,
+                    setFieldValue,
+                    values,
+                  }}
+                />
                 <Button
                   {...{
                     color: "primary",

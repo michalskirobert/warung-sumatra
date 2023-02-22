@@ -21,3 +21,12 @@ export const DASHBOARD_LABEL = {
 //Common
 export const RESTAURANT_NAME = "Warung Sumatra";
 export const WELCOME = `Welcome to ${RESTAURANT_NAME}`;
+
+//Masks
+export const MASK_TYPE_PHONE = "+4\\8 99 999 99 99 99 99 99 99";
+export const MASK_TYPE_MOBILE_PHONE = "+4\\8 999 999 999";
+export const MASK_PESEL = "99999999999";
+export const MASK_NIP = "9999999999";
+export const MASK_REGON = "99999999999999";
+export const MASK_POSTAL_CODE = "99-999";
+export const MASK_OFFICE_CODE = "9999999";

@@ -3,7 +3,7 @@
       "baseUrl": ".",
       "paths": {
         "@assets/*": ["./src/assets/*"],
-        "@namespace/*": ["./src/core/typings/*"],
+        "@namespace/*": ["./src/typings/*"],
         "@utils/*": ["./src/utils/*"],
         "@routes/*": ["./src/store/routes/*"],
         "@components/*": ["./src/components/*"],
