@@ -1,3 +1,4 @@
+import { convertTimeToDate } from "@helpers/useful-functions/convert-time-to-date";
 import * as yup from "yup";
 
 export const validationSchema = yup.object().shape({
@@ -11,6 +12,13 @@ export const validationSchema = yup.object().shape({
   email: yup.string().email("Email is incorrect").required("required"),
   date: yup.string().required("Date is required"),
   timeFrom: yup.string().required("Time is required"),
-  timeTo: yup.string().required("Time is required"),
+  timeTo: yup
+    .string()
+    .required("Time is required")
+    .test("check time", "Time cannot be lower than time to", (val, context) => {
+      return (
+        convertTimeToDate(val) > convertTimeToDate(context.parent.timeFrom)
+      );
+    }),
   restaurant: yup.string().required("Restaurant is required").nullable(),
 });
