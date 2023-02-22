@@ -1,8 +1,8 @@
+import { useAppDispatch, useAppSelector } from "@store/config";
 import { useLocation } from "react-router-dom";
+import { createLink } from "./utils";
 
 import * as C from "@utils/constants";
-import { NAV_HELPER } from "./utils";
-import { useAppDispatch, useAppSelector } from "@store/config";
 
 export const useHeaderService = () => {
   const { language } = useAppSelector(({ globalConfig }) => globalConfig);
@@ -13,7 +13,9 @@ export const useHeaderService = () => {
 
   const isDashboard = pathname === C.DASHBOARD_ROUTE;
 
-  const menuContent = pathname.includes("/admin") ? [] : NAV_HELPER;
+  const menuContent = pathname.includes("/admin")
+    ? []
+    : createLink(language.value);
 
   const menuColor = isDashboard ? "transparent" : "dark";
 

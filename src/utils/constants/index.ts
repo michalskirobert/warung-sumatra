@@ -1,3 +1,5 @@
+import { NCommonTypes } from "@namespace/commonTypes";
+
 // Routes
 export const DASHBOARD_ROUTE = "/";
 export const MENU_ROUTE = "/menu";
@@ -12,10 +14,34 @@ export const RESERVATE = "Reservate";
 export const ABOUT = "About";
 export const CONTACT = "Contact";
 
-export const DASHBOARD_LABEL = {
+export const DASHBOARD_LABEL: NCommonTypes.TTranslateProps = {
   pl: "Strona głowna",
   eng: "Home",
   bh: "Beranda",
+};
+
+export const MENU_LABEL: NCommonTypes.TTranslateProps = {
+  pl: "Menu",
+  bh: "Menu",
+  eng: "Menu",
+};
+
+export const RESERVATE_LABEL: NCommonTypes.TTranslateProps = {
+  pl: "Rezerwacja",
+  bh: "Reservasi",
+  eng: "Reservation",
+};
+
+export const ABOUT_LABEL: NCommonTypes.TTranslateProps = {
+  pl: "O nas",
+  bh: "Tentang kami",
+  eng: "About us",
+};
+
+export const CONTACT_LABEL: NCommonTypes.TTranslateProps = {
+  pl: "Kontakt",
+  bh: "Kontak",
+  eng: "Contact",
 };
 
 //Common

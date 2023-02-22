@@ -17,9 +17,8 @@ export const useAppService = () => {
 
   useEffect(() => {
     if (!browserLanguage || language.value === browserLanguage.value) return;
-
     dispatch(setLanguage(browserLanguage));
-  }, [browserLanguage, language]);
+  }, [browserLanguage]);
 
   return { isAdmingPage, checkPathname };
 };

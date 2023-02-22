@@ -55,10 +55,11 @@ export const Header = () => {
                   options: LANGUAGE_HELPER,
                   defaultValue: LANGUAGE_HELPER[0],
                   value: language,
-                  onChange: (option: TOption) =>
-                    dispatch(
-                      setLanguage(option || { label: "Polski", value: "pl" })
-                    ),
+                  onChange: (option: TOption) => {
+                    if (!option?.value) return;
+
+                    dispatch(setLanguage(option));
+                  },
                 }}
               />
             </Nav>

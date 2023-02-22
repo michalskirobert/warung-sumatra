@@ -9,6 +9,12 @@ export declare namespace NCommonTypes {
   type V = void;
   type JSX = JSX.Element;
 
+  type TTranslateProps = {
+    pl: S;
+    eng: S;
+    bh: S;
+  };
+
   type TLayoutType = "sm" | "md" | "xl" | "xxl";
 
   type TOptions = { label: string; value: unknown };
