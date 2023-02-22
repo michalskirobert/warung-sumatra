@@ -1,9 +1,10 @@
 import { NShared } from "@namespace/shared";
 import { Input } from "reactstrap";
 
-import Select from "react-select";
+import Select, { SingleValue } from "react-select";
 
 import InputMask from "react-input-mask";
+import { NCommonTypes } from "@namespace/commonTypes";
 
 export const RenderChildren = ({
   id,
@@ -16,6 +17,7 @@ export const RenderChildren = ({
   mask,
   maskChar,
 }: NShared.TRenderChildren) => {
+  console.log({ errors });
   switch (type) {
     case "mask":
       if (!mask) return null;
@@ -32,7 +34,17 @@ export const RenderChildren = ({
         />
       );
     case "select":
-      return <Select {...{ options, onChange: (e) => setFieldValue(id, e) }} />;
+      return (
+        <Select
+          {...{
+            options,
+            className: `${!!errors[id] ? "is-invalid form-control" : null}`,
+            value: options?.find(({ value }) => value === values[id]),
+            onChange: (e: SingleValue<NCommonTypes.TOptions>) =>
+              setFieldValue(id, e?.value),
+          }}
+        />
+      );
     default:
       return (
         <Input

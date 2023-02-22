@@ -10,7 +10,7 @@ export const validationSchema = yup.object().shape({
     }),
   email: yup.string().email("Email is incorrect").required("required"),
   date: yup.string().required("Date is required"),
-  timeForm: yup.string().required("Time is required"),
+  timeFrom: yup.string().required("Time is required"),
   timeTo: yup.string().required("Time is required"),
-  restaurant: yup.string().required("Restaurant is required"),
+  restaurant: yup.string().required("Restaurant is required").nullable(),
 });

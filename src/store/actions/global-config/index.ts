@@ -1,4 +1,3 @@
-import { useAppDispatch } from "@store/config";
 import { GlobalConfig } from "@store/reducers/actionTypes";
 import { NGlobalConfig } from "src/typings/global-config";
 
