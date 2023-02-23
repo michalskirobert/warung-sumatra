@@ -28,7 +28,7 @@ export const useDetectBrowserLanguage = () => {
   };
 
   const detectLanguage = () => {
-    const language = navigator.language as NGlobalConfig.TLangCode;
+    const language = navigator.language;
     const userLanguage = {
       label: detectLanguageFullName(language) || "Polski",
       value:
