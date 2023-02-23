@@ -1,3 +1,4 @@
+import { LANGUAGE_HELPER } from "@components/layout/header/utils";
 import { useEffect, useState } from "react";
 import { NGlobalConfig } from "src/typings/global-config";
 
@@ -29,8 +30,9 @@ export const useDetectBrowserLanguage = () => {
   const detectLanguage = () => {
     const language = navigator.language as NGlobalConfig.TLangCode;
     const userLanguage = {
-      label: detectLanguageFullName(language),
-      value: language,
+      label: detectLanguageFullName(language) || "Polski",
+      value:
+        LANGUAGE_HELPER.find(({ value }) => value === language)?.value || "pl",
     };
 
     setBrowserLanguage(userLanguage);
