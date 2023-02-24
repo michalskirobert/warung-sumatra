@@ -1,9 +1,14 @@
 import { ReactNode } from "react";
 
+//Public
 import { Dashboard } from "@pages/dashboard";
 import { Menu } from "@pages/menu";
 import { Contact } from "@components/pages/contact";
 import { Reservate } from "@components/pages/reservation";
+
+//Admin
+import { AdminDashboard } from "@components/pages/admin/pages/dashboard";
+import { MenuSettings } from "@components/pages/admin/pages/menu";
 
 import * as C from "@utils/constants";
 
@@ -21,6 +26,6 @@ export const ROUTES: readonly TRoutes[] = [
 ];
 
 export const ADMIN_ROUTES: readonly TRoutes[] = [
-  { path: C.ADMIN_ROUTE, component: <Dashboard /> },
-  { path: C.ADMIN_MENU_PAGE_SETTINGS, component: <Menu /> },
+  { path: C.ADMIN_ROUTE, component: <AdminDashboard /> },
+  { path: C.ADMIN_MENU_PAGE_SETTINGS_ROUTE, component: <MenuSettings /> },
 ];

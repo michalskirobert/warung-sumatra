@@ -9,7 +9,7 @@ export const CONTACT_ROUTE = "/contact";
 
 //Admin routes
 export const ADMIN_ROUTE = "/admin";
-export const ADMIN_MENU_PAGE_SETTINGS = `${ADMIN_ROUTE}${MENU_ROUTE}/settings`;
+export const ADMIN_MENU_PAGE_SETTINGS_ROUTE = `${ADMIN_ROUTE}${MENU_ROUTE}/settings`;
 
 //Menu
 export const DASHBORAD = "Home";
@@ -51,6 +51,7 @@ export const CONTACT_LABEL: NCommonTypes.TTranslateProps = {
 //Common
 export const RESTAURANT_NAME = "Warung Sumatra";
 export const WELCOME = `Welcome to ${RESTAURANT_NAME}`;
+export const ADMIN_PAGE = "Admin page";
 
 //Masks
 export const MASK_TYPE_PHONE = "+4\\8 99 999 99 99 99 99 99 99";

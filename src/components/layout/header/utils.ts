@@ -5,33 +5,43 @@ import { NCommonTypes } from "@namespace/commonTypes";
 import * as C from "@utils/constants";
 
 export const createLink = (
-  language: NGlobalConfig.TLangCode
+  language: NGlobalConfig.TLangCode,
+  isAdmin?: boolean
 ): {
   label: string;
   path: string;
   isBlank?: boolean;
-}[] => [
-  {
-    label: C.DASHBOARD_LABEL[language],
-    path: C.DASHBOARD_ROUTE,
-  },
-  {
-    label: C.MENU_LABEL[language],
-    path: C.MENU_ROUTE,
-  },
-  {
-    label: C.RESERVATE_LABEL[language],
-    path: C.RESERVATION_ROUTE,
-  },
-  {
-    label: C.ABOUT_LABEL[language],
-    path: C.ABOUT_ROUTE,
-  },
-  {
-    label: C.CONTACT_LABEL[language],
-    path: C.CONTACT_ROUTE,
-  },
-];
+}[] =>
+  !!isAdmin
+    ? [
+        { label: "Main page", path: C.ADMIN_ROUTE },
+        { label: "Edit menu-page", path: C.ADMIN_MENU_PAGE_SETTINGS_ROUTE },
+        { label: "Edit about-page", path: "/admin/settings/about" },
+        { label: "Edit contact-page", path: "/admin/settings/contact" },
+        { label: "Back to restaurant", path: "/", isBlank: true },
+      ]
+    : [
+        {
+          label: C.DASHBOARD_LABEL[language],
+          path: C.DASHBOARD_ROUTE,
+        },
+        {
+          label: C.MENU_LABEL[language],
+          path: C.MENU_ROUTE,
+        },
+        {
+          label: C.RESERVATE_LABEL[language],
+          path: C.RESERVATION_ROUTE,
+        },
+        {
+          label: C.ABOUT_LABEL[language],
+          path: C.ABOUT_ROUTE,
+        },
+        {
+          label: C.CONTACT_LABEL[language],
+          path: C.CONTACT_ROUTE,
+        },
+      ];
 
 export const LANGUAGE_HELPER: NGlobalConfig.TLanguage[] = [
   { label: "Polski", value: "pl" },

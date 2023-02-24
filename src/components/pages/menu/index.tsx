@@ -14,11 +14,11 @@ import {
 } from "reactstrap";
 
 import { INIT_MENU } from "./utils";
-import { Wrapper } from "@components/styles";
+import { CustomContainer } from "@components/shared";
 
 export const Menu = () => {
   return (
-    <Wrapper>
+    <CustomContainer>
       <Container>
         <CardGroup>
           <Row md={5}>
@@ -44,6 +44,6 @@ export const Menu = () => {
           </Row>
         </CardGroup>
       </Container>
-    </Wrapper>
+    </CustomContainer>
   );
 };

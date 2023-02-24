@@ -13,13 +13,13 @@ export const useHeaderService = () => {
 
   const isDashboard = pathname === C.DASHBOARD_ROUTE;
 
-  const menuContent = pathname.includes("/admin")
-    ? []
-    : createLink(language.value);
+  const isAdmin = pathname.includes("/admin");
+
+  const menuContent = createLink(language.value, pathname.includes("/admin"));
 
   const menuColor = isDashboard ? "transparent" : "dark";
 
   const isLinkActive = (path: string) => (path === pathname ? "active" : "");
 
-  return { menuColor, isLinkActive, menuContent, language, dispatch };
+  return { menuColor, isLinkActive, menuContent, language, dispatch, isAdmin };
 };

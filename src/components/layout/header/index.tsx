@@ -18,13 +18,22 @@ type TOption = SingleValue<{
 }>;
 
 export const Header = () => {
-  const { menuColor, isLinkActive, menuContent, dispatch, language } =
+  const { menuColor, isLinkActive, menuContent, dispatch, language, isAdmin } =
     useHeaderService();
   return (
-    <Navbar fixed="top" bg={menuColor} variant="dark" expand={"xxl"}>
+    <Navbar
+      {...{
+        bg: menuColor,
+        variant: "dark",
+        expand: "xxl",
+        fixed: isAdmin ? undefined : "top",
+      }}
+    >
       <Container fluid>
-        <Navbar.Brand href={C.DASHBOARD_ROUTE}>
-          {C.RESTAURANT_NAME}
+        <Navbar.Brand>
+          {isAdmin
+            ? `${C.ADMIN_PAGE} - ${C.RESTAURANT_NAME}`
+            : C.RESTAURANT_NAME}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-xxl`} />
         <Navbar.Offcanvas
@@ -39,29 +48,35 @@ export const Header = () => {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="me-auto">
-              {menuContent.map(({ label, path }) => (
+              {menuContent.map(({ label, path, isBlank }) => (
                 <Link
                   key={label}
-                  {...{ to: path, className: `nav-link ${isLinkActive(path)}` }}
+                  {...{
+                    to: path,
+                    className: `nav-link ${isLinkActive(path)}`,
+                    target: isBlank ? "_blank" : "_self",
+                  }}
                 >
                   {label}
                 </Link>
               ))}
             </Nav>
             <Nav>
-              <Select
-                {...{
-                  styles: STYLED_SELECT,
-                  options: LANGUAGE_HELPER,
-                  defaultValue: LANGUAGE_HELPER[0],
-                  value: language,
-                  onChange: (option: TOption) => {
-                    if (!option?.value) return;
+              {!isAdmin && (
+                <Select
+                  {...{
+                    styles: STYLED_SELECT,
+                    options: LANGUAGE_HELPER,
+                    defaultValue: LANGUAGE_HELPER[0],
+                    value: language,
+                    onChange: (option: TOption) => {
+                      if (!option?.value) return;
 
-                    dispatch(setLanguage(option));
-                  },
-                }}
-              />
+                      dispatch(setLanguage(option));
+                    },
+                  }}
+                />
+              )}
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

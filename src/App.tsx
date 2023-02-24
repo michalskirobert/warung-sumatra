@@ -12,7 +12,7 @@ const App = () => {
   if (isAdmingPage) {
     return (
       <BrowserRouter>
-        {/* <Header /> */}
+        <Header />
         <Suspense fallback={<>loading...</>}>
           <Routes>
             {ADMIN_ROUTES.map(({ path, component }) => (
