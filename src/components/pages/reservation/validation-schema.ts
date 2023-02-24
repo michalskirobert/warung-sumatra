@@ -14,7 +14,7 @@ export const validationSchema = yup.object().shape({
   timeFrom: yup.string().required("Time is required"),
   timeTo: yup
     .string()
-    .required("Time is required")
+    .notRequired()
     .test("check time", "Time cannot be lower than time to", (val, context) => {
       return (
         convertTimeToDate(val) > convertTimeToDate(context.parent.timeFrom)

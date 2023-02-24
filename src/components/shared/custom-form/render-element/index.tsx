@@ -17,6 +17,7 @@ export const RenderElement = ({
   mask,
   maskChar,
   isRequired,
+  placeholder,
 }: NShared.TRenderElement) => (
   <FormGroup {...{ check: type === "checkbox", inline: type === "checkbox" }}>
     <LabelForm {...{ id, name: id, isRequired, label }} />
@@ -32,6 +33,7 @@ export const RenderElement = ({
         type,
         mask,
         maskChar,
+        placeholder,
       }}
     />
     <FormFeedback>{errors[id]}</FormFeedback>

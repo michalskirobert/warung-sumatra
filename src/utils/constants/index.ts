@@ -1,11 +1,15 @@
 import { NCommonTypes } from "@namespace/commonTypes";
 
-// Routes
+// Public routes
 export const DASHBOARD_ROUTE = "/";
 export const MENU_ROUTE = "/menu";
 export const RESERVATION_ROUTE = "/reservate";
 export const ABOUT_ROUTE = "/about";
 export const CONTACT_ROUTE = "/contact";
+
+//Admin routes
+export const ADMIN_ROUTE = "/admin";
+export const ADMIN_MENU_PAGE_SETTINGS = `${ADMIN_ROUTE}${MENU_ROUTE}/settings`;
 
 //Menu
 export const DASHBORAD = "Home";

@@ -84,7 +84,6 @@ export const FORM_HELPER: NCommonTypes.TForm[] = [
         colType: "md",
         label: "Do godziny",
         type: "time",
-        isRequired: true,
       },
     ],
   },

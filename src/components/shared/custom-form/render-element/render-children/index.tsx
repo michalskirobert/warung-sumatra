@@ -17,7 +17,6 @@ export const RenderChildren = ({
   mask,
   maskChar,
 }: NShared.TRenderChildren) => {
-  console.log({ errors });
   switch (type) {
     case "mask":
       if (!mask) return null;
@@ -38,7 +37,14 @@ export const RenderChildren = ({
         <Select
           {...{
             options,
-            className: `${!!errors[id] ? "is-invalid form-control" : null}`,
+            className: `${!!errors[id] ? "is-invalid" : null}`,
+            styles: {
+              container: (prov) => ({
+                ...prov,
+                border: !!errors[id] ? "1px solid #dc3545" : "unset",
+                borderRadius: "0.375rem",
+              }),
+            },
             value: options?.find(({ value }) => value === values[id]),
             onChange: (e: SingleValue<NCommonTypes.TOptions>) =>
               setFieldValue(id, e?.value),

@@ -30,6 +30,7 @@ export declare namespace NShared {
     mask?: S | (S | RegExp)[];
     maskChar?: S | null;
     isRequired?: B;
+    placeholder?: S;
   };
 
   type TRenderChildren = {
@@ -42,5 +43,6 @@ export declare namespace NShared {
     options: TRenderElement["options"];
     mask: TRenderElement["mask"];
     maskChar: TRenderElement["maskChar"];
+    placeholder: TRenderElement["placeholder"];
   };
 }

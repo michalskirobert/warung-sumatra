@@ -3,9 +3,9 @@ import { ReactNode } from "react";
 import { Dashboard } from "@pages/dashboard";
 import { Menu } from "@pages/menu";
 import { Contact } from "@components/pages/contact";
+import { Reservate } from "@components/pages/reservation";
 
 import * as C from "@utils/constants";
-import { Reservate } from "@components/pages/reservation";
 
 interface TRoutes {
   path: string;
@@ -18,4 +18,9 @@ export const ROUTES: readonly TRoutes[] = [
   { path: C.RESERVATION_ROUTE, component: <Reservate /> },
   { path: C.ABOUT_ROUTE, component: null },
   { path: C.CONTACT_ROUTE, component: <Contact /> },
+];
+
+export const ADMIN_ROUTES: readonly TRoutes[] = [
+  { path: C.ADMIN_ROUTE, component: <Dashboard /> },
+  { path: C.ADMIN_MENU_PAGE_SETTINGS, component: <Menu /> },
 ];
