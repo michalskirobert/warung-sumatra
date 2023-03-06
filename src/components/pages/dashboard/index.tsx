@@ -1,10 +1,12 @@
 import React from "react";
+import { Image } from "react-bootstrap";
+
+import logo from "@assets/images/utils/header/red_logo.png";
 
 export const Dashboard = () => {
   return (
     <section {...{ className: "appContainer" }}>
-      <h1>Welcome!!</h1>
-      <h2>To the restaurant</h2>
+      <Image {...{ src: logo, style: { maxWidth: "400px" } }} />
     </section>
   );
 };

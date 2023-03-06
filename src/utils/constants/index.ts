@@ -10,6 +10,7 @@ export const CONTACT_ROUTE = "/contact";
 //Admin routes
 export const ADMIN_ROUTE = "/admin";
 export const ADMIN_MENU_PAGE_SETTINGS_ROUTE = `${ADMIN_ROUTE}${MENU_ROUTE}/settings`;
+export const LOGIN_PAGE_ROUTE = `${ADMIN_ROUTE}/sign-in`;
 
 //Menu
 export const DASHBORAD = "Home";

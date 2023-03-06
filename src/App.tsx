@@ -1,10 +1,12 @@
-import React, { Suspense } from "react";
+import React from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { ADMIN_ROUTES, ROUTES } from "./store/routes";
 import { Header } from "@components/layout/header";
 import { useAppService } from "./service";
+import { AuthRoute } from "@components/pages/admin/auth-route";
+import { Footer } from "@components/layout/footer";
 
 const App = () => {
   const { isAdmingPage } = useAppService();
@@ -12,14 +14,14 @@ const App = () => {
   if (isAdmingPage) {
     return (
       <BrowserRouter>
-        <Header />
-        <Suspense fallback={<>loading...</>}>
+        <AuthRoute>
+          <Header />
           <Routes>
             {ADMIN_ROUTES.map(({ path, component }) => (
               <Route key={path} {...{ path, element: component }} />
             ))}
           </Routes>
-        </Suspense>
+        </AuthRoute>
       </BrowserRouter>
     );
   }
@@ -27,13 +29,12 @@ const App = () => {
   return (
     <BrowserRouter>
       <Header />
-      <Suspense fallback={<>loading...</>}>
-        <Routes>
-          {ROUTES.map(({ path, component }) => (
-            <Route key={path} {...{ path, element: component }} />
-          ))}
-        </Routes>
-      </Suspense>
+      <Routes>
+        {ROUTES.map(({ path, component }) => (
+          <Route key={path} {...{ path, element: component }} />
+        ))}
+      </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

@@ -11,7 +11,7 @@
         "@pages/*": ["./src/components/pages/*"],
         "@shared/*": ["./src/components/shared/*"],
         "@helpers/*": ["./src/helpers/*"],
-        "@fire*": ["./src/firebase*"],
+        "@fire/*": ["./src/firebase/*"],
         "@api/*": ["./src/api/*"],
         "@store/*": ["./src/store/*"]
       }

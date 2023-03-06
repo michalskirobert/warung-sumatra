@@ -13,29 +13,32 @@ import {
   Col,
 } from "reactstrap";
 
-import { INIT_MENU } from "./utils";
+import { setColumnsNumber } from "./utils";
 import { CustomContainer } from "@components/shared";
+import { useMenuService } from "./service";
 
 export const Menu = () => {
+  const { menu } = useMenuService();
   return (
     <CustomContainer>
       <Container>
         <CardGroup>
-          <Row md={5}>
-            {INIT_MENU.map(({ desc, img, price, title }) => (
+          <Row md={setColumnsNumber(menu?.length)}>
+            {menu.map(({ category, description, image, name, price }) => (
               <Col key={crypto.randomUUID()}>
                 <Card
                   style={{
                     marginTop: "15px",
                   }}
                 >
-                  <CardImg alt={title} src={img} top />
+                  <CardImg alt={name} src={image} top />
                   <CardBody>
-                    <CardTitle tag="h5">{title}</CardTitle>
+                    <CardTitle tag="h4">{category?.label}</CardTitle>
+                    <CardTitle tag="h5">{name}</CardTitle>
                     <CardSubtitle className="mb-2 text-muted" tag="h6">
                       {price}
                     </CardSubtitle>
-                    <CardText>{desc.slice(0, 100)}...</CardText>
+                    <CardText>{description.slice(0, 100)}...</CardText>
                     <Button>Read more</Button>
                   </CardBody>
                 </Card>

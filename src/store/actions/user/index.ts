@@ -1,7 +1,7 @@
 import { NUser } from "@namespace/admin";
 import { User } from "@store/reducers/actionTypes";
 
-export const setLoading = (payload: NUser.TSetLoading["payload"]) => ({
+export const setIsUserLoading = (payload: NUser.TSetLoading["payload"]) => ({
   type: User.SetLoading,
   payload,
 });

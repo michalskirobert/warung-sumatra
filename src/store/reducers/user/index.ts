@@ -19,6 +19,7 @@ export const auth = (state = initial, action: NUser.TActions) => {
       return {
         ...state,
         user: action.payload,
+        isUserLoading: false,
       };
     case User.SetLoading:
       return {

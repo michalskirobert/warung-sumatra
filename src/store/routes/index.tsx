@@ -5,12 +5,14 @@ import { Dashboard } from "@pages/dashboard";
 import { Menu } from "@pages/menu";
 import { Contact } from "@components/pages/contact";
 import { Reservate } from "@components/pages/reservation";
+import { PageNotFound } from "@components/pages/not-found";
 
 //Admin
 import { AdminDashboard } from "@components/pages/admin/pages/dashboard";
 import { MenuSettings } from "@components/pages/admin/pages/menu";
 
 import * as C from "@utils/constants";
+import { LoginPage } from "@components/pages/admin/login";
 
 interface TRoutes {
   path: string;
@@ -23,9 +25,11 @@ export const ROUTES: readonly TRoutes[] = [
   { path: C.RESERVATION_ROUTE, component: <Reservate /> },
   { path: C.ABOUT_ROUTE, component: null },
   { path: C.CONTACT_ROUTE, component: <Contact /> },
+  { path: "*", component: <PageNotFound /> },
 ];
 
 export const ADMIN_ROUTES: readonly TRoutes[] = [
   { path: C.ADMIN_ROUTE, component: <AdminDashboard /> },
   { path: C.ADMIN_MENU_PAGE_SETTINGS_ROUTE, component: <MenuSettings /> },
+  { path: C.LOGIN_PAGE_ROUTE, component: <LoginPage /> },
 ];

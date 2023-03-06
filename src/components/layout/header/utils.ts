@@ -14,10 +14,10 @@ export const createLink = (
 }[] =>
   !!isAdmin
     ? [
-        { label: "Main page", path: C.ADMIN_ROUTE },
-        { label: "Edit menu-page", path: C.ADMIN_MENU_PAGE_SETTINGS_ROUTE },
-        { label: "Edit about-page", path: "/admin/settings/about" },
-        { label: "Edit contact-page", path: "/admin/settings/contact" },
+        { label: "Dashboard", path: C.ADMIN_ROUTE },
+        { label: "Edit menu", path: C.ADMIN_MENU_PAGE_SETTINGS_ROUTE },
+        { label: "Edit about", path: "/admin/settings/about" },
+        { label: "Edit contact", path: "/admin/settings/contact" },
         { label: "Back to restaurant", path: "/", isBlank: true },
       ]
     : [
@@ -49,11 +49,13 @@ export const LANGUAGE_HELPER: NGlobalConfig.TLanguage[] = [
   { label: "Bahasa", value: "bh" },
 ];
 
-export const STYLED_SELECT: StylesConfig<
-  NCommonTypes.TOptions,
-  false,
-  GroupBase<NCommonTypes.TOptions>
-> = {
+export const STYLED_SELECT:
+  | StylesConfig<
+      NGlobalConfig.TLanguage,
+      false,
+      GroupBase<NGlobalConfig.TLanguage>
+    >
+  | undefined = {
   control: (prov) => ({
     ...prov,
     background: "black",

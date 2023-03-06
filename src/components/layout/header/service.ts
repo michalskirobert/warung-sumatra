@@ -19,7 +19,19 @@ export const useHeaderService = () => {
 
   const menuColor = isDashboard ? "transparent" : "dark";
 
+  const isMenuSticky: { sticky?: "top" } | { fixed?: "top" | "bottom" } =
+    isDashboard ? { fixed: "top" } : { sticky: "top" };
+
+
   const isLinkActive = (path: string) => (path === pathname ? "active" : "");
 
-  return { menuColor, isLinkActive, menuContent, language, dispatch, isAdmin };
+  return {
+    menuColor,
+    isLinkActive,
+    menuContent,
+    language,
+    dispatch,
+    isAdmin,
+    isMenuSticky,
+  };
 };
