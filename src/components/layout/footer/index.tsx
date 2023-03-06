@@ -59,7 +59,7 @@ export const Footer = () => {
                   <Icons>Glovo</Icons>
                 </Media>
                 <span
-                  style={{ fontSize: "1.3rem", color: "yellow", margin: "5px" }}
+                  style={{ fontSize: "1.3rem", color: "white", margin: "5px" }}
                 >
                   /
                 </span>

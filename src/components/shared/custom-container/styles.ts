@@ -4,6 +4,8 @@ import styled from "styled-components";
 export const PageContainer = styled(Container)`
   display: flex;
   position: relative;
+  min-height: 100vh;
   flex-direction: column;
-  top: 70px;
+  margin-top: 25px;
+  padding: 10px;
 `;
