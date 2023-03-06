@@ -5,9 +5,8 @@ import { Formik } from "formik";
 
 import { CONTACT_FORM_HELPER } from "./utils";
 import { validationSchema } from "./validation-schema";
-import { FormContainer } from "./styles";
 import { Image } from "react-bootstrap";
-import { CustomForm } from "@components/shared";
+import { CustomContainer, CustomForm } from "@components/shared";
 
 export const Contact = () => {
   return (
@@ -29,7 +28,7 @@ export const Contact = () => {
         setFieldValue,
         values,
       }) => (
-        <FormContainer>
+        <CustomContainer title="Kontakt">
           <Form onSubmit={handleSubmit}>
             <Row md={2}>
               <Col>
@@ -79,7 +78,7 @@ export const Contact = () => {
               </Col>
             </Row>
           </Form>
-        </FormContainer>
+        </CustomContainer>
       )}
     </Formik>
   );

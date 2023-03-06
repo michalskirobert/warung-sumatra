@@ -1,13 +1,11 @@
 import { Button, Col, Form, Row } from "reactstrap";
 
-import { Header } from "./styles";
-
 import { Formik } from "formik";
+
+import { CustomContainer, CustomForm } from "@components/shared";
 
 import { validationSchema } from "./validation-schema";
 import { FORM_HELPER } from "./utils";
-import { CustomForm } from "@components/shared";
-import { PageContainer } from "@components/shared/custom-container/styles";
 
 export const Reservate = () => {
   return (
@@ -36,8 +34,7 @@ export const Reservate = () => {
         setFieldValue,
         values,
       }) => (
-        <PageContainer>
-          <Header>Zrób rezerwację</Header>
+        <CustomContainer title="Zrób rezerwację">
           <Form onSubmit={handleSubmit}>
             <CustomForm
               {...{
@@ -62,7 +59,7 @@ export const Reservate = () => {
               </Col>
             </Row>
           </Form>
-        </PageContainer>
+        </CustomContainer>
       )}
     </Formik>
   );
