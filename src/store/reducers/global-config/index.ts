@@ -7,7 +7,7 @@ import {
 
 const initialValues: NGlobalConfig.TReducer = {
   isLoading: false,
-  language: getFromLocalStorage("language"),
+  language: getFromLocalStorage("language") || { label: "Polski", value: "pl" },
 };
 
 export const globalConfig = (

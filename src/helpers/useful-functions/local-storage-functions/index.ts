@@ -10,4 +10,4 @@ export const saveToLocalStorage = ({
 
 export const getFromLocalStorage = (
   collectionName: ILocalStorageProps["collectionName"]
-) => JSON.parse(localStorage.getItem(collectionName) || "");
+) => JSON.parse(String(localStorage.getItem(collectionName)));
