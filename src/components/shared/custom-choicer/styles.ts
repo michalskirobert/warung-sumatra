@@ -14,7 +14,7 @@ export const Choicer = styled.button<{ isActive: boolean }>`
 `;
 
 export const Separator = styled.span`
-  color: white;
+  color: red;
 `;
 
 export const ChildrensContainer = styled.div`

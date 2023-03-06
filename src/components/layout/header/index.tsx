@@ -20,11 +20,6 @@ import { formatPhoneNumber } from "@helpers/useful-functions";
 import { CustomChoicer } from "@components/shared/custom-choicer";
 import { NCommonTypes } from "@namespace/commonTypes";
 
-type TOption = SingleValue<{
-  label: NGlobalConfig.TLanguageLabels;
-  value: NGlobalConfig.TLangCode;
-}>;
-
 export const Header = () => {
   const {
     menuColor,
@@ -45,7 +40,7 @@ export const Header = () => {
       }}
     >
       <Container fluid>
-        <Navbar.Brand>
+        <Navbar.Brand href="/">
           {isAdmin ? C.ADMIN_PAGE : <Img {...{ src: logo, width: 60 }} />}
         </Navbar.Brand>
 

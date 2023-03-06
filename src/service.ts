@@ -5,8 +5,9 @@ import { useAppDispatch, useAppSelector } from "@store/config";
 import { setLanguage } from "@store/actions/global-config";
 import { NGlobalConfig } from "./typings";
 import { getCollection } from "./firebase";
-import { NMenu } from "@namespace/menu";
 import { setMenu } from "@store/actions/menu";
+import { getFromLocalStorage } from "@helpers/useful-functions";
+import _ from "lodash";
 
 export const useAppService = () => {
   const { browserLanguage } = useDetectBrowserLanguage();
@@ -33,13 +34,17 @@ export const useAppService = () => {
   };
 
   useEffect(() => {
-    if (!browserLanguage || language.value === browserLanguage.value) return;
+    if (
+      !browserLanguage ||
+      language.value === browserLanguage.value ||
+      !_.isEmpty(getFromLocalStorage("language"))
+    )
+      return;
     dispatch(setLanguage(browserLanguage));
   }, [browserLanguage]);
 
   useEffect(() => {
     if (!language) return;
-
     getInitData(language.value);
   }, [language]);
 
