@@ -24,7 +24,7 @@ export const Header = () => {
     language,
     isAdmin,
     isMenuSticky,
-    signOutUser,
+    buttonsHandler,
   } = useHeaderService();
   return (
     <Navbar
@@ -53,27 +53,30 @@ export const Header = () => {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="me-auto">
-              {menuContent.map(({ label, path, isBlank }) => (
-                <Link
-                  key={label}
-                  {...{
-                    to: path,
-                    className: `nav-link ${isLinkActive(path)}`,
-                    target: isBlank ? "_blank" : "_self",
-                  }}
-                >
-                  {label}
-                </Link>
-              ))}
-              <StyledButton
-                {...{
-                  className: "nav-link ",
-                  type: "button",
-                  onClick: signOutUser,
-                }}
-              >
-                Sign out
-              </StyledButton>
+              {menuContent.map(({ label, path, isBlank, action }) =>
+                !!path ? (
+                  <Link
+                    key={label}
+                    {...{
+                      to: path,
+                      className: `nav-link ${isLinkActive(path)}`,
+                      target: isBlank ? "_blank" : "_self",
+                    }}
+                  >
+                    {label}
+                  </Link>
+                ) : (
+                  <StyledButton
+                    {...{
+                      className: "nav-link",
+                      type: "button",
+                      onClick: () => buttonsHandler(action),
+                    }}
+                  >
+                    {label}
+                  </StyledButton>
+                )
+              )}
             </Nav>
             <Nav>
               {!isAdmin && (

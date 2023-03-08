@@ -15,4 +15,6 @@ export const Img = styled(Image)`
   }
 `;
 
-export const StyledButton = styled(Button)``;
+export const StyledButton = styled(Button)`
+  height: 100%;
+`;

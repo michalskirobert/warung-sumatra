@@ -20,7 +20,6 @@ export const LoginPage = () => {
           initialValues: { email: "", password: "" },
           onSubmit: (payload) => signIn(payload),
           validateOnBlur: true,
-          validateOnChange: true,
           enableReinitialize: true,
           validationSchema,
         }}

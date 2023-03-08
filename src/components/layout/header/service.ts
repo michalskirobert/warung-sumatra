@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from "@store/config";
 import { useLocation, useNavigate } from "react-router-dom";
-import { createLink } from "./utils";
+import { IMenuPage, createLink } from "./utils";
 
 import { signOut } from "@firebase/auth";
 import { auth } from "@fire/index";
@@ -20,11 +20,13 @@ export const useHeaderService = () => {
   const pathname = useLocation().pathname;
   const isDashboard = pathname === C.DASHBOARD_ROUTE;
   const isAdmin = pathname.includes("/admin");
+
   const menuContent = createLink(
     language.value,
     pathname.includes("/admin"),
     isLogged
   );
+
   const menuColor = isDashboard ? "transparent" : "dark";
   const isMenuSticky: { sticky?: "top" } | { fixed?: "top" | "bottom" } =
     isDashboard ? { fixed: "top" } : { sticky: "top" };
@@ -34,7 +36,16 @@ export const useHeaderService = () => {
   const signOutUser = async () => {
     await signOut(auth);
     navigator("/admin/sign-in");
+    window.location.reload();
     dispatch(resetUser());
+  };
+
+  const buttonsHandler = (action?: IMenuPage["action"]) => {
+    switch (action) {
+      case "SIGN_OUT":
+        signOutUser();
+        break;
+    }
   };
 
   return {
@@ -47,5 +58,6 @@ export const useHeaderService = () => {
     isMenuSticky,
     isLogged,
     signOutUser,
+    buttonsHandler,
   };
 };

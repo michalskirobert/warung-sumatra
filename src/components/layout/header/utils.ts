@@ -3,10 +3,14 @@ import { NGlobalConfig } from "@namespace/global-config";
 
 import * as C from "@utils/constants";
 
-interface IMenuPage {
+type TButtonActions = "SIGN_OUT";
+
+export interface IMenuPage {
   label: string;
-  path: string;
+  path?: string;
   isBlank?: boolean;
+  isButton?: boolean;
+  action?: TButtonActions;
 }
 
 const adminMenu: IMenuPage[] = [
@@ -15,6 +19,7 @@ const adminMenu: IMenuPage[] = [
   { label: "Edit about", path: "/admin/settings/about" },
   { label: "Edit contact", path: "/admin/settings/contact" },
   { label: "Back to restaurant", path: "/", isBlank: true },
+  { label: "Sign-out", isButton: true, action: "SIGN_OUT" },
 ];
 
 const publicMenu = (language: NGlobalConfig.TLangCode): IMenuPage[] => [

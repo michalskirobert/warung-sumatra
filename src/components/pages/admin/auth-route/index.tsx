@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "@fire/index";
 import { onAuthStateChanged } from "@firebase/auth";
 
-import { setIsUserLoading, setUser } from "@store/actions/user";
+import { resetUser, setIsUserLoading, setUser } from "@store/actions/user";
 
 import { useAppDispatch, useAppSelector } from "@store/config";
 
@@ -26,6 +26,7 @@ export const AuthRoute = ({ children }: IAuthRoute) => {
       if (!checkingUser) {
         navigate(C.LOGIN_PAGE_ROUTE);
         dispatch(setIsUserLoading(false));
+        dispatch(resetUser());
         return;
       }
 
