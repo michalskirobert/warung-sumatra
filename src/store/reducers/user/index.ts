@@ -4,7 +4,7 @@ import { User } from "../actionTypes";
 const initial: NUser.TReducer = {
   user: {
     role: 0,
-    token: null,
+    accessToken: null,
     email: null,
     username: null,
   },
@@ -19,6 +19,16 @@ export const auth = (state = initial, action: NUser.TActions) => {
       return {
         ...state,
         user: action.payload,
+        isUserLoading: false,
+      };
+    case User.Reset:
+      return {
+        user: {
+          role: 0,
+          accessToken: null,
+          email: null,
+          username: null,
+        },
         isUserLoading: false,
       };
     case User.SetLoading:

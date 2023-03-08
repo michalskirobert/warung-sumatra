@@ -6,6 +6,7 @@ export const enum GlobalConfig {
 export const enum User {
   SetUser = "SET_USER",
   SetLoading = "SET_LOADING",
+  Reset = "RESET_USER",
 }
 
 export const enum Menu {

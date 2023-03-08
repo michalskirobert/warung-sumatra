@@ -1,47 +1,51 @@
 import { GroupBase, StylesConfig } from "react-select";
 import { NGlobalConfig } from "@namespace/global-config";
-import { NCommonTypes } from "@namespace/commonTypes";
 
 import * as C from "@utils/constants";
 
-export const createLink = (
-  language: NGlobalConfig.TLangCode,
-  isAdmin?: boolean
-): {
+interface IMenuPage {
   label: string;
   path: string;
   isBlank?: boolean;
-}[] =>
-  !!isAdmin
-    ? [
-        { label: "Dashboard", path: C.ADMIN_ROUTE },
-        { label: "Edit menu", path: C.ADMIN_MENU_PAGE_SETTINGS_ROUTE },
-        { label: "Edit about", path: "/admin/settings/about" },
-        { label: "Edit contact", path: "/admin/settings/contact" },
-        { label: "Back to restaurant", path: "/", isBlank: true },
-      ]
-    : [
-        {
-          label: C.DASHBOARD_LABEL[language],
-          path: C.DASHBOARD_ROUTE,
-        },
-        {
-          label: C.MENU_LABEL[language],
-          path: C.MENU_ROUTE,
-        },
-        {
-          label: C.RESERVATE_LABEL[language],
-          path: C.RESERVATION_ROUTE,
-        },
-        {
-          label: C.ABOUT_LABEL[language],
-          path: C.ABOUT_ROUTE,
-        },
-        {
-          label: C.CONTACT_LABEL[language],
-          path: C.CONTACT_ROUTE,
-        },
-      ];
+}
+
+const adminMenu: IMenuPage[] = [
+  { label: "Dashboard", path: C.ADMIN_ROUTE },
+  { label: "Edit menu", path: C.ADMIN_MENU_PAGE_SETTINGS_ROUTE },
+  { label: "Edit about", path: "/admin/settings/about" },
+  { label: "Edit contact", path: "/admin/settings/contact" },
+  { label: "Back to restaurant", path: "/", isBlank: true },
+];
+
+const publicMenu = (language: NGlobalConfig.TLangCode): IMenuPage[] => [
+  {
+    label: C.DASHBOARD_LABEL[language],
+    path: C.DASHBOARD_ROUTE,
+  },
+  {
+    label: C.MENU_LABEL[language],
+    path: C.MENU_ROUTE,
+  },
+  {
+    label: C.RESERVATE_LABEL[language],
+    path: C.RESERVATION_ROUTE,
+  },
+  {
+    label: C.ABOUT_LABEL[language],
+    path: C.ABOUT_ROUTE,
+  },
+  {
+    label: C.CONTACT_LABEL[language],
+    path: C.CONTACT_ROUTE,
+  },
+];
+
+export const createLink = (
+  language: NGlobalConfig.TLangCode,
+  isAdmin?: boolean,
+  isLogged?: boolean
+) =>
+  !!isAdmin && !isLogged ? [] : !!isAdmin ? adminMenu : publicMenu(language);
 
 export const LANGUAGE_HELPER: NGlobalConfig.TLanguage[] = [
   { label: "Polski", value: "pl" },

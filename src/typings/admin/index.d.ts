@@ -8,7 +8,7 @@ export declare namespace NUser {
 
   type TUser = {
     role: N;
-    token: S | null;
+    accessToken: S | null;
     username: S | null;
     email: S | null;
   };
@@ -28,5 +28,9 @@ export declare namespace NUser {
     payload: TUser;
   };
 
-  type TActions = TSetLoading | TSetUser;
+  type TResetUser = {
+    type: User.Reset;
+  };
+
+  type TActions = TSetLoading | TSetUser | TResetUser;
 }

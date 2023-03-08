@@ -10,3 +10,5 @@ export const setUser = (payload: NUser.TSetUser["payload"]) => ({
   type: User.SetUser,
   payload,
 });
+
+export const resetUser = (): NUser.TResetUser => ({ type: User.Reset });

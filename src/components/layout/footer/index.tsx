@@ -1,20 +1,16 @@
-import { Col, Container, FormGroup, Image, Row } from "react-bootstrap";
+import { Col, Container, FormGroup, Row } from "react-bootstrap";
 import {
   Caption,
   Icons,
-  Img,
   Info,
   Media,
   ScheduleContainer,
   StyledFooter,
   Title,
 } from "./styles";
-import { Phone } from "../header/styles";
+
 import { PhoneNumbers } from "@utils/enums";
 import { formatPhoneNumber } from "@helpers/useful-functions";
-
-import glovo from "@assets/images/utils/footer/external-links/glovo-logo.svg";
-import uberEats from "@assets/images/utils/footer/external-links/uber-eats.svg";
 
 import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 
@@ -27,9 +23,9 @@ export const Footer = () => {
             <Title>Contact:</Title>
             <FormGroup>
               <Caption>Phone:</Caption>
-              <Phone {...{ href: `tel:${PhoneNumbers.Contact}` }}>
+              <Info {...{ href: `tel:${PhoneNumbers.Contact}` }}>
                 {formatPhoneNumber(PhoneNumbers.Contact)}
-              </Phone>
+              </Info>
             </FormGroup>
             <FormGroup>
               <Caption>Address:</Caption>

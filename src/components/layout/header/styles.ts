@@ -1,22 +1,8 @@
 import styled from "styled-components";
-import { Image, Navbar } from "react-bootstrap";
+import { Button, Image, Navbar } from "react-bootstrap";
 
 export const Logo = styled(Navbar.Brand)`
   color: white !important;
-`;
-
-export const ContactSection = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const Phone = styled.a`
-  color: yellow;
-`;
-
-export const Info = styled.p`
-  color: yellow;
 `;
 
 export const Img = styled(Image)`
@@ -28,3 +14,5 @@ export const Img = styled(Image)`
     opacity: 1;
   }
 `;
+
+export const StyledButton = styled(Button)``;

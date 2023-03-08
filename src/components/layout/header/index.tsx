@@ -1,24 +1,19 @@
-import React from "react";
-
-import Select, { SingleValue } from "react-select";
 import { Link } from "react-router-dom";
 
-import { Navbar, Container, Nav, Offcanvas, Image } from "react-bootstrap";
+import { Navbar, Container, Nav, Offcanvas } from "react-bootstrap";
 
-import { LANGUAGE_HELPER, STYLED_SELECT } from "./utils";
+import { LANGUAGE_HELPER } from "./utils";
 import { useHeaderService } from "./service";
 import { setLanguage } from "@store/actions/global-config";
 import { NGlobalConfig } from "src/typings/global-config";
 
-import { ContactSection, Img, Info, Phone } from "./styles";
+import { Img, StyledButton } from "./styles";
+
+import { CustomChoicer } from "@components/shared/custom-choicer";
 
 import logo from "@assets/images/utils/header/white_logo.png";
 
 import * as C from "@utils/constants";
-import { PhoneNumbers } from "@utils/enums";
-import { formatPhoneNumber } from "@helpers/useful-functions";
-import { CustomChoicer } from "@components/shared/custom-choicer";
-import { NCommonTypes } from "@namespace/commonTypes";
 
 export const Header = () => {
   const {
@@ -29,6 +24,7 @@ export const Header = () => {
     language,
     isAdmin,
     isMenuSticky,
+    signOutUser,
   } = useHeaderService();
   return (
     <Navbar
@@ -40,7 +36,7 @@ export const Header = () => {
       }}
     >
       <Container fluid>
-        <Navbar.Brand href="/">
+        <Navbar.Brand>
           {isAdmin ? C.ADMIN_PAGE : <Img {...{ src: logo, width: 60 }} />}
         </Navbar.Brand>
 
@@ -69,6 +65,15 @@ export const Header = () => {
                   {label}
                 </Link>
               ))}
+              <StyledButton
+                {...{
+                  className: "nav-link ",
+                  type: "button",
+                  onClick: signOutUser,
+                }}
+              >
+                Sign out
+              </StyledButton>
             </Nav>
             <Nav>
               {!isAdmin && (

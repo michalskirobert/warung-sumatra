@@ -10,9 +10,9 @@ import { PageNotFound } from "@components/pages/not-found";
 //Admin
 import { AdminDashboard } from "@components/pages/admin/pages/dashboard";
 import { MenuSettings } from "@components/pages/admin/pages/menu";
+import { LoginPage } from "@components/pages/admin/login";
 
 import * as C from "@utils/constants";
-import { LoginPage } from "@components/pages/admin/login";
 
 interface TRoutes {
   path: string;
