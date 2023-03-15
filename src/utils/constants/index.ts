@@ -62,3 +62,7 @@ export const MASK_NIP = "9999999999";
 export const MASK_REGON = "99999999999999";
 export const MASK_POSTAL_CODE = "99-999";
 export const MASK_OFFICE_CODE = "9999999";
+
+//API
+export const REST_ERROR_DETAILS_STRING_FRAGMENT = "Szczegóły:";
+export const TOAST_ERROR = "Wystąpił błąd.";
