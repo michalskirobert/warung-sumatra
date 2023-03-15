@@ -15,20 +15,12 @@ export const auth = (state = initial, action: NUser.TActions) => {
   switch (action.type) {
     default:
       return state;
+    case User.Reset:
+      return initial;
     case User.SetUser:
       return {
         ...state,
         user: action.payload,
-        isUserLoading: false,
-      };
-    case User.Reset:
-      return {
-        user: {
-          role: 0,
-          accessToken: null,
-          email: null,
-          username: null,
-        },
         isUserLoading: false,
       };
     case User.SetLoading:

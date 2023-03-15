@@ -2,6 +2,8 @@ import { useAppDispatch, useAppSelector } from "@store/config";
 import { useLocation, useNavigate } from "react-router-dom";
 import { IMenuPage, createLink } from "./utils";
 
+import { checkPathname } from "@helpers/useful-functions/check-pathname";
+
 import { signOut } from "@firebase/auth";
 import { auth } from "@fire/index";
 import { resetUser } from "@store/actions/user";
@@ -19,13 +21,9 @@ export const useHeaderService = () => {
 
   const pathname = useLocation().pathname;
   const isDashboard = pathname === C.DASHBOARD_ROUTE;
-  const isAdmin = pathname.includes("/admin");
+  const isAdmin = checkPathname(C.ADMIN_ROUTE);
 
-  const menuContent = createLink(
-    language.value,
-    pathname.includes("/admin"),
-    isLogged
-  );
+  const menuContent = createLink(language.value, isAdmin, isLogged);
 
   const menuColor = isDashboard ? "transparent" : "dark";
   const isMenuSticky: { sticky?: "top" } | { fixed?: "top" | "bottom" } =

@@ -5,3 +5,4 @@ export {
   getFromLocalStorage,
   saveToLocalStorage,
 } from "./local-storage-functions/";
+export { checkPathname } from "./check-pathname";
