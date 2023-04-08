@@ -6,7 +6,6 @@ export const PageContainer = styled(Container)`
   position: relative;
   min-height: 100vh;
   flex-direction: column;
-  margin-top: 25px;
   padding: 10px;
 `;
 

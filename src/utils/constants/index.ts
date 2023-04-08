@@ -32,9 +32,9 @@ export const MENU_LABEL: NCommonTypes.TTranslateProps = {
 };
 
 export const RESERVATE_LABEL: NCommonTypes.TTranslateProps = {
-  pl: "Rezerwacja",
-  bh: "Reservasi",
-  eng: "Reservation",
+  pl: "Zarezerwuj stolik",
+  bh: "Memesan meja",
+  eng: "Book a table",
 };
 
 export const ABOUT_LABEL: NCommonTypes.TTranslateProps = {
@@ -66,3 +66,10 @@ export const MASK_OFFICE_CODE = "9999999";
 //API
 export const REST_ERROR_DETAILS_STRING_FRAGMENT = "Szczegóły:";
 export const TOAST_ERROR = "Wystąpił błąd.";
+
+//Colours
+export const LIGHT_YELLOW = "#FFD60A";
+export const CONTRAST_YELLOW = "#FFC300";
+export const BLUE = "#003566";
+export const DARK_BLUE = "#001D3D";
+export const BLACK = "#000814";

@@ -1,0 +1,85 @@
+$standard: 'standard';
+$standard_italic: 'standard-italic';
+$standard_light:'light';
+$standard_light_italic: 'light-italic';
+$standard_bold: 'bold';
+$standard_bold_italic: 'bold-italic';
+
+@font-face {
+    font-family: $standard;
+    src: url("./../fonts/Roboto-Black.ttf");
+    font-weight: 0 1000;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $standard_italic;
+    src: url("./../fonts/Roboto-BlackItalic.ttf");
+    font-weight: 0 1000;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $standard_light;
+    src: url("./../fonts/Roboto-Light.ttf");
+    font-weight: 0 1000;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $standard_light_italic;
+    src: url("./../fonts/Roboto-LightItalic.ttf");
+    font-weight: 0 1000;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $standard_bold;
+    src: url("./../fonts/Roboto-Bold.ttf");
+    font-weight: 0 1000;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $standard_bold_italic;
+    src: url("./../fonts/Roboto-BoldItalic.ttf");
+    font-weight: 0 1000;
+    font-display: swap;
+}
+
+
+p, h4, h5, h6 {
+    font-family: $standard;
+}
+
+a {
+    font-family: $standard;
+}
+
+h4, h5, h6 {
+    font-weight: 500;
+}
+
+b {
+    font-family: $standard_bold;
+}
+
+i {
+    font-family: $standard_italic;
+}
+
+i.thick {
+    font-family: $standard_bold_italic;
+}
+
+i.light {
+    font-family: $standard_light_italic;
+}
+
+h1, h2, h3 {
+    font-family: $standard_bold;
+}
+
+p.light {
+    font-family: $standard_light;
+}

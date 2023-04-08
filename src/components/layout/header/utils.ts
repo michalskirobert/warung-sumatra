@@ -11,6 +11,7 @@ export interface IMenuPage {
   isBlank?: boolean;
   isButton?: boolean;
   action?: TButtonActions;
+  isUniqueLink?: boolean;
 }
 
 const adminMenu: IMenuPage[] = [
@@ -32,16 +33,17 @@ const publicMenu = (language: NGlobalConfig.TLangCode): IMenuPage[] => [
     path: C.MENU_ROUTE,
   },
   {
-    label: C.RESERVATE_LABEL[language],
-    path: C.RESERVATION_ROUTE,
-  },
-  {
     label: C.ABOUT_LABEL[language],
     path: C.ABOUT_ROUTE,
   },
   {
     label: C.CONTACT_LABEL[language],
     path: C.CONTACT_ROUTE,
+  },
+  {
+    label: C.RESERVATE_LABEL[language],
+    path: C.RESERVATION_ROUTE,
+    isUniqueLink: true,
   },
 ];
 

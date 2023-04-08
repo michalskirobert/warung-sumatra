@@ -20,14 +20,9 @@ export const useHeaderService = () => {
   const isLogged = !!accessToken;
 
   const pathname = useLocation().pathname;
-  const isDashboard = pathname === C.DASHBOARD_ROUTE;
   const isAdmin = checkPathname(C.ADMIN_ROUTE);
 
   const menuContent = createLink(language.value, isAdmin, isLogged);
-
-  const menuColor = isDashboard ? "transparent" : "dark";
-  const isMenuSticky: { sticky?: "top" } | { fixed?: "top" | "bottom" } =
-    isDashboard ? { fixed: "top" } : { sticky: "top" };
 
   const isLinkActive = (path: string) => (path === pathname ? "active" : "");
 
@@ -47,13 +42,11 @@ export const useHeaderService = () => {
   };
 
   return {
-    menuColor,
     isLinkActive,
     menuContent,
     language,
     dispatch,
     isAdmin,
-    isMenuSticky,
     isLogged,
     signOutUser,
     buttonsHandler,

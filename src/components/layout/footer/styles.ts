@@ -2,14 +2,11 @@ import { Image } from "react-bootstrap";
 import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
-  width: 100vw;
-  min-height: 10vh;
-  max-height: 50vh;
-  background-color: black;
-  opacity: 0.7;
-  position: fixed;
+  position: relative;
   bottom: 0;
-  padding: 5px;
+  width: 100%;
+  min-height: 2.5rem;
+  background-color: black;
 `;
 
 export const Caption = styled.p`
