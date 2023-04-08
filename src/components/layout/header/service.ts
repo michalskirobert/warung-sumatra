@@ -9,10 +9,20 @@ import { auth } from "@fire/index";
 import { resetUser } from "@store/actions/user";
 
 import * as C from "@utils/constants";
+import { useMediaQuery } from "react-responsive";
+import { maxScreenSizes } from "@utils/enums";
 
 export const useHeaderService = () => {
   const { language } = useAppSelector(({ globalConfig }) => globalConfig);
   const { accessToken } = useAppSelector(({ auth }) => auth.user);
+
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${maxScreenSizes.mobile}px)`,
+  });
+
+  const isStandardSize = useMediaQuery({
+    query: `(mim-width: ${maxScreenSizes.tablet}px)`,
+  });
 
   const dispatch = useAppDispatch();
   const navigator = useNavigate();
@@ -50,5 +60,6 @@ export const useHeaderService = () => {
     isLogged,
     signOutUser,
     buttonsHandler,
+    isMobile,
   };
 };
