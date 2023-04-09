@@ -1,20 +1,24 @@
 import styled from "styled-components";
+import { WEBSITE_BASE_COLOURS } from "@utils/constants";
+import { Sizes } from "@utils/enums";
 
-export const Choicer = styled.button<{ isActive: boolean }>`
+export const Choicer = styled.button<{ isActive: boolean; isMobile?: boolean }>`
   border: none;
   outline: none;
   background: none;
-  color: ${({ isActive }) => (isActive ? "red" : "black")};
-  font-weight: ${({ isActive }) => (isActive ? "700" : "400")};
-  transition: 0.5s color;
+  color: ${({ isActive }) =>
+    isActive ? WEBSITE_BASE_COLOURS.PURPULE : WEBSITE_BASE_COLOURS.BLUE};
+  transition: 0.8s color;
+
+  font-size: ${({ isMobile }) => (!!isMobile ? Sizes.standard : Sizes.small)};
 
   &:hover {
-    color: yellow;
+    color: ${WEBSITE_BASE_COLOURS.PURPULE};
   }
 `;
 
 export const Separator = styled.span`
-  color: red;
+  color: ${WEBSITE_BASE_COLOURS.BLUE};
 `;
 
 export const ChildrensContainer = styled.div`
@@ -23,7 +27,7 @@ export const ChildrensContainer = styled.div`
   align-items: center;
 `;
 
-export const Container = styled.div`
+export const Container = styled.div<{ isMobile?: boolean }>`
   display: flex;
   margin: 0;
   padding: 0;

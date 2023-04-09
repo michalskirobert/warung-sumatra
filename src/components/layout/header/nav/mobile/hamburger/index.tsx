@@ -10,7 +10,7 @@ interface IHamburgerProps {
 }
 
 export const Hamburger = ({ isOpen, toggle }: IHamburgerProps) => {
-  const styles = {
+  const styles: React.CSSProperties = {
     color: isOpen
       ? WEBSITE_BASE_COLOURS.BLUE
       : WEBSITE_BASE_COLOURS.LIGHT_YELLOW,

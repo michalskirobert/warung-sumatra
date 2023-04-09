@@ -6,16 +6,23 @@ interface IChoicerProps {
   options: NCommonTypes.TOptions[];
   value: unknown;
   onEvent: (option?: NCommonTypes.TOptions) => void;
+  isMobile?: boolean;
 }
 
-export const CustomChoicer = ({ options, value, onEvent }: IChoicerProps) => {
+export const CustomChoicer = ({
+  options,
+  value,
+  onEvent,
+  isMobile,
+}: IChoicerProps) => {
   const { checkIsActive, addSeparator } = useChoicerService({ value });
   return (
-    <Container>
+    <Container {...{ isMobile }}>
       {options.map(({ label, value }, index) => (
         <ChildrensContainer>
           <Choicer
             {...{
+              isMobile,
               isActive: checkIsActive(value),
               onClick: () =>
                 onEvent(options.find((option) => option.value === value)),

@@ -3,7 +3,7 @@ export const enum PhoneNumbers {
 }
 
 export const enum maxScreenSizes {
-  mobile = 768,
+  mobile = 870,
   tablet = 1200,
 }
 

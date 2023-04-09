@@ -1,12 +1,19 @@
 import { CustomChoicer } from "@components/shared/custom-choicer";
-import { StyledButton, StyledLink } from "../../styles";
+import { Img, StyledButton, StyledLink } from "../../styles";
 import { LANGUAGE_HELPER } from "../../utils";
 import { setLanguage } from "@store/actions/global-config";
 import { NGlobalConfig } from "@namespace/global-config";
 import { useMobileNavService } from "./service";
 import { NLayout } from "@namespace/layout";
 import { Hamburger } from "./hamburger";
-import { NavContainer, LinksContainer } from "./styles";
+import {
+  NavContainer,
+  LinksContainer,
+  LogoContainer,
+  LanguageContainer,
+} from "./styles";
+
+import logo from "@assets/images/utils/header/red_logo.png";
 
 export const MobileNav = ({
   isLinkActive,
@@ -21,6 +28,9 @@ export const MobileNav = ({
       <Hamburger {...{ isOpen, toggle }} />
       <LinksContainer {...{ isOpen }}>
         <ul>
+          <LogoContainer>
+            <Img src={logo} alt="Warung Sumatra" style={{ width: "60%" }} />
+          </LogoContainer>
           {menuContent.map(({ label, path, isBlank, action, isUniqueLink }) => (
             <li key={path}>
               {!!path ? (
@@ -49,14 +59,17 @@ export const MobileNav = ({
             </li>
           ))}
         </ul>
-        <CustomChoicer
-          {...{
-            value: language.value,
-            options: LANGUAGE_HELPER,
-            onEvent: (value) =>
-              dispatch(setLanguage(value as NGlobalConfig.TLanguage)),
-          }}
-        />
+        <LanguageContainer>
+          <CustomChoicer
+            {...{
+              isMobile: true,
+              value: language.value,
+              options: LANGUAGE_HELPER,
+              onEvent: (value) =>
+                dispatch(setLanguage(value as NGlobalConfig.TLanguage)),
+            }}
+          />
+        </LanguageContainer>
       </LinksContainer>
     </NavContainer>
   );

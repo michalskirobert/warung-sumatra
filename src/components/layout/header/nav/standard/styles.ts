@@ -35,3 +35,11 @@ width: 100%;
   }
 }
 `;
+
+export const LanguageContainer = styled.div`
+  display: flex;
+  position: relative;
+  height: 100%;
+  transform: translateY(50%);
+  margin-right: 30px;
+`;

@@ -73,6 +73,7 @@ export const CONTRAST_YELLOW = "#FFC300";
 export const BLUE = "#003566";
 export const DARK_BLUE = "#001D3D";
 export const BLACK = "#000814";
+export const PURPULE = "#A020F0";
 
 export const WEBSITE_BASE_COLOURS = {
   LIGHT_YELLOW,
@@ -80,4 +81,5 @@ export const WEBSITE_BASE_COLOURS = {
   BLUE,
   DARK_BLUE,
   BLACK,
+  PURPULE,
 };

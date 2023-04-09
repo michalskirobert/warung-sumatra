@@ -25,6 +25,7 @@ export const Hero = () => {
         items={HERO_ITEMS}
         activeIndex={activeIndex}
         onClickHandler={goToIndex}
+        hidden={true}
       />
       {HERO_ITEMS.map((item) => {
         return (
@@ -33,11 +34,6 @@ export const Hero = () => {
               src={item.src}
               alt={item.altText}
               {...{ style: { width: "100vw" } }}
-            />
-            <CarouselCaption
-              className="text-primary"
-              captionText={item.caption}
-              captionHeader={item.caption}
             />
           </CarouselItem>
         );

@@ -63,6 +63,7 @@ i,
 u,
 h4,
 h5,
+button,
 h6 {
   font-size: $standardSize;
 }
@@ -83,6 +84,7 @@ p,
 u,
 h4,
 h5,
+button,
 h6 {
   font-family: $standard;
 }
@@ -129,4 +131,18 @@ p.small {
 
 p.extra-small {
   font-size: $extraSmallSize;
+}
+
+.nav-link {
+  color: $blue !important;
+}
+
+.nav-link.active {
+  color: $light-yellow !important;
+}
+
+@media (max-width: 780px) {
+  .nav-link.active {
+    color: $purple;
+  }
 }

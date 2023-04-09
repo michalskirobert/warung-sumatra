@@ -1,9 +1,20 @@
-$light-yellow: #FFD60A;
-$contrast-yellow: #FFC300;
+$light-yellow: #ffd60a;
+$contrast-yellow: #ffc300;
 $blue: #003566;
-$dark-blue: #001D3D;
+$dark-blue: #001d3d;
 $black: #000814;
+$purple: #a020f0;
 
-p, b, i, u, h1, h2, h3, h4, h5, h6, a {
-    color: $black
+p,
+b,
+i,
+u,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  color: $black;
 }
