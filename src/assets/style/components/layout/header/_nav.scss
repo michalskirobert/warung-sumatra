@@ -1,41 +1,4 @@
-nav.nav-container {
-  display: flex;
-  position: fixed;
-  z-index: 2;
-  align-items: flex-start;
-  max-height: 8vh;
-  width: 100vw;
-  background-color: $black;
-
-  & ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-
-    & li {
-      text-decoration: none;
-      list-style-type: none;
-      margin: 15px;
-      & a {
-        color: $light-yellow;
-      }
-    }
-
-    & li:last-child {
-      padding-right: 20px;
-      margin-left: auto;
-      & a {
-        position: relative;
-        top: -5px;
-        color: $blue;
-        padding: 5px;
-      }
-    }
-  }
-}
-
-nav.mobile {
+header {
   display: flex;
   position: fixed;
   z-index: 2;

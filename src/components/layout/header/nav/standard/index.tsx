@@ -1,21 +1,22 @@
 import { CustomChoicer } from "@components/shared/custom-choicer";
-import { Img, StyledButton, StyledLink } from "../../styles";
-import logo from "@assets/images/utils/header/white_logo.png";
+import { StyledButton, StyledLink } from "../../styles";
+
 import { LANGUAGE_HELPER } from "../../utils";
 import { setLanguage } from "@store/actions/global-config";
 import { NGlobalConfig } from "@namespace/global-config";
+import { NavContainer } from "./styles";
+import { NLayout } from "@namespace/layout";
+import { useStandardNavService } from "./service";
 
 export const StandardNav = ({
   isLinkActive,
   menuContent,
-  dispatch,
   language,
-  isAdmin,
   buttonsHandler,
-}: any) => {
+}: NLayout.TStandardNav) => {
+  const { dispatch } = useStandardNavService();
   return (
-    <nav className="nav-container">
-      <Img {...{ src: logo, width: 60 }} />
+    <NavContainer>
       <ul>
         {menuContent.map(
           ({ label, path, isBlank, action, isUniqueLink }: any) => (
@@ -48,16 +49,14 @@ export const StandardNav = ({
         )}
       </ul>
 
-      {!isAdmin && (
-        <CustomChoicer
-          {...{
-            value: language.value,
-            options: LANGUAGE_HELPER,
-            onEvent: (value) =>
-              dispatch(setLanguage(value as NGlobalConfig.TLanguage)),
-          }}
-        />
-      )}
-    </nav>
+      <CustomChoicer
+        {...{
+          value: language.value,
+          options: LANGUAGE_HELPER,
+          onEvent: (value) =>
+            dispatch(setLanguage(value as NGlobalConfig.TLanguage)),
+        }}
+      />
+    </NavContainer>
   );
 };

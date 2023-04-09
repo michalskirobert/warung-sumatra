@@ -5,16 +5,15 @@ import { LANGUAGE_HELPER } from "../../utils";
 import { setLanguage } from "@store/actions/global-config";
 import { NGlobalConfig } from "@namespace/global-config";
 import { useMobileNavService } from "./service";
+import { NLayout } from "@namespace/layout";
 
 export const MobileNav = ({
   isLinkActive,
   menuContent,
-  dispatch,
   language,
-  isAdmin,
   buttonsHandler,
-}: any) => {
-  const { changeClassName, isOpen, toggle } = useMobileNavService();
+}: NLayout.TMobileNavProps) => {
+  const { changeClassName, isOpen, toggle, dispatch } = useMobileNavService();
 
   return (
     <nav className={changeClassName(isOpen)}>

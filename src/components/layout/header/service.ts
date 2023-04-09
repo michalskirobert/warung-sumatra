@@ -1,5 +1,8 @@
 import { useAppDispatch, useAppSelector } from "@store/config";
 import { useLocation, useNavigate } from "react-router-dom";
+
+import { useDetectDevice } from "@helpers/use-hooks";
+
 import { IMenuPage, createLink } from "./utils";
 
 import { checkPathname } from "@helpers/useful-functions/check-pathname";
@@ -9,20 +12,12 @@ import { auth } from "@fire/index";
 import { resetUser } from "@store/actions/user";
 
 import * as C from "@utils/constants";
-import { useMediaQuery } from "react-responsive";
-import { maxScreenSizes } from "@utils/enums";
 
 export const useHeaderService = () => {
+  const { isMobile } = useDetectDevice();
+
   const { language } = useAppSelector(({ globalConfig }) => globalConfig);
   const { accessToken } = useAppSelector(({ auth }) => auth.user);
-
-  const isMobile = useMediaQuery({
-    query: `(max-width: ${maxScreenSizes.mobile}px)`,
-  });
-
-  const isStandardSize = useMediaQuery({
-    query: `(mim-width: ${maxScreenSizes.tablet}px)`,
-  });
 
   const dispatch = useAppDispatch();
   const navigator = useNavigate();

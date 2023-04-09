@@ -1,3 +1,4 @@
+import { NLayout } from "@namespace/layout";
 import { MobileNav } from "./mobile";
 import { StandardNav } from "./standard";
 
@@ -5,18 +6,16 @@ export const Nav = ({
   isMobile,
   isLinkActive,
   menuContent,
-  dispatch,
   language,
   isAdmin,
   buttonsHandler,
-}: any) => {
+}: NLayout.TNavProps) => {
   if (isMobile) {
     return (
       <MobileNav
         {...{
           isLinkActive,
           menuContent,
-          dispatch,
           language,
           isAdmin,
           buttonsHandler,
@@ -30,7 +29,6 @@ export const Nav = ({
       {...{
         isLinkActive,
         menuContent,
-        dispatch,
         language,
         isAdmin,
         buttonsHandler,

@@ -1,19 +1,15 @@
-import { LANGUAGE_HELPER } from "./utils";
 import { useHeaderService } from "./service";
-import { setLanguage } from "@store/actions/global-config";
-import { NGlobalConfig } from "src/typings/global-config";
 
-import { Img, StyledButton, StyledLink } from "./styles";
-
-import { CustomChoicer } from "@components/shared/custom-choicer";
+import { Img } from "./styles";
 
 import { Nav } from "./nav";
+
+import logo from "@assets/images/utils/header/white_logo.png";
 
 export const Header = () => {
   const {
     isLinkActive,
     menuContent,
-    dispatch,
     language,
     isAdmin,
     buttonsHandler,
@@ -22,12 +18,12 @@ export const Header = () => {
 
   return (
     <header>
+      <Img {...{ src: logo, width: 60 }} />
       <Nav
         {...{
           isMobile,
           isLinkActive,
           menuContent,
-          dispatch,
           language,
           isAdmin,
           buttonsHandler,
