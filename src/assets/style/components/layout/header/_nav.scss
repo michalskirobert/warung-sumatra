@@ -6,4 +6,9 @@ header {
   max-height: 8vh;
   width: 100vw;
   background-color: $black;
+
+  img {
+    padding: 2px;
+    margin-left: 10px;
+  }
 }

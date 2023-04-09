@@ -8,8 +8,5 @@ export const useMobileNavService = () => {
 
   const dispatch = useAppDispatch();
 
-  const changeClassName = (isOpen: boolean) =>
-    !!isOpen ? "mobile.active" : "mobile";
-
-  return { isOpen, toggle, changeClassName, dispatch };
+  return { isOpen, toggle, dispatch };
 };

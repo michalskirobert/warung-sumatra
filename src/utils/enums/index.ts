@@ -1,5 +1,3 @@
-import * as C from "@utils/constants";
-
 export const enum PhoneNumbers {
   Contact = 699797030,
 }

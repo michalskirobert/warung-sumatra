@@ -3,6 +3,10 @@ import styled from "styled-components";
 import { WEBSITE_BASE_COLOURS } from "@utils/constants";
 
 export const NavContainer = styled.nav`
+display: flex;
+margin-top: 2px;
+width: 100%;
+
 & ul {
     display: flex;
     flex-direction: row;
