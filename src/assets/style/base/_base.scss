@@ -143,6 +143,6 @@ p.extra-small {
 
 @media (max-width: 780px) {
   .nav-link.active {
-    color: $purple;
+    color: $purple !important;
   }
 }

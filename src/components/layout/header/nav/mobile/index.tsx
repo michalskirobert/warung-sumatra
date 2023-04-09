@@ -1,5 +1,5 @@
 import { CustomChoicer } from "@components/shared/custom-choicer";
-import { Img, StyledButton, StyledLink } from "../../styles";
+import { Img } from "../../styles";
 import { LANGUAGE_HELPER } from "../../utils";
 import { setLanguage } from "@store/actions/global-config";
 import { NGlobalConfig } from "@namespace/global-config";
@@ -11,6 +11,8 @@ import {
   LinksContainer,
   LogoContainer,
   LanguageContainer,
+  StyledLink,
+  StyledButton,
 } from "./styles";
 
 import logo from "@assets/images/utils/header/red_logo.png";

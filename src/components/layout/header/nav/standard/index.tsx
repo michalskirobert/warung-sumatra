@@ -1,10 +1,14 @@
 import { CustomChoicer } from "@components/shared/custom-choicer";
-import { StyledButton, StyledLink } from "../../styles";
 
 import { LANGUAGE_HELPER } from "../../utils";
 import { setLanguage } from "@store/actions/global-config";
 import { NGlobalConfig } from "@namespace/global-config";
-import { LanguageContainer, NavContainer } from "./styles";
+import {
+  LanguageContainer,
+  NavContainer,
+  StyledButton,
+  StyledLink,
+} from "./styles";
 import { NLayout } from "@namespace/layout";
 import { useStandardNavService } from "./service";
 
