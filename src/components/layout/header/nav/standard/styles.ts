@@ -1,14 +1,6 @@
 import styled from "styled-components";
 
-import * as C from "@utils/constants";
-
-const colors = {
-  lightYellow: C.LIGHT_YELLOW,
-  contrastYellow: C.CONTRAST_YELLOW,
-  blue: C.BLUE,
-  darkBlue: C.DARK_BLUE,
-  Black: C.BLACK,
-};
+import { WEBSITE_BASE_COLOURS } from "@utils/constants";
 
 export const NavContainer = styled.nav`
 & ul {
@@ -22,7 +14,7 @@ export const NavContainer = styled.nav`
       list-style-type: none;
       margin: 15px;
       & a {
-        color: ${colors.lightYellow};
+        color: ${WEBSITE_BASE_COLOURS.LIGHT_YELLOW};
       }
     }
 
@@ -32,7 +24,7 @@ export const NavContainer = styled.nav`
       & a {
         position: relative;
         top: -5px;
-        color: ${colors.blue};
+        color: ${WEBSITE_BASE_COLOURS.BLUE};
         padding: 5px;
       }
     }

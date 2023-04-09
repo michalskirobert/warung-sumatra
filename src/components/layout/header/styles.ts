@@ -1,13 +1,7 @@
 import styled from "styled-components";
 import { Button, Image, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import {
-  BLACK,
-  BLUE,
-  CONTRAST_YELLOW,
-  DARK_BLUE,
-  LIGHT_YELLOW,
-} from "@utils/constants";
+import { DARK_BLUE, LIGHT_YELLOW } from "@utils/constants";
 
 export const Logo = styled(Navbar.Brand)`
   color: white !important;
