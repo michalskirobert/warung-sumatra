@@ -58,6 +58,12 @@ $extraLargeSize: "3rem";
   font-display: swap;
 }
 
+*,
+*::after,
+*::before {
+  font-family: $standard;
+}
+
 p,
 a,
 b,
@@ -92,7 +98,6 @@ h4,
 h5,
 button,
 h6 {
-  font-family: $standard;
   font-weight: normal;
 }
 
@@ -105,26 +110,23 @@ h6 {
 
 a,
 b {
-  font-family: $standard;
   font-weight: bold;
 }
 
-h1,
-h2,
-h3 {
-  font-family: $standard;
-}
-
-p.light {
-  font-family: $standard;
-}
-
-p.small {
+.small {
   font-size: $smallSize;
 }
 
-p.extra-small {
+.extra-small {
   font-size: $extraSmallSize;
+}
+
+.large {
+  font-size: $largeSize;
+}
+
+.extra-large {
+  font-size: $extraLargeSize;
 }
 
 .nav-link {
