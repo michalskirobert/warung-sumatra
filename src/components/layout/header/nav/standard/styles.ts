@@ -57,11 +57,11 @@ export const StyledLink = styled(Link)<{ isUniqueLink?: boolean }>`
   color: ${({ isUniqueLink }) =>
     isUniqueLink ? WEBSITE_BASE_COLOURS.BLUE : "#fffff"};
   opacity: 0.8;
+  font-weight: bold;
   transition: all 0.6s;
 
   &:hover {
     opacity: 0.6;
     color: ${WEBSITE_BASE_COLOURS.CONTRAST_YELLOW}!important;
-    font-weight: bold;
   }
 `;

@@ -128,18 +128,3 @@ b {
 .extra-large {
   font-size: $extraLargeSize;
 }
-
-.nav-link {
-  color: $blue !important;
-}
-
-.nav-link.active {
-  color: $light-yellow !important;
-  font-weight: bold;
-}
-
-@media (max-width: 780px) {
-  .nav-link.active {
-    color: $purple !important;
-  }
-}

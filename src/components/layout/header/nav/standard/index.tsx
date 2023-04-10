@@ -22,13 +22,15 @@ export const StandardNav = ({
   return (
     <NavContainer>
       <ul>
-        {menuContent.map(({ label, path, isBlank, isUniqueLink }: any) => (
+        {menuContent.map(({ label, path, isBlank, isUniqueLink }) => (
           <li>
             <StyledLink
               key={label}
               {...{
                 to: path || "",
-                className: `nav-link ${isLinkActive(path || "")}`,
+                className: `nav-link ${isLinkActive(path || "")} ${
+                  isUniqueLink ? "unique" : ""
+                }`,
                 target: isBlank ? "_blank" : "_self",
                 isUniqueLink,
               }}
