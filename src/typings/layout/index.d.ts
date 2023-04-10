@@ -24,7 +24,13 @@ export declare namespace NLayout {
     buttonsHandler: (action?: "SIGN_OUT") => V;
   };
 
-  type TMobileNavProps = Omit<TNavProps, "isMobile" | "isAdmin">;
+  type TMobileNavProps = Omit<
+    TNavProps,
+    "isMobile" | "isAdmin" | "buttonsHandler"
+  >;
 
-  type TStandardNav = Omit<TNavProps, "isMobile" | "isAdmin">;
+  type TStandardNav = Omit<
+    TNavProps,
+    "isMobile" | "isAdmin" | "buttonsHandler"
+  >;
 }

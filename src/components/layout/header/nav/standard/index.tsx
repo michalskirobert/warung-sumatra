@@ -16,7 +16,6 @@ export const StandardNav = ({
   isLinkActive,
   menuContent,
   language,
-  buttonsHandler,
 }: NLayout.TStandardNav) => {
   const { dispatch } = useStandardNavService();
   return (

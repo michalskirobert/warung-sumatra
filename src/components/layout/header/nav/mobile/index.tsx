@@ -16,12 +16,12 @@ import {
 } from "./styles";
 
 import logo from "@assets/images/utils/header/red_logo.png";
+import { checkPathname } from "@helpers/useful-functions";
 
 export const MobileNav = ({
   isLinkActive,
   menuContent,
   language,
-  buttonsHandler,
 }: NLayout.TMobileNavProps) => {
   const { isOpen, toggle, dispatch } = useMobileNavService();
 
@@ -42,7 +42,13 @@ export const MobileNav = ({
                   className: `nav-link ${isLinkActive(path || "")}`,
                   target: isBlank ? "_blank" : "_self",
                   isUniqueLink,
-                  onClick: toggle,
+                  onClick: () => {
+                    if (isLinkActive(path || "") === "active") {
+                      return;
+                    }
+
+                    toggle();
+                  },
                 }}
               >
                 {label}

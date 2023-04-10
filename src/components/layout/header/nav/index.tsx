@@ -18,7 +18,6 @@ export const Nav = ({
           menuContent,
           language,
           isAdmin,
-          buttonsHandler,
         }}
       />
     );
@@ -31,7 +30,6 @@ export const Nav = ({
         menuContent,
         language,
         isAdmin,
-        buttonsHandler,
       }}
     />
   );
