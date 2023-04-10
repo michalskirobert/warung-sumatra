@@ -28,11 +28,20 @@
   cursor: pointer;
   transition: all 0.3s linear;
   border-radius: 0.25rem;
+  transition: all 0.8s;
+
+  &:hover {
+    background: $contrast-yellow;
+    color: $blue;
+  }
 }
-.filter-btn:hover {
+
+.filter-btn.active {
   background: $contrast-yellow;
   color: $blue;
+  font-weight: bold;
 }
+
 .section-center {
   width: 90vw;
   margin: 0 auto;

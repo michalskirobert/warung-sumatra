@@ -10,11 +10,12 @@ export declare namespace NMenu {
   type TMenuReducer = TReducer;
 
   type TMenu = {
-    category: NCommonTypes.TOptions;
-    name: S;
-    description: S;
-    image: S;
-    price: S;
+    id: S;
+    title: S;
+    category: S;
+    price: N;
+    img: S;
+    desc: S;
   };
 
   type TReducer = {
@@ -30,6 +31,16 @@ export declare namespace NMenu {
   type TSetMenu = {
     type: Menu.SetMenu;
     payload: TReducer["menu"];
+  };
+
+  type TMenuCategoriesProps = {
+    filterItems: (category: S) => void;
+    categories: S[];
+    currentCategory: S;
+  };
+
+  type TMenuItemsProps = {
+    items: TMenu[];
   };
 
   type TAction = TSetIsLoading | TSetMenu;
