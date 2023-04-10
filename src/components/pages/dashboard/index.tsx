@@ -1,14 +1,13 @@
-import { CustomContainer } from "@components/shared";
-
 import { Hero } from "./hero";
+import { Wrapper, DashboardContainer } from "./styles";
 
 export const Dashboard = () => {
   return (
-    <>
+    <DashboardContainer>
       <Hero />
-      <CustomContainer {...{ title: "Welcome to Warung Sumatra" }}>
+      <Wrapper>
         <div>Welcome</div>
-      </CustomContainer>
-    </>
+      </Wrapper>
+    </DashboardContainer>
   );
 };

@@ -27,7 +27,13 @@ export const Hero = () => {
             <img
               src={item.src}
               alt={item.altText}
-              {...{ style: { width: "100vw" } }}
+              {...{
+                style: {
+                  width: "100%",
+                  backgroundSize: "cover",
+                  height: "100%",
+                },
+              }}
             />
           </CarouselItem>
         );

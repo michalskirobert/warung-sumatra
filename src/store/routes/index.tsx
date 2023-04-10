@@ -11,6 +11,7 @@ import { PageNotFound } from "@components/pages/not-found";
 import { AdminDashboard } from "@components/pages/admin/pages/dashboard";
 import { MenuSettings } from "@components/pages/admin/pages/menu";
 import { LoginPage } from "@components/pages/admin/login";
+import { About } from "@components/pages/about";
 
 import * as C from "@utils/constants";
 
@@ -23,7 +24,7 @@ export const ROUTES: readonly TRoutes[] = [
   { path: C.DASHBOARD_ROUTE, component: <Dashboard /> },
   { path: C.MENU_ROUTE, component: <Menu /> },
   { path: C.RESERVATION_ROUTE, component: <Reservate /> },
-  { path: C.ABOUT_ROUTE, component: null },
+  { path: C.ABOUT_ROUTE, component: <About /> },
   { path: C.CONTACT_ROUTE, component: <Contact /> },
   { path: "*", component: <PageNotFound /> },
 ];

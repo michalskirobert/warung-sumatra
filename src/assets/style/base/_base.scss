@@ -1,10 +1,5 @@
 //family-fonts
 $standard: "standard";
-$standard_italic: "standard-italic";
-$standard_light: "light";
-$standard_light_italic: "light-italic";
-$standard_bold: "bold";
-$standard_bold_italic: "bold-italic";
 
 //font-sizes
 $extraSmallSize: "0.5rem";
@@ -16,43 +11,50 @@ $extraLargeSize: "3rem";
 
 @font-face {
   font-family: $standard;
-  src: url("./../fonts/Roboto-Black.ttf");
-  font-weight: 0 1000;
+  src: url("./../fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: $standard_italic;
-  src: url("./../fonts/Roboto-BlackItalic.ttf");
-  font-weight: 0 1000;
+  font-family: $standard;
+  src: url("./../fonts/Roboto-BlackItalic.ttf") format("truetype");
+  font-weight: 0 400;
+  font-display: swap;
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $standard;
+  src: url("./../fonts/Roboto-Light.ttf") format("truetype");
+  font-weight: lighter;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: $standard_light;
-  src: url("./../fonts/Roboto-Light.ttf");
-  font-weight: 0 1000;
+  font-family: $standard;
+  src: url("./../fonts/Roboto-LightItalic.ttf") format("truetype");
+  font-weight: lighter;
+  font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: $standard_light_italic;
-  src: url("./../fonts/Roboto-LightItalic.ttf");
-  font-weight: 0 1000;
+  font-family: $standard;
+  src: url("./../fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: $standard_bold;
-  src: url("./../fonts/Roboto-Bold.ttf");
-  font-weight: 0 1000;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: $standard_bold_italic;
-  src: url("./../fonts/Roboto-BoldItalic.ttf");
-  font-weight: 0 1000;
+  font-family: $standard;
+  src: url("./../fonts/Roboto-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -70,16 +72,20 @@ h6 {
 
 h1 {
   font-size: $extraLargeSize;
+  font-weight: bold;
 }
 
 h2 {
   font-size: $largeSize;
+  font-weight: bold;
 }
 
 h3 {
   font-size: $mediumSize;
+  font-weight: bold;
 }
 
+i,
 p,
 u,
 h4,
@@ -87,42 +93,30 @@ h5,
 button,
 h6 {
   font-family: $standard;
-}
-
-a {
-  font-family: $standard;
+  font-weight: normal;
 }
 
 h4,
 h5,
 h6 {
-  font-weight: 500;
+  font-weight: normal;
+  font-size: $largeSize;
 }
 
+a,
 b {
-  font-family: $standard_bold;
-}
-
-i {
-  font-family: $standard_italic;
-}
-
-i.thick {
-  font-family: $standard_bold_italic;
-}
-
-i.light {
-  font-family: $standard_light_italic;
+  font-family: $standard;
+  font-weight: bold;
 }
 
 h1,
 h2,
 h3 {
-  font-family: $standard_bold;
+  font-family: $standard;
 }
 
 p.light {
-  font-family: $standard_light;
+  font-family: $standard;
 }
 
 p.small {

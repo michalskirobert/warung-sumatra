@@ -20,7 +20,7 @@ import { useMenuService } from "./service";
 export const Menu = () => {
   const { menu } = useMenuService();
   return (
-    <CustomContainer>
+    <CustomContainer {...{ title: "Menu", titleAlign: "center" }}>
       <Container>
         <CardGroup>
           <Row md={setColumnsNumber(menu?.length)}>

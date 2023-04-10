@@ -33,31 +33,20 @@ export const MobileNav = ({
           <LogoContainer>
             <Img src={logo} alt="Warung Sumatra" style={{ width: "60%" }} />
           </LogoContainer>
-          {menuContent.map(({ label, path, isBlank, action, isUniqueLink }) => (
+          {menuContent.map(({ label, path, isBlank, isUniqueLink }) => (
             <li key={path}>
-              {!!path ? (
-                <StyledLink
-                  key={label}
-                  {...{
-                    to: path,
-                    className: `nav-link ${isLinkActive(path)}`,
-                    target: isBlank ? "_blank" : "_self",
-                    isUniqueLink,
-                  }}
-                >
-                  {label}
-                </StyledLink>
-              ) : (
-                <StyledButton
-                  {...{
-                    className: "nav-link",
-                    type: "button",
-                    onClick: () => buttonsHandler(action),
-                  }}
-                >
-                  {label}
-                </StyledButton>
-              )}
+              <StyledLink
+                key={label}
+                {...{
+                  to: path || "",
+                  className: `nav-link ${isLinkActive(path || "")}`,
+                  target: isBlank ? "_blank" : "_self",
+                  isUniqueLink,
+                  onClick: toggle,
+                }}
+              >
+                {label}
+              </StyledLink>
             </li>
           ))}
         </ul>

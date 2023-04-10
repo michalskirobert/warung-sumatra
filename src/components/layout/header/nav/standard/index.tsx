@@ -22,35 +22,21 @@ export const StandardNav = ({
   return (
     <NavContainer>
       <ul>
-        {menuContent.map(
-          ({ label, path, isBlank, action, isUniqueLink }: any) => (
-            <li>
-              {!!path ? (
-                <StyledLink
-                  key={label}
-                  {...{
-                    to: path,
-                    className: `nav-link ${isLinkActive(path)}`,
-                    target: isBlank ? "_blank" : "_self",
-                    isUniqueLink,
-                  }}
-                >
-                  {label}
-                </StyledLink>
-              ) : (
-                <StyledButton
-                  {...{
-                    className: "nav-link",
-                    type: "button",
-                    onClick: () => buttonsHandler(action),
-                  }}
-                >
-                  {label}
-                </StyledButton>
-              )}
-            </li>
-          )
-        )}
+        {menuContent.map(({ label, path, isBlank, isUniqueLink }: any) => (
+          <li>
+            <StyledLink
+              key={label}
+              {...{
+                to: path || "",
+                className: `nav-link ${isLinkActive(path || "")}`,
+                target: isBlank ? "_blank" : "_self",
+                isUniqueLink,
+              }}
+            >
+              {label}
+            </StyledLink>
+          </li>
+        ))}
       </ul>
       <LanguageContainer>
         <CustomChoicer

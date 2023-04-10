@@ -3,7 +3,7 @@
   "author": "Robert Michalski",
   "email": "robert.michalski@digimonkeys.com",
   "license": "MIT",
-  "version": "0.5.5",
+  "version": "0.7.5",
   "private": true,
   "dependencies": {
     "@firebase/auth": "^0.21.0",
