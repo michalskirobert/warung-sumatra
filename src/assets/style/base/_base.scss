@@ -133,6 +133,7 @@ p.extra-small {
 
 .nav-link.active {
   color: $light-yellow !important;
+  font-weight: bold;
 }
 
 @media (max-width: 780px) {
