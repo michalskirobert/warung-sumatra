@@ -8,6 +8,7 @@ export const Choicer = styled.button<{ isActive: boolean; isMobile?: boolean }>`
   background: none;
   color: ${({ isActive }) =>
     isActive ? WEBSITE_BASE_COLOURS.PURPULE : WEBSITE_BASE_COLOURS.BLUE};
+  font-weight: ${({ isActive }) => (isActive ? "bold" : "normal")};
   transition: 0.8s color;
 
   font-size: ${({ isMobile }) => (!!isMobile ? Sizes.standard : Sizes.small)};
