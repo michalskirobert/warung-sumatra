@@ -1,4 +1,4 @@
-import { PageContainer, Title } from "./styles";
+import { PageContainer, Title, Wrapper } from "./styles";
 
 interface ICustomContainer {
   children: JSX.Element | JSX.Element[] | string;
@@ -13,7 +13,11 @@ export const CustomContainer = ({
 }: ICustomContainer) => {
   return (
     <PageContainer>
-      {!!title && <Title {...{ titleAlign }}>{title}</Title>}
+      {!!title && (
+        <Wrapper>
+          <Title {...{ titleAlign }}>{title}</Title>
+        </Wrapper>
+      )}
       {children}
     </PageContainer>
   );
