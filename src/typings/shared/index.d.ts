@@ -33,16 +33,17 @@ export declare namespace NShared {
     placeholder?: S;
   };
 
-  type TRenderChildren = {
-    type: TRenderElement["type"];
-    setFieldValue: TRenderElement["setFieldValue"];
-    errors: TRenderElement["errors"];
-    handleChange: TRenderElement["handleChange"];
-    values: TRenderElement["values"];
-    id: TRenderElement["id"];
-    options: TRenderElement["options"];
-    mask: TRenderElement["mask"];
-    maskChar: TRenderElement["maskChar"];
-    placeholder: TRenderElement["placeholder"];
-  };
+  type TRenderChildren = Pick<
+    TRenderElement,
+    | "type"
+    | "setFieldValue"
+    | "errors"
+    | "handleChange"
+    | "values"
+    | "id"
+    | "options"
+    | "mask"
+    | "maskChar"
+    | "placeholder"
+  >;
 }
