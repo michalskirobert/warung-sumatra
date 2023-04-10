@@ -1,5 +1,4 @@
 import { maxScreenSizes } from "@utils/enums";
-import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 interface IParseQueryProps {

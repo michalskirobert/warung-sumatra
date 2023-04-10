@@ -1,10 +1,4 @@
-import {
-  Carousel,
-  CarouselItem,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselCaption,
-} from "reactstrap";
+import { Carousel, CarouselItem, CarouselIndicators } from "reactstrap";
 
 import { useHeroService } from "./service";
 
