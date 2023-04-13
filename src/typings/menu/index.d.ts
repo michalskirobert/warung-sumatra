@@ -33,6 +33,10 @@ export declare namespace NMenu {
     payload: TReducer["menu"];
   };
 
+  type TMenuProps = {
+    menuItems: TMenu[];
+  };
+
   type TMenuCategoriesProps = {
     filterItems: (category: S) => void;
     categories: S[];

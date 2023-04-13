@@ -3,12 +3,7 @@ import { CustomChoicer } from "@components/shared/custom-choicer";
 import { LANGUAGE_HELPER } from "../../utils";
 import { setLanguage } from "@store/actions/global-config";
 import { NGlobalConfig } from "@namespace/global-config";
-import {
-  LanguageContainer,
-  NavContainer,
-  StyledButton,
-  StyledLink,
-} from "./styles";
+import { LanguageContainer, NavContainer, StyledLink } from "./styles";
 import { NLayout } from "@namespace/layout";
 import { useStandardNavService } from "./service";
 

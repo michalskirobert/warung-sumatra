@@ -4,7 +4,7 @@ export const MenuItem = ({ items }: NMenu.TMenuItemsProps) => {
   return (
     <div className="section-center">
       {items.map((menuItem) => {
-        const { id, title, img, price, desc } = menuItem;
+        const { id, title, price, desc } = menuItem;
         return (
           <article key={id} className="menu-item">
             <img

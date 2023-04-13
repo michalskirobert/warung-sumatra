@@ -1,8 +1,6 @@
-import { useState } from "react";
-
 import { CustomContainer } from "@components/shared";
 import { useMenuService } from "./service";
-import { MenuItem } from "./menu-item";
+import { CustomMenu } from "@components/shared/custom-menu";
 import { Categories } from "./categories";
 
 export const Menu = () => {
@@ -11,16 +9,14 @@ export const Menu = () => {
 
   return (
     <CustomContainer>
-      <main>
-        <section className="menu">
-          <div className="title">
-            <h2>Menu</h2>
-            <div className="underline"></div>
-          </div>
-          <Categories {...{ currentCategory, categories, filterItems }} />
-          <MenuItem items={menuItems} />
-        </section>
-      </main>
+      <section className="menu">
+        <div className="title">
+          <h2>Menu</h2>
+          <div className="underline"></div>
+        </div>
+        <Categories {...{ currentCategory, categories, filterItems }} />
+        <CustomMenu {...{ categories, filterItems, menuItems }} />
+      </section>
     </CustomContainer>
   );
 };

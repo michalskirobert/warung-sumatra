@@ -12,11 +12,9 @@ import {
   LogoContainer,
   LanguageContainer,
   StyledLink,
-  StyledButton,
 } from "./styles";
 
-import logo from "@assets/images/utils/header/red_logo.png";
-import { checkPathname } from "@helpers/useful-functions";
+import logo from "@assets/images/utils/header/red_logo_comprassed.png";
 
 export const MobileNav = ({
   isLinkActive,
