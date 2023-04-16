@@ -13,34 +13,39 @@ import { PhoneNumbers } from "@utils/enums";
 import { formatPhoneNumber } from "@helpers/useful-functions";
 
 import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
+import { CONSTANTS } from "@utils/index";
+import { useAppSelector } from "@store/config";
 
 export const Footer = () => {
+  const { language } = useAppSelector(({ globalConfig }) => globalConfig);
   return (
     <StyledFooter>
       <Container>
         <Row md="3">
           <Col md="4">
-            <Title>Contact:</Title>
+            <Title>{CONSTANTS.CONTACT_LABEL[language.value]}:</Title>
             <FormGroup>
-              <Caption>Phone:</Caption>
+              <Caption>{CONSTANTS.TRANSLATE[language.value].phone}:</Caption>
               <Info {...{ href: `tel:${PhoneNumbers.Contact}` }}>
                 {formatPhoneNumber(PhoneNumbers.Contact)}
               </Info>
             </FormGroup>
             <FormGroup>
-              <Caption>Address:</Caption>
+              <Caption>{CONSTANTS.TRANSLATE[language.value].address}:</Caption>
               <Info>Poznań - ul. os. Bolesława Chrobrego 10</Info>
             </FormGroup>
           </Col>
           <Col md="4">
-            <Title>Open:</Title>
+            <Title>{CONSTANTS.TRANSLATE[language.value].open}:</Title>
             <ScheduleContainer>
-              <Info>Mon-Sat: 12-22</Info>
-              <Info>Sun: 12-20</Info>
+              <Info>
+                {CONSTANTS.TRANSLATE[language.value].openTimeMonToSat}
+              </Info>
+              <Info> {CONSTANTS.TRANSLATE[language.value].openTimeSun}</Info>
             </ScheduleContainer>
           </Col>
           <Col md="4">
-            <Title>Find us:</Title>
+            <Title>{CONSTANTS.TRANSLATE[language.value].findUs}:</Title>
             <Col>
               <Media href="https://www.facebook.com/WarungSumatraPoznan">
                 <AiFillFacebook {...{ style: { fontSize: "2rem" } }} />

@@ -1,3 +1,4 @@
+import { CONSTANTS } from "@utils/index";
 import { Image } from "react-bootstrap";
 import styled from "styled-components";
 
@@ -12,18 +13,18 @@ export const StyledFooter = styled.footer`
 export const Caption = styled.p`
   display: inline;
   margin-right: 5px;
-  color: white;
+  color: ${CONSTANTS.WEBSITE_BASE_COLOURS.LIGHT_YELLOW};
 `;
 
 export const Title = styled.h4`
-  color: white;
+  color: ${CONSTANTS.WEBSITE_BASE_COLOURS.LIGHT_YELLOW};
   font-size: 1.1rem;
   margin-top: 10px;
 `;
 
 export const Info = styled.p`
   display: inline;
-  color: white;
+  color: ${CONSTANTS.WEBSITE_BASE_COLOURS.LIGHT_YELLOW};
   font-size: 1rem;
   margin: 0;
 `;
@@ -42,6 +43,7 @@ export const ScheduleContainer = styled.div`
 
 export const Media = styled.a`
   margin-right: 5px;
+  color: ${CONSTANTS.WEBSITE_BASE_COLOURS.LIGHT_YELLOW};
 `;
 
 export const Icons = styled.span`
