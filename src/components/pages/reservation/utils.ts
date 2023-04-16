@@ -1,4 +1,5 @@
 import { NCommonTypes } from "@namespace/commonTypes";
+import { NGlobalConfig } from "@namespace/global-config";
 
 import * as C from "@utils/constants";
 
@@ -7,7 +8,9 @@ const TEMP_OPTIONS: NCommonTypes.TOptions[] = [
   { label: "Warszawa", value: "Warsaw" },
 ];
 
-export const FORM_HELPER: NCommonTypes.TForm[] = [
+export const createReservationForm = (
+  language: NGlobalConfig.TLangCode
+): NCommonTypes.TForm[] => [
   {
     id: crypto.randomUUID(),
     row: 2,
@@ -17,7 +20,7 @@ export const FORM_HELPER: NCommonTypes.TForm[] = [
         id: "name",
         col: 4,
         colType: "md",
-        label: "Imię",
+        label: C.TRANSLATE[language].name,
         type: "text",
         isRequired: true,
       },
@@ -25,7 +28,7 @@ export const FORM_HELPER: NCommonTypes.TForm[] = [
         id: "phone",
         col: 4,
         colType: "md",
-        label: "Telefon",
+        label: C.TRANSLATE[language].phone,
         type: "mask",
         mask: C.MASK_TYPE_MOBILE_PHONE,
         maskChar: null,
@@ -35,7 +38,7 @@ export const FORM_HELPER: NCommonTypes.TForm[] = [
         id: "email",
         col: 4,
         colType: "md",
-        label: "E-mail",
+        label: C.TRANSLATE[language].email,
         type: "email",
         isRequired: true,
       },
@@ -50,7 +53,7 @@ export const FORM_HELPER: NCommonTypes.TForm[] = [
         id: "restaurant",
         col: 12,
         colType: "md",
-        label: "Restauracja",
+        label: C.TRANSLATE[language].restaurant,
         type: "select",
         options: TEMP_OPTIONS,
         isRequired: true,
@@ -66,7 +69,7 @@ export const FORM_HELPER: NCommonTypes.TForm[] = [
         id: "date",
         col: 4,
         colType: "md",
-        label: "Data",
+        label: C.TRANSLATE[language].date,
         type: "date",
         isRequired: true,
       },
@@ -74,7 +77,7 @@ export const FORM_HELPER: NCommonTypes.TForm[] = [
         id: "timeFrom",
         col: 4,
         colType: "md",
-        label: "Od godziny",
+        label: C.TRANSLATE[language].timeFrom,
         type: "time",
         isRequired: true,
       },
@@ -82,7 +85,7 @@ export const FORM_HELPER: NCommonTypes.TForm[] = [
         id: "timeTo",
         col: 4,
         colType: "md",
-        label: "Do godziny",
+        label: C.TRANSLATE[language].timeTo,
         type: "time",
       },
     ],
@@ -96,7 +99,7 @@ export const FORM_HELPER: NCommonTypes.TForm[] = [
         id: "content",
         col: 12,
         colType: "md",
-        label: "Szczegóły",
+        label: C.TRANSLATE[language].details,
         type: "textarea",
       },
     ],

@@ -1,14 +1,17 @@
-import React from "react";
 import { Button, Col, Form, Row } from "reactstrap";
 
 import { Formik } from "formik";
 
-import { CONTACT_FORM_HELPER } from "./utils";
+import { createContactForm } from "./utils";
 import { validationSchema } from "./validation-schema";
 import { Image } from "react-bootstrap";
 import { CustomContainer, CustomForm } from "@components/shared";
+import { useAppSelector } from "@store/config";
+
+import { CONSTANTS } from "@utils/index";
 
 export const Contact = () => {
+  const { language } = useAppSelector(({ globalConfig }) => globalConfig);
   return (
     <Formik
       {...{
@@ -28,13 +31,15 @@ export const Contact = () => {
         setFieldValue,
         values,
       }) => (
-        <CustomContainer title="Kontakt">
+        <CustomContainer
+          {...{ title: CONSTANTS.CONTACT_LABEL[language.value] }}
+        >
           <Form onSubmit={handleSubmit}>
             <Row md={2}>
               <Col>
                 <CustomForm
                   {...{
-                    form: CONTACT_FORM_HELPER,
+                    form: createContactForm(language.value),
                     errors,
                     handleChange,
                     setFieldValue,
@@ -48,7 +53,7 @@ export const Contact = () => {
                     disabled: !isValid || !dirty,
                   }}
                 >
-                  Send
+                  {CONSTANTS.TRANSLATE[language.value].send}
                 </Button>
               </Col>
               <Col>

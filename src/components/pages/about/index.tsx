@@ -1,8 +1,11 @@
 import { CustomContainer } from "@components/shared";
+import { useAppSelector } from "@store/config";
+import { CONSTANTS } from "@utils/index";
 
 export const About = () => {
+  const { language } = useAppSelector(({ globalConfig }) => globalConfig);
   return (
-    <CustomContainer {...{ title: "About us" }}>
+    <CustomContainer {...{ title: CONSTANTS.ABOUT_LABEL[language.value] }}>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla possimus
         corporis dolores unde et labore? Excepturi, incidunt corporis maxime

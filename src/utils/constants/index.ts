@@ -83,3 +83,40 @@ export const WEBSITE_BASE_COLOURS = {
   BLACK,
   PURPULE,
 };
+
+//Translations
+export const TRANSLATE = {
+  eng: {
+    name: "Name",
+    phone: "Phone",
+    email: "E-mail",
+    details: "Details",
+    restaurant: "Restaurant",
+    date: "Date",
+    timeFrom: "Time from",
+    timeTo: "Time to",
+    send: "Send",
+  },
+  bh: {
+    name: "Nama",
+    phone: "Telepon",
+    email: "E-mail",
+    details: "Detail",
+    restaurant: "Restoran",
+    date: "Tanggal",
+    timeFrom: "Waktu dari",
+    timeTo: "Waktunya untuk",
+    send: "Mengirim",
+  },
+  pl: {
+    name: "Imię",
+    phone: "Telefon",
+    email: "E-mail",
+    details: "Szczegóły",
+    restaurant: "Restauracja",
+    date: "Data",
+    timeFrom: "Czas od",
+    timeTo: "Czas do",
+    send: "Wyślij",
+  },
+};

@@ -5,9 +5,12 @@ import { Formik } from "formik";
 import { CustomContainer, CustomForm } from "@components/shared";
 
 import { validationSchema } from "./validation-schema";
-import { FORM_HELPER } from "./utils";
+import { createReservationForm } from "./utils";
+import { CONSTANTS } from "@utils/index";
+import { useAppSelector } from "@store/config";
 
 export const Reservate = () => {
+  const { language } = useAppSelector(({ globalConfig }) => globalConfig);
   return (
     <Formik
       {...{
@@ -34,11 +37,13 @@ export const Reservate = () => {
         setFieldValue,
         values,
       }) => (
-        <CustomContainer title="Zrób rezerwację">
+        <CustomContainer
+          {...{ title: CONSTANTS.RESERVATE_LABEL[language.value] }}
+        >
           <Form onSubmit={handleSubmit}>
             <CustomForm
               {...{
-                form: FORM_HELPER,
+                form: createReservationForm(language.value),
                 errors,
                 handleChange,
                 setFieldValue,
@@ -54,7 +59,7 @@ export const Reservate = () => {
                     disabled: !isValid || !dirty,
                   }}
                 >
-                  Wyślij rezerwację
+                  {CONSTANTS.TRANSLATE[language.value].send}
                 </Button>
               </Col>
             </Row>
