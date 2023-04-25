@@ -1,3 +1,4 @@
+import { Sizes } from "@utils/enums";
 import { CONSTANTS } from "@utils/index";
 import { Image } from "react-bootstrap";
 import styled from "styled-components";
@@ -18,14 +19,15 @@ export const Caption = styled.p`
 
 export const Title = styled.h4`
   color: ${CONSTANTS.WEBSITE_BASE_COLOURS.BASE_COLOUR};
-  font-size: 1.1rem;
+  font-size: ${Sizes.standard};
   margin-top: 10px;
+  font-weight: bold;
 `;
 
 export const Info = styled.p`
   display: inline;
   color: ${CONSTANTS.WEBSITE_BASE_COLOURS.BASE_COLOUR};
-  font-size: 1rem;
+  font-size: ${Sizes.small};
   margin: 0;
 `;
 
@@ -47,5 +49,5 @@ export const Media = styled.a`
 `;
 
 export const Icons = styled.span`
-  font-size: 1.3rem;
+  font-size: ${Sizes.small};
 `;

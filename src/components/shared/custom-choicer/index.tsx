@@ -16,6 +16,7 @@ export const CustomChoicer = ({
   isMobile,
 }: IChoicerProps) => {
   const { checkIsActive, addSeparator } = useChoicerService({ value });
+  console.log(isMobile);
   return (
     <Container {...{ isMobile }}>
       {options.map(({ label, value }, index) => (

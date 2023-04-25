@@ -23,9 +23,11 @@ header {
 }
 
 .nav-link.unique {
+  border-radius: 7px;
+  padding: 25px;
   &:hover,
   &:active {
-    color: $black-colour;
+    color: $black-colour !important;
   }
 }
 
@@ -36,6 +38,6 @@ header {
 
 @media (max-width: 780px) {
   .nav-link.active {
-    color: $secondary-colour !important;
+    color: $black-colour !important;
   }
 }
