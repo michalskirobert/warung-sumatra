@@ -19,7 +19,7 @@ export const Contact = () => {
         onSubmit: (values) => console.log(values),
         validateOnBlur: true,
         validateOnChange: true,
-        validationSchema,
+        validationSchema: validationSchema(language.value),
       }}
     >
       {({

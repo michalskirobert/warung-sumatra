@@ -1,12 +1,18 @@
+import { NGlobalConfig } from "@namespace/global-config";
+import { VALIDATIONS } from "@utils/constants";
 import * as yup from "yup";
 
-export const validationSchema = yup.object().shape({
-  fullname: yup.string().required("Required"),
-  phone: yup.string().required("Required"),
-  email: yup.string().email("Adres email is incorrect").required("Required"),
-  content: yup
-    .string()
-    .required("Required")
-    .min(3, "The content must be more than 3 characters")
-    .max(250, "Content cannot be more than 250 characters"),
-});
+export const validationSchema = (language: NGlobalConfig.TLangCode) =>
+  yup.object().shape({
+    fullname: yup.string().required(VALIDATIONS[language].required),
+    phone: yup.string().required(VALIDATIONS[language].required),
+    email: yup
+      .string()
+      .email(VALIDATIONS[language].email)
+      .required(VALIDATIONS[language].required),
+    content: yup
+      .string()
+      .required(VALIDATIONS[language].required)
+      .min(3, VALIDATIONS[language].contentMin)
+      .max(250, VALIDATIONS[language].contentMax),
+  });

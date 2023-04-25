@@ -130,3 +130,33 @@ export const TRANSLATE = {
     findUs: "Znajdź nas",
   },
 };
+
+export const VALIDATIONS = {
+  eng: {
+    required: "Required*",
+    email: "E-mail is incorrect",
+    contentMin: "Content must be more than 3 characters",
+    contentMax: "Content cannot be more than 250 characters",
+    name: "Name needs more than 1 character",
+    timeFrom: "Time from cannot be lower than time to",
+    phone: "Incorrect phone format",
+  },
+  pl: {
+    required: "Wymagane*",
+    email: "Podany email jest nieprawidłowy",
+    contentMin: "Treść musi zawierać przynajmniej 3 znaki",
+    contentMax: "Treść nie może być większa od 250 znaków",
+    name: "Imię musi składać się przynajmniej z 2 znaków",
+    timeFrom: "Czas od nie może być mniejsze od czasu do",
+    phone: "Nieprawidłowy format telefonu",
+  },
+  bh: {
+    required: "Diperlukan*",
+    email: "Email salah",
+    contentMin: "Konten harus lebih dari 3 karakter",
+    contentMax: "Konten tidak boleh lebih dari 250 karakter",
+    name: "Nama membutuhkan lebih dari 1 karakter",
+    timeFrom: "Waktu dari tidak boleh lebih rendah dari waktu ke",
+    phone: "Format telepon salah",
+  },
+};

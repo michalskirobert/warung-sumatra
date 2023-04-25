@@ -25,7 +25,7 @@ export const Reservate = () => {
         onSubmit: (values) => console.log(values),
         validateOnChange: true,
         validateOnBlur: true,
-        validationSchema,
+        validationSchema: validationSchema(language.value),
       }}
     >
       {({
