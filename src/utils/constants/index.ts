@@ -67,21 +67,16 @@ export const MASK_OFFICE_CODE = "9999999";
 export const REST_ERROR_DETAILS_STRING_FRAGMENT = "Szczegóły:";
 export const TOAST_ERROR = "Wystąpił błąd.";
 
-//Colours
-export const LIGHT_YELLOW = "#FFD60A";
-export const CONTRAST_YELLOW = "#FFC300";
-export const BLUE = "#003566";
-export const DARK_BLUE = "#001D3D";
-export const BLACK = "#000814";
-export const PURPULE = "#A020F0";
+export const BASE_COLOUR = "#FDFB10";
+export const BLACK_COLOUR = "#333113";
+export const LIGHT_COLOUR = "#FDFAE6";
+export const SECONDARY_COLOUR = "#979265";
 
 export const WEBSITE_BASE_COLOURS = {
-  LIGHT_YELLOW,
-  CONTRAST_YELLOW,
-  BLUE,
-  DARK_BLUE,
-  BLACK,
-  PURPULE,
+  BASE_COLOUR,
+  BLACK_COLOUR,
+  LIGHT_COLOUR,
+  SECONDARY_COLOUR,
 };
 
 //Translations

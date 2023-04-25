@@ -1,7 +1,7 @@
 .underline {
   width: 5rem;
   height: 0.25rem;
-  background: $contrast-yellow;
+  background: $base-colour;
   margin-left: auto;
   margin-right: auto;
 }
@@ -24,21 +24,21 @@
   margin: 0 0.5rem;
   letter-spacing: 1px;
   padding: 0.375rem 0.75rem;
-  color: $dark-blue;
+  color: $black-colour;
   cursor: pointer;
   transition: all 0.3s linear;
   border-radius: 0.25rem;
   transition: all 0.8s;
 
   &:hover {
-    background: $contrast-yellow;
-    color: $blue;
+    background: $base-colour;
+    color: $secondary-colour;
   }
 }
 
 .filter-btn.active {
-  background: $contrast-yellow;
-  color: $blue;
+  background: $base-colour;
+  color: $secondary-colour;
   font-weight: bold;
 }
 
@@ -59,20 +59,21 @@
   object-fit: cover;
   height: 200px;
   width: 100%;
-  border: 0.25rem solid var($contrast-yellow);
+  border: 0.25rem solid var($base-colour);
   border-radius: 0.25rem;
   display: block;
 }
 .item-info header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 0.5px dotted $blue;
+  border-bottom: 0.5px dotted $black-colour;
 }
 .item-info h4 {
   margin-bottom: 0.5rem;
 }
 .price {
-  color: $contrast-yellow;
+  color: $secondary-colour;
+  font-weight: 600;
 }
 .item-text {
   margin-bottom: 0;

@@ -18,7 +18,7 @@ export const LinksContainer = styled.div<{ isOpen: boolean }>`
   right: 0;
   left: 0;
   bottom: 0;
-  background: ${WEBSITE_BASE_COLOURS.LIGHT_YELLOW};
+  background: ${WEBSITE_BASE_COLOURS.BASE_COLOUR};
   width: 100vw;
   height: 100vh;
 
@@ -39,7 +39,7 @@ export const LinksContainer = styled.div<{ isOpen: boolean }>`
       list-style-type: none;
       margin: 5px;
       & a {
-        color: ${WEBSITE_BASE_COLOURS.BLUE};
+        color: ${WEBSITE_BASE_COLOURS.SECONDARY_COLOUR}!important;
         font-size: ${Sizes.medium};
       }
     }
@@ -63,15 +63,15 @@ export const StyledButton = styled(Button)`
 
 export const StyledLink = styled(Link)<{ isUniqueLink?: boolean }>`
   background-color: ${({ isUniqueLink }) =>
-    isUniqueLink ? WEBSITE_BASE_COLOURS.LIGHT_YELLOW : "unset"};
+    isUniqueLink ? WEBSITE_BASE_COLOURS.BASE_COLOUR : "unset"};
   font-weight: ${({ isUniqueLink }) => (isUniqueLink ? "800" : "initial")};
   color: ${({ isUniqueLink }) =>
-    isUniqueLink ? WEBSITE_BASE_COLOURS.BLUE : "#fffff"};
+    isUniqueLink ? WEBSITE_BASE_COLOURS.BLACK_COLOUR : "#fffff"};
   opacity: 0.8;
   transition: all 0.6s;
 
   &:hover {
     opacity: 0.6;
-    color: ${WEBSITE_BASE_COLOURS.PURPULE}!important;
+    color: ${WEBSITE_BASE_COLOURS.SECONDARY_COLOUR}!important;
   }
 `;

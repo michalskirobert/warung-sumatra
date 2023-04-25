@@ -20,7 +20,7 @@ width: 100%;
       list-style-type: none;
       margin: 15px;
       & a {
-        color: ${WEBSITE_BASE_COLOURS.LIGHT_YELLOW};
+        color: ${WEBSITE_BASE_COLOURS.BASE_COLOUR};
       }
     }
 
@@ -30,7 +30,7 @@ width: 100%;
       & a {
         position: relative;
         top: -5px;
-        color: ${WEBSITE_BASE_COLOURS.BLUE};
+        color: ${WEBSITE_BASE_COLOURS.BLACK_COLOUR};
         padding: 5px;
       }
     }
@@ -52,16 +52,18 @@ export const StyledButton = styled(Button)`
 
 export const StyledLink = styled(Link)<{ isUniqueLink?: boolean }>`
   background-color: ${({ isUniqueLink }) =>
-    isUniqueLink ? WEBSITE_BASE_COLOURS.LIGHT_YELLOW : "unset"};
+    isUniqueLink ? WEBSITE_BASE_COLOURS.BASE_COLOUR : "unset"};
   font-weight: ${({ isUniqueLink }) => (isUniqueLink ? "800" : "initial")};
   color: ${({ isUniqueLink }) =>
-    isUniqueLink ? WEBSITE_BASE_COLOURS.BLUE : "#fffff"};
+    isUniqueLink
+      ? WEBSITE_BASE_COLOURS.BLACK_COLOUR
+      : WEBSITE_BASE_COLOURS.LIGHT_COLOUR};
   opacity: 0.8;
   font-weight: bold;
   transition: all 0.6s;
 
   &:hover {
     opacity: 0.6;
-    color: ${WEBSITE_BASE_COLOURS.CONTRAST_YELLOW}!important;
+    color: ${WEBSITE_BASE_COLOURS.BASE_COLOUR}!important;
   }
 `;

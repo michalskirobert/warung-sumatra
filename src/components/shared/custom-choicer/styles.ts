@@ -7,19 +7,21 @@ export const Choicer = styled.button<{ isActive: boolean; isMobile?: boolean }>`
   outline: none;
   background: none;
   color: ${({ isActive }) =>
-    isActive ? WEBSITE_BASE_COLOURS.PURPULE : WEBSITE_BASE_COLOURS.BLUE};
+    isActive
+      ? WEBSITE_BASE_COLOURS.BASE_COLOUR
+      : WEBSITE_BASE_COLOURS.SECONDARY_COLOUR};
   font-weight: ${({ isActive }) => (isActive ? "bold" : "normal")};
   transition: 0.8s color;
 
   font-size: ${({ isMobile }) => (!!isMobile ? Sizes.standard : Sizes.small)};
 
   &:hover {
-    color: ${WEBSITE_BASE_COLOURS.PURPULE};
+    color: ${WEBSITE_BASE_COLOURS.BASE_COLOUR};
   }
 `;
 
 export const Separator = styled.span`
-  color: ${WEBSITE_BASE_COLOURS.BLUE};
+  color: ${WEBSITE_BASE_COLOURS.BLACK_COLOUR};
 `;
 
 export const ChildrensContainer = styled.div`

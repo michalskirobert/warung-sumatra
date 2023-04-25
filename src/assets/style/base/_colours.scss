@@ -1,9 +1,7 @@
-$light-yellow: #ffd60a;
-$contrast-yellow: #ffc300;
-$blue: #003566;
-$dark-blue: #001d3d;
-$black: #000814;
-$purple: #a020f0;
+$base-colour: #fdfb10;
+$black-colour: #333113;
+$light-colour: #fdfae6;
+$secondary-colour: #979265;
 
 p,
 b,
@@ -16,5 +14,5 @@ h4,
 h5,
 h6,
 a {
-  color: $black;
+  color: $black-colour;
 }
