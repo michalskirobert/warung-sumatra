@@ -9,9 +9,13 @@ import { CustomContainer, CustomForm } from "@components/shared";
 import { useAppSelector } from "@store/config";
 
 import { CONSTANTS } from "@utils/index";
+import { useMemo } from "react";
 
 export const Contact = () => {
   const { language } = useAppSelector(({ globalConfig }) => globalConfig);
+  const form = useMemo(() => {
+    return createContactForm(language.value);
+  }, [language]);
   return (
     <Formik
       {...{
@@ -39,7 +43,7 @@ export const Contact = () => {
               <Col>
                 <CustomForm
                   {...{
-                    form: createContactForm(language.value),
+                    form,
                     errors,
                     handleChange,
                     setFieldValue,

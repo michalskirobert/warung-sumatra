@@ -8,9 +8,13 @@ import { validationSchema } from "./validation-schema";
 import { createReservationForm } from "./utils";
 import { CONSTANTS } from "@utils/index";
 import { useAppSelector } from "@store/config";
+import { useMemo } from "react";
 
 export const Reservate = () => {
   const { language } = useAppSelector(({ globalConfig }) => globalConfig);
+  const form = useMemo(() => {
+    return createReservationForm(language.value);
+  }, [language]);
   return (
     <Formik
       {...{
@@ -43,7 +47,7 @@ export const Reservate = () => {
           <Form onSubmit={handleSubmit}>
             <CustomForm
               {...{
-                form: createReservationForm(language.value),
+                form,
                 errors,
                 handleChange,
                 setFieldValue,
