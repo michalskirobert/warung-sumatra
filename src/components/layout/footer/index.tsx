@@ -5,6 +5,7 @@ import {
   Info,
   Media,
   ScheduleContainer,
+  Seperator,
   StyledFooter,
   Title,
 } from "./styles";
@@ -50,6 +51,7 @@ export const Footer = () => {
               <Media href="https://www.facebook.com/WarungSumatraPoznan">
                 <AiFillFacebook {...{ style: { fontSize: "2rem" } }} />
               </Media>
+              <Seperator />
               <Media>
                 <AiFillInstagram {...{ style: { fontSize: "2rem" } }} />
               </Media>
@@ -59,11 +61,7 @@ export const Footer = () => {
                 <Media href="https://glovoapp.com/pl/pl/poznan/warung-sumatra-poz/?utm_campaign=maplinks&utm_medium=organic&utm_source=googlemaps">
                   <Icons>Glovo</Icons>
                 </Media>
-                <span
-                  style={{ fontSize: "1.3rem", color: "white", margin: "5px" }}
-                >
-                  /
-                </span>
+                <Seperator />
                 <Media href="https://www.ubereats.com/pl/store/warung-sumatra/i7FeMEetTZ-_dJpSiqyGyg?utm_campaign=place-action-link&utm_medium=organic&utm_source=google">
                   <Icons>Uber Eats</Icons>
                 </Media>

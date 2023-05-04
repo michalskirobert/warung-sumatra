@@ -14,11 +14,12 @@ export const StyledFooter = styled.footer`
 export const Caption = styled.p`
   display: inline;
   margin-right: 5px;
-  color: ${CONSTANTS.WEBSITE_BASE_COLOURS.BASE_COLOUR};
+  color: ${CONSTANTS.WEBSITE_BASE_COLOURS.SECONDARY_COLOUR};
+  font-weight: bold;
 `;
 
 export const Title = styled.h4`
-  color: ${CONSTANTS.WEBSITE_BASE_COLOURS.BASE_COLOUR};
+  color: ${CONSTANTS.WEBSITE_BASE_COLOURS.SECONDARY_COLOUR};
   font-size: ${Sizes.standard};
   margin-top: 10px;
   font-weight: bold;
@@ -26,7 +27,7 @@ export const Title = styled.h4`
 
 export const Info = styled.p`
   display: inline;
-  color: ${CONSTANTS.WEBSITE_BASE_COLOURS.BASE_COLOUR};
+  color: ${CONSTANTS.WEBSITE_BASE_COLOURS.SECONDARY_COLOUR};
   font-size: ${Sizes.small};
   margin: 0;
 `;
@@ -44,10 +45,24 @@ export const ScheduleContainer = styled.div`
 `;
 
 export const Media = styled.a`
-  margin-right: 5px;
-  color: ${CONSTANTS.WEBSITE_BASE_COLOURS.BASE_COLOUR};
+  color: ${CONSTANTS.WEBSITE_BASE_COLOURS.SECONDARY_COLOUR};
+  transition: color 0.8s;
+
+  &:hover {
+    color: ${CONSTANTS.WEBSITE_BASE_COLOURS.BASE_COLOUR};
+  }
 `;
 
 export const Icons = styled.span`
   font-size: ${Sizes.small};
+`;
+
+export const Seperator = styled.span`
+  font-size: ${Sizes.small};
+  color: ${CONSTANTS.WEBSITE_BASE_COLOURS.SECONDARY_COLOUR};
+
+  &::after {
+    content: "/";
+    margin: 5px;
+  }
 `;
