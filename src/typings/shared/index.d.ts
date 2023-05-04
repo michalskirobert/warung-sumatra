@@ -16,6 +16,7 @@ export declare namespace NShared {
     setFieldValue: (field: S, value: unknown, shouldValidate?: B | U) => V;
     handleChange: ChangeEventHandler<HTMLInputElement>;
     errors: FormikErrors<unknown>;
+    isLoading?: B;
   };
 
   type TRenderElement = {

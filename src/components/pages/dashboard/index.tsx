@@ -3,6 +3,7 @@ import { Wrapper, DashboardContainer, Title } from "./styles";
 import { Hero } from "./hero";
 import { CONSTANTS } from "@utils/index";
 import { useAppSelector } from "@store/config";
+import { Link } from "react-router-dom";
 
 export const Dashboard = () => {
   const { language } = useAppSelector(({ globalConfig }) => globalConfig);

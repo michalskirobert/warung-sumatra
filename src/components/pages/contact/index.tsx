@@ -1,6 +1,8 @@
 import { Button, Col, Form, Row } from "reactstrap";
 
-import { Formik } from "formik";
+import { Formik, FormikValues } from "formik";
+
+import { toast } from "react-toastify";
 
 import { createContactForm } from "./utils";
 import { validationSchema } from "./validation-schema";
@@ -9,25 +11,33 @@ import { CustomContainer, CustomForm } from "@components/shared";
 import { useAppSelector } from "@store/config";
 
 import { CONSTANTS } from "@utils/index";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 export const Contact = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const { language } = useAppSelector(({ globalConfig }) => globalConfig);
   const form = useMemo(() => {
     return createContactForm(language.value);
   }, [language]);
+
+  const send = (values: FormikValues) => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      toast.success(CONSTANTS.TRANSLATE[language.value].sentMessage);
+    }, 1000);
+  };
   return (
     <Formik
       {...{
-        initialValues: { fullname: "", email: "", phone: "", content: "" },
-        onSubmit: (values) => console.log(values),
+        initialValues: { name: "", email: "", phone: "", content: "" },
+        onSubmit: (values) => send(values),
         validateOnBlur: true,
         validateOnChange: true,
         validationSchema: validationSchema(language.value),
       }}
     >
       {({
-        dirty,
         errors,
         handleChange,
         handleSubmit,
@@ -48,13 +58,14 @@ export const Contact = () => {
                     handleChange,
                     setFieldValue,
                     values,
+                    isLoading,
                   }}
                 />
                 <Button
                   {...{
                     color: "primary",
                     type: "submit",
-                    disabled: !isValid || !dirty,
+                    disabled: !isValid || !!isLoading,
                   }}
                 >
                   {CONSTANTS.TRANSLATE[language.value].send}

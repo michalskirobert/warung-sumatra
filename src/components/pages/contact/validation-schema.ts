@@ -4,7 +4,7 @@ import * as yup from "yup";
 
 export const validationSchema = (language: NGlobalConfig.TLangCode) =>
   yup.object().shape({
-    fullname: yup.string().required(VALIDATIONS[language].required),
+    name: yup.string().required(VALIDATIONS[language].required),
     phone: yup.string().required(VALIDATIONS[language].required),
     email: yup
       .string()

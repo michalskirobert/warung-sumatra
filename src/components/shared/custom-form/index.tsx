@@ -3,6 +3,7 @@ import React from "react";
 import { Col, Row } from "reactstrap";
 import { RenderElement } from "./render-element";
 import { NShared } from "@namespace/shared";
+import { LoadingBlocker } from "../loading-blocker";
 
 export const CustomForm = ({
   form,
@@ -10,9 +11,11 @@ export const CustomForm = ({
   setFieldValue,
   handleChange,
   errors,
+  isLoading,
 }: NShared.TCustomForm) => {
+  console.log({ errors });
   return (
-    <>
+    <LoadingBlocker {...{ isLoading }}>
       {form.map(({ id, row, rowType, subItems }) => (
         <Row key={id} {...{ [rowType]: row, subItems }}>
           {subItems.map(
@@ -49,6 +52,6 @@ export const CustomForm = ({
           )}
         </Row>
       ))}
-    </>
+    </LoadingBlocker>
   );
 };
