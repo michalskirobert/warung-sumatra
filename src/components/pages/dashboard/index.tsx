@@ -1,13 +1,16 @@
 import { CustomMenu } from "@components/shared/custom-menu";
 import { Wrapper, DashboardContainer, Title } from "./styles";
 import { Hero } from "./hero";
+import { CONSTANTS } from "@utils/index";
+import { useAppSelector } from "@store/config";
 
 export const Dashboard = () => {
+  const { language } = useAppSelector(({ globalConfig }) => globalConfig);
   return (
     <DashboardContainer>
       <Hero />
       <Wrapper>
-        <Title>The best choices</Title>
+        <Title>{CONSTANTS.TRANSLATE[language.value].weRecommend}</Title>
         <CustomMenu
           {...{
             menuItems: [
@@ -17,7 +20,7 @@ export const Dashboard = () => {
                 category: "lunch",
                 price: 12.99,
                 img: "./images/item-8.jpeg",
-                desc: `on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  `,
+                desc: "",
               },
               {
                 id: crypto.randomUUID(),
@@ -25,7 +28,7 @@ export const Dashboard = () => {
                 category: "shakes",
                 price: 16.99,
                 img: "./images/item-9.jpeg",
-                desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+                desc: "",
               },
             ],
           }}

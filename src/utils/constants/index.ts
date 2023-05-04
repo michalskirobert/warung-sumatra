@@ -96,6 +96,7 @@ export const TRANSLATE = {
     openTimeMonToSat: "Mon-Sat 12:00 - 22:00",
     openTimeSun: "Sun: 12:00 - 20:00",
     findUs: "Find us",
+    weRecommend: "We recommend",
   },
   bh: {
     name: "Nama",
@@ -112,6 +113,7 @@ export const TRANSLATE = {
     openTimeMonToSat: "Senin-Sabtu: 12:00 - 22:00",
     openTimeSun: "Minggu: 12:00 - 20:00",
     findUs: "Temukan kami",
+    weRecommend: "Kami merekomendasikan",
   },
   pl: {
     name: "Imię",
@@ -128,6 +130,7 @@ export const TRANSLATE = {
     openTimeMonToSat: "pn-sb: 12:00 - 22:00",
     openTimeSun: "ndz: 12:00 - 20:00",
     findUs: "Znajdź nas",
+    weRecommend: "Polecamy",
   },
 };
 
