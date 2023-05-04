@@ -1,6 +1,6 @@
 import { CustomMenu } from "@components/shared/custom-menu";
-import { Hero } from "./hero";
 import { Wrapper, DashboardContainer, Title } from "./styles";
+import { Hero } from "./hero";
 
 export const Dashboard = () => {
   return (

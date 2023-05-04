@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const DashboardContainer = styled.section`
   padding-top: 53px;
+  min-height: 100vh;
 `;
 
 export const Wrapper = styled(Container)`
