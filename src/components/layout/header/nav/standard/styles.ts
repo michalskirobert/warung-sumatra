@@ -29,9 +29,9 @@ width: 100%;
       margin-left: auto;
       & a {
         position: relative;
-        top: -5px;
+        top: -9px;
         color: ${WEBSITE_BASE_COLOURS.BLACK_COLOUR};
-        padding: 5px;
+        padding: 9px;
       }
     }
   }
