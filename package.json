@@ -3,7 +3,8 @@
   "author": "Robert Michalski",
   "email": "robert.michalski@digimonkeys.com",
   "license": "MIT",
-  "version": "0.7.5",
+  "version": "1.0.0",
+  "env": "Test",
   "private": true,
   "dependencies": {
     "@firebase/auth": "^0.21.0",
@@ -46,6 +47,7 @@
     "react-bootstrap": "^2.7.1",
     "react-bootstrap-icons": "^1.10.2",
     "react-dom": "^18.2.0",
+    "react-flag-kit": "^1.1.1",
     "react-icons": "^4.8.0",
     "react-input-mask": "^2.0.4",
     "react-loaders": "^3.0.1",

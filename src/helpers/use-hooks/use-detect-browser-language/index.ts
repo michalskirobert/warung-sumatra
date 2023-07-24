@@ -1,4 +1,4 @@
-import { LANGUAGE_HELPER } from "@components/layout/header/utils";
+import { LANGUAGE_HELPER } from "@components/shared/custom-language-choicer/utils";
 import { useEffect, useState } from "react";
 import { NGlobalConfig } from "src/typings/global-config";
 

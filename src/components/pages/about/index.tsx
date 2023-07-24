@@ -1,50 +1,94 @@
 import { CustomContainer } from "@components/shared";
 import { useAppSelector } from "@store/config";
-import { CONSTANTS } from "@utils/index";
+
+import shape3 from "@assets/temp/images/shape-3.png";
+import abs from "@assets/temp/images/about-abs-image.jpg";
+import aboutBanner from "@assets/temp/images/about-banner.jpg";
+import badge2 from "@assets/temp/images/indonesia.png";
 
 export const About = () => {
   const { language } = useAppSelector(({ globalConfig }) => globalConfig);
   return (
-    <CustomContainer {...{ title: CONSTANTS.ABOUT_LABEL[language.value] }}>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla possimus
-        corporis dolores unde et labore? Excepturi, incidunt corporis maxime
-        assumenda et alias dolor similique nemo debitis officiis! Aperiam, ullam
-        recusandae.
-      </p>
-      <h2>Lorem ipsum dolor</h2>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo fugit
-        velit minima cupiditate itaque ipsam aperiam corporis, tempore odit
-        aliquam optio at, excepturi cumque ratione fugiat voluptate asperiores,
-        quaerat et cum magni quas ipsa molestiae obcaecati odio? Nulla facilis
-        deserunt expedita eaque placeat provident sit minus veniam facere hic.
-        Culpa, debitis quas vel iste nihil quia beatae necessitatibus inventore
-        officiis obcaecati suscipit hic nam esse dolores tempore voluptatem
-        pariatur laudantium ipsum accusamus, velit repellendus natus non.
-        Distinctio ipsam repellat, dolore praesentium ad expedita. Nam ad
-        doloremque, non et molestiae cumque aut! Rerum dolorem recusandae nam
-        aliquid eos totam nostrum dolore sunt, est maiores officiis neque iure
-        voluptatum quod tenetur corrupti laudantium aliquam perspiciatis
-        corporis tempora atque, voluptas distinctio? Tempora consequatur veniam
-        asperiores, impedit natus eaque non, minus neque et repellat nulla. Ea
-        consectetur earum ab commodi? Obcaecati in accusantium distinctio
-        architecto animi praesentium expedita molestiae nam quibusdam aspernatur
-        sint, soluta fugiat aperiam aliquam ducimus consequuntur perferendis
-        doloribus. Commodi provident corrupti impedit laborum. Quae, numquam
-        asperiores. Consequatur ea, accusantium corporis voluptate modi soluta
-        ipsum iure facere, ab fugit recusandae adipisci odio, corrupti deserunt
-        sunt dolores est doloremque veritatis provident distinctio ipsa.
-        Pariatur ullam commodi magni molestiae, dolor modi cupiditate unde atque
-        fugit enim sunt. Officiis commodi possimus quam alias dolores nesciunt
-        repellendus magnam suscipit. Laudantium deserunt temporibus tenetur
-        voluptate laboriosam deleniti beatae! Ea aperiam magnam facilis, cum eum
-        earum. Obcaecati at iste porro dolorem quasi! Amet perferendis natus
-        asperiores ratione expedita non repudiandae voluptatem voluptatibus
-        provident incidunt id assumenda, quasi earum, harum voluptas neque
-        debitis quis.
-      </p>
-      <b>The end</b>
+    <CustomContainer>
+      <section
+        className="section about text-center"
+        aria-labelledby="about-label"
+        id="about"
+      >
+        <div className="container">
+          <div className="about-content">
+            <p className="label-2 section-subtitle" id="about-label">
+              Our Story
+            </p>
+            <h2 className="headline-1 section-title">
+              Every Fla vor Tells a Story
+            </h2>
+            <p className="section-text">
+              Lorem Ipsum is simply dummy text of the printingand typesetting
+              industry lorem Ipsum has been the industrys standard dummy text
+              ever since the when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book It has survived not only
+              five centuries, but also the leap into.
+            </p>
+            <div className="contact-label">Book Through Call</div>
+            <a
+              href="tel:+804001234567"
+              className="body-1 contact-number hover-underline"
+            >
+              +80 (400) 123 4567
+            </a>
+            <a href="#" className="btn btn-primary">
+              <span className="text text-1">Read More</span>
+              <span className="text text-2" aria-hidden="true">
+                Read More
+              </span>
+            </a>
+          </div>
+          <figure className="about-banner">
+            <img
+              src={aboutBanner}
+              width={570}
+              height={570}
+              loading="lazy"
+              alt="about banner"
+              className="w-100"
+              data-parallax-item
+              data-parallax-speed={1}
+            />
+            <div
+              className="abs-img abs-img-1 has-before"
+              data-parallax-item
+              data-parallax-speed="1.75"
+            >
+              <img
+                src={abs}
+                width={285}
+                height={285}
+                loading="lazy"
+                alt=""
+                className="w-100"
+              />
+            </div>
+            <div className="abs-img abs-img-2 has-before">
+              <img
+                src={badge2}
+                width={133}
+                height={134}
+                loading="lazy"
+                alt=""
+              />
+            </div>
+          </figure>
+          <img
+            src={shape3}
+            width={197}
+            height={194}
+            loading="lazy"
+            alt=""
+            className="shape"
+          />
+        </div>
+      </section>
     </CustomContainer>
   );
 };

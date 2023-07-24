@@ -3,7 +3,7 @@ import { NCommonTypes } from "@namespace/commonTypes";
 // Public routes
 export const DASHBOARD_ROUTE = "/";
 export const MENU_ROUTE = "/menu";
-export const RESERVATION_ROUTE = "/reservate";
+export const BOOK_TABLE_ROUTE = "/book-table";
 export const ABOUT_ROUTE = "/about";
 export const CONTACT_ROUTE = "/contact";
 
@@ -19,6 +19,10 @@ export const RESERVATE = "Reservate";
 export const ABOUT = "About";
 export const CONTACT = "Contact";
 
+//Contact details
+export const BOOKING_EMAIL = "booking@warungsumatra.pl";
+export const INFO_EMAIL = "info@warungsumatra.pl";
+
 export const DASHBOARD_LABEL: NCommonTypes.TTranslateProps = {
   pl: "Strona głowna",
   eng: "Home",
@@ -31,7 +35,7 @@ export const MENU_LABEL: NCommonTypes.TTranslateProps = {
   eng: "Menu",
 };
 
-export const RESERVATE_LABEL: NCommonTypes.TTranslateProps = {
+export const BOOK_TABLE_LABEL: NCommonTypes.TTranslateProps = {
   pl: "Zarezerwuj stolik",
   bh: "Memesan meja",
   eng: "Book a table",
@@ -91,10 +95,8 @@ export const TRANSLATE = {
     timeFrom: "Time from",
     timeTo: "Time to",
     send: "Send",
-    address: "Address",
-    open: "Open",
-    openTimeMonToSat: "Mon-Sat 12:00 - 22:00",
-    openTimeSun: "Sun: 12:00 - 20:00",
+    address: "Osiedle Bolesława Chrobrego 10 street, 60-681 Poznań",
+    restaurantOpenHours: "Mon-Sat: 12pm - 10pm | Sun: 12pm - 8pm",
     findUs: "Find us",
     weRecommend: "We recommend",
     sentMessage: "Message has been sent",
@@ -109,10 +111,8 @@ export const TRANSLATE = {
     timeFrom: "Waktu dari",
     timeTo: "Waktunya untuk",
     send: "Mengirim",
-    address: "Alamat",
-    open: "Buka",
-    openTimeMonToSat: "Senin-Sabtu: 12:00 - 22:00",
-    openTimeSun: "Minggu: 12:00 - 20:00",
+    address: "Osiedle Bolesława Chrobrego 10, 60-681 Poznań",
+    restaurantOpenHours: "Senin-Sabtu: 12:00 - 22:00 | Minggu: 12:00 - 20:00",
     findUs: "Temukan kami",
     weRecommend: "Kami merekomendasikan",
     sentMessage: "Pesan telah terkirim",
@@ -127,10 +127,9 @@ export const TRANSLATE = {
     timeFrom: "Czas od",
     timeTo: "Czas do",
     send: "Wyślij",
-    address: "Adres",
+    address: "Ul. Osiedle Bolesława Chrobrego 10 street, 60-681 Poznań",
     open: "Otwarte",
-    openTimeMonToSat: "pn-sb: 12:00 - 22:00",
-    openTimeSun: "ndz: 12:00 - 20:00",
+    restaurantOpenHours: "pn-sb: 12:00 - 22:00 | ndz: 12:00 - 20:00",
     findUs: "Znajdź nas",
     weRecommend: "Polecamy",
     sentMessage: "Wiadomość została pomyślnie wysłana",

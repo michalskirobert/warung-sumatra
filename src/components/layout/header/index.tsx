@@ -1,34 +1,38 @@
 import { useHeaderService } from "./service";
 
-import { Img } from "./styles";
+import { Topbar } from "./tolbar";
 
 import { Nav } from "./nav";
 
-import logo from "@assets/images/utils/header/white_logo.png";
-
 export const Header = () => {
   const {
+    isMenuOpen,
+    toggleMenu,
+    headerData,
+    activeTopbar,
+    topbarHide,
     isLinkActive,
-    menuContent,
-    language,
-    isAdmin,
-    buttonsHandler,
-    isMobile,
   } = useHeaderService();
 
   return (
-    <header>
-      <Img {...{ src: logo, width: 60 }} />
-      <Nav
+    <>
+      <Topbar
         {...{
-          isMobile,
-          isLinkActive,
-          menuContent,
-          language,
-          isAdmin,
-          buttonsHandler,
+          dataSource: headerData.topbar,
         }}
       />
-    </header>
+
+      <header className={`header ${activeTopbar} ${topbarHide}`} data-header>
+        <div className="container">
+          <Nav
+            {...{
+              isMenuOpen,
+              toggleMenu,
+              isLinkActive,
+            }}
+          />
+        </div>
+      </header>
+    </>
   );
 };

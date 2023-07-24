@@ -36,6 +36,8 @@ export const RenderElement = ({
         placeholder,
       }}
     />
-    <FormFeedback>{errors[id]}</FormFeedback>
+    <FormFeedback {...{ style: { fontSize: "1rem" } }}>
+      {errors[id]}
+    </FormFeedback>
   </FormGroup>
 );

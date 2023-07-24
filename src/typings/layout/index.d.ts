@@ -33,4 +33,25 @@ export declare namespace NLayout {
     TNavProps,
     "isMobile" | "isAdmin" | "buttonsHandler"
   >;
+
+  type TTopbar = {
+    type: "address" | "div" | "link" | "language";
+    icon: JSX.Element;
+    label: string;
+    mailTo?: `${string}@${string}.${string}`;
+    phoneTo?: string;
+    path?: TNav["path"];
+  };
+
+  type TNav = {
+    label: string;
+    path: `/${string}` | `https://${string}.${string}`;
+    isBookTable?: boolean;
+    isBlank?: boolean;
+  };
+
+  type THeaderData = {
+    topbar: TTopbar[];
+    nav: TNav[];
+  };
 }

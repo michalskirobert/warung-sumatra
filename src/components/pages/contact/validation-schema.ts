@@ -5,7 +5,12 @@ import * as yup from "yup";
 export const validationSchema = (language: NGlobalConfig.TLangCode) =>
   yup.object().shape({
     name: yup.string().required(VALIDATIONS[language].required),
-    phone: yup.string().required(VALIDATIONS[language].required),
+    phone: yup
+      .string()
+      .required(VALIDATIONS[language].required)
+      .test("isPhoneFormatValid", VALIDATIONS[language].phone, (value) => {
+        return Number(value?.length) === 15;
+      }),
     email: yup
       .string()
       .email(VALIDATIONS[language].email)

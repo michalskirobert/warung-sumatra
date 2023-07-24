@@ -1,30 +1,46 @@
-import React from "react";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import { ADMIN_ROUTES, ROUTES } from "./store/routes";
 import { Header } from "@components/layout/header";
-import { useAppService } from "./service";
-import { AuthRoute } from "@components/pages/admin/auth-route";
 import { Footer } from "@components/layout/footer";
+import { ROUTES } from "@routes/index";
+import { useEffect, useState } from "react";
+import { Loader } from "@components/layout/loader";
 
 const App = () => {
-  const { isAdmingPage } = useAppService();
+  const [isAppLoading, setIsAppLoading] = useState<boolean>(true);
 
-  if (isAdmingPage) {
-    return (
-      <BrowserRouter>
-        <AuthRoute>
-          <Header />
-          <Routes>
-            {ADMIN_ROUTES.map(({ path, component }) => (
-              <Route key={path} {...{ path, element: component }} />
-            ))}
-          </Routes>
-        </AuthRoute>
-      </BrowserRouter>
-    );
-  }
+  useEffect(() => {
+    const parallaxItems = document.querySelectorAll("[data-parallax-item]");
+
+    let x: number, y: number;
+
+    window.addEventListener("mousemove", function (event) {
+      x = (event.clientX / window.innerWidth) * 10 - 5;
+      y = (event.clientY / window.innerHeight) * 10 - 5;
+
+      x = x - x * 2;
+      y = y - y * 2;
+
+      for (let i = 0, len = parallaxItems.length; i < len; i++) {
+        x =
+          x * Number((parallaxItems[i] as HTMLElement).dataset?.parallaxSpeed);
+        y =
+          y * Number((parallaxItems[i] as HTMLElement).dataset?.parallaxSpeed);
+
+        parallaxItems[i].setAttribute(
+          "transform",
+          `translate3d(${x}px, ${y}px, 0px)`
+        );
+      }
+    });
+  });
+
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      setIsAppLoading(false);
+    });
+  }, []);
+
+  if (isAppLoading) return <Loader />;
 
   return (
     <BrowserRouter>

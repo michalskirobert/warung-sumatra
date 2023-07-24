@@ -1,37 +1,33 @@
-import { NGlobalConfig } from "src/typings/global-config";
-import { GlobalConfig } from "../actionTypes";
-import {
-  getFromLocalStorage,
-  saveToLocalStorage,
-} from "@helpers/useful-functions";
+import { getFromLocalStorage } from "@helpers/useful-functions";
+import { NGlobalConfig } from "@namespace/global-config";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-const initialValues: NGlobalConfig.TReducer = {
+interface IGlobalConfig {
+  isLoading: boolean;
+  language: NGlobalConfig.TLanguage;
+}
+
+const initialState: IGlobalConfig = {
   isLoading: false,
   language: getFromLocalStorage("language") || { label: "Polski", value: "pl" },
 };
 
-export const globalConfig = (
-  init = initialValues,
-  action: NGlobalConfig.TAction
-) => {
-  switch (action.type) {
-    case GlobalConfig.SetIsLoading:
-      return {
-        ...init,
-        isLoading: action.payload,
-      };
-    case GlobalConfig.SetLanguage:
-      saveToLocalStorage({
-        collectionName: "language",
-        value: JSON.stringify(action.payload),
-      }); //save current language in storage
+export const globalConfig = createSlice({
+  name: "globalConfig",
+  initialState,
+  reducers: {
+    setIsLoading: (
+      state,
+      action: PayloadAction<IGlobalConfig["isLoading"]>
+    ) => {
+      state.isLoading = action.payload;
+    },
+    setLanguage: (state, action: PayloadAction<IGlobalConfig["language"]>) => {
+      state.language = action.payload;
+    },
+  },
+});
 
-      return {
-        ...init,
-        language: action.payload,
-      };
+export const { setIsLoading, setLanguage } = globalConfig.actions;
 
-    default:
-      return init;
-  }
-};
+export default globalConfig.reducer;

@@ -4,15 +4,19 @@ interface ICustomContainer {
   children: JSX.Element | JSX.Element[] | string;
   title?: string;
   titleAlign?: "center" | "left" | "right";
+  marginTop?: `${number}px`;
+  marginBottom?: `${number}px`;
 }
 
 export const CustomContainer = ({
   children,
   title,
   titleAlign,
+  marginBottom,
+  marginTop,
 }: ICustomContainer) => {
   return (
-    <PageContainer>
+    <PageContainer {...{ marginBottom, marginTop }}>
       {!!title && (
         <Wrapper>
           <Title {...{ titleAlign }}>{title}</Title>

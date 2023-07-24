@@ -13,7 +13,7 @@ export const validationSchema = (language: NGlobalConfig.TLangCode) =>
     phone: yup
       .string()
       .required(VALIDATIONS[language].required)
-      .test("isNumber", VALIDATIONS[language].phone, (val) => {
+      .test("isPhoneFormatValid", VALIDATIONS[language].phone, (val) => {
         return Number(val?.length) === 15;
       }),
     email: yup

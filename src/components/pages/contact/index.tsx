@@ -12,6 +12,10 @@ import { useAppSelector } from "@store/config";
 
 import { CONSTANTS } from "@utils/index";
 import { useMemo, useState } from "react";
+import { HiArrowDown } from "react-icons/hi2";
+import { CiCalendar, CiTimer, CiUser } from "react-icons/ci";
+import { formatPhoneNumber } from "@helpers/useful-functions";
+import { PhoneNumbers } from "@utils/enums";
 
 export const Contact = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -27,77 +31,73 @@ export const Contact = () => {
       toast.success(CONSTANTS.TRANSLATE[language.value].sentMessage);
     }, 1000);
   };
+
+  const contactForm = createContactForm(language.value);
   return (
     <Formik
       {...{
         initialValues: { name: "", email: "", phone: "", content: "" },
         onSubmit: (values) => send(values),
         validateOnBlur: true,
-        validateOnChange: true,
         validationSchema: validationSchema(language.value),
       }}
     >
-      {({
-        errors,
-        handleChange,
-        handleSubmit,
-        isValid,
-        setFieldValue,
-        values,
-      }) => (
-        <CustomContainer
-          {...{ title: CONSTANTS.CONTACT_LABEL[language.value] }}
-        >
-          <Form onSubmit={handleSubmit}>
-            <Row md={2}>
-              <Col>
-                <CustomForm
-                  {...{
-                    form,
-                    errors,
-                    handleChange,
-                    setFieldValue,
-                    values,
-                    isLoading,
-                  }}
-                />
-                <Button
-                  {...{
-                    color: "primary",
-                    type: "submit",
-                    disabled: !isValid || !!isLoading,
+      {({ errors, handleChange, setFieldValue, values, handleSubmit }) => (
+        <CustomContainer {...{ marginTop: "450px" }}>
+          <section className="reservation">
+            <div className="container">
+              <div className="form reservation-form bg-black-10">
+                <form className="form-left" onSubmit={handleSubmit}>
+                  <h2 className="headline-1 text-center">Contact us</h2>
+                  <p className="form-text text-center">
+                    We will try to contact you as fast as possible
+                  </p>
+                  <CustomForm
+                    {...{
+                      errors,
+                      values,
+                      handleChange,
+                      setFieldValue,
+                      form: contactForm,
+                    }}
+                  />
+                  <button type="submit" className="btn btn-secondary">
+                    <span className="text text-1">
+                      {CONSTANTS.TRANSLATE[language.value].send}
+                    </span>
+                    <span className="text text-2" aria-hidden="true">
+                      {CONSTANTS.TRANSLATE[language.value].send}
+                    </span>
+                  </button>
+                </form>
+                <div
+                  className="form-right text-center"
+                  style={{
+                    backgroundImage:
+                      'url("./../../../assets/temp/images/form-pattern.png")',
                   }}
                 >
-                  {CONSTANTS.TRANSLATE[language.value].send}
-                </Button>
-              </Col>
-              <Col>
-                <Image
-                  {...{
-                    src: "https://www.advancedcustomfields.com/wp-content/uploads/2013/11/acf-google-map-field-interface.png",
-                    style: {
-                      minWidth: "150px",
-                      maxWidth: "400px",
-                      margin: "5px auto",
-                      objectFit: "cover",
-                    },
-                  }}
-                />
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Exercitationem minus molestias voluptatibus dicta aspernatur
-                  iure rem reprehenderit quos quidem, delectus sit nihil dolorem
-                  deserunt, placeat perspiciatis excepturi rerum accusamus quas.
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et
-                  dignissimos ipsam quod accusantium facilis, atque saepe
-                  delectus possimus nam consequatur aperiam fugiat, dolor
-                  repudiandae dolorum! Et saepe maxime ut eaque blanditiis
-                  recusandae. Eius amet quibusdam maiores enim molestiae
-                  corporis eveniet error! Nesciunt alias, eos
-                </p>
-              </Col>
-            </Row>
-          </Form>
+                  <h2 className="headline-1 text-center">Visit us</h2>
+                  <p className="contact-label">Location</p>
+                  <address className="body-4">
+                    Poznań
+                    <br />
+                    XXX street 11/11
+                  </address>
+                  <p className="contact-label">Lunch Time</p>
+                  <p className="body-4">
+                    Monday to Sunday <br />
+                    11.00 am - 2.30pm
+                  </p>
+                  <p className="contact-label">Dinner Time</p>
+                  <p className="body-4">
+                    Monday to Sunday <br />
+                    05.00 pm - 10.00pm
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
         </CustomContainer>
       )}
     </Formik>

@@ -8,9 +8,9 @@ import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 
 import { store } from "@store/config";
+import { ToastContainer } from "react-toastify";
 
 import "./assets/style/index.scss";
-import { ToastContainer } from "react-toastify";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

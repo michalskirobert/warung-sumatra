@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive";
 
 interface IParseQueryProps {
   arg: "min-width" | "max-width" | "width";
-  width: number;
+  width: 653 | 667 | 870 | 1200;
   unit?: "px" | "rem" | "em" | "%" | "vw";
 }
 
@@ -27,5 +27,6 @@ export const useDetectDevice = () => {
     isMobile,
     isTablet,
     isPc,
+    parseQuery,
   };
 };

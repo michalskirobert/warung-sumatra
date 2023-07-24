@@ -1,5 +1,7 @@
-import { globalConfig } from "./global-config";
-import { auth } from "./user";
-import { menu } from "./menu";
+import globalConfig from "./global-config";
+import layout from "./layout";
 
-export default { globalConfig, auth, menu };
+export default {
+  globalConfig,
+  layout,
+};

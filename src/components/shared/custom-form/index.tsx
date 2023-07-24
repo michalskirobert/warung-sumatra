@@ -13,7 +13,6 @@ export const CustomForm = ({
   errors,
   isLoading,
 }: NShared.TCustomForm) => {
-  console.log({ errors });
   return (
     <LoadingBlocker {...{ isLoading }}>
       {form.map(({ id, row, rowType, subItems }) => (

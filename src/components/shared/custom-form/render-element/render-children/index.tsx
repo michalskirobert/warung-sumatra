@@ -25,7 +25,9 @@ export const RenderChildren = ({
           {...{
             id,
             name: id,
-            className: `${!!errors[id] ? "is-invalid" : null} form-control`,
+            className: `input-field ${
+              !!errors[id] ? "is-invalid" : null
+            } form-control`,
             mask,
             maskChar,
             onChange: handleChange,
@@ -37,7 +39,7 @@ export const RenderChildren = ({
         <Select
           {...{
             options,
-            className: `${!!errors[id] ? "is-invalid" : null}`,
+            className: `input-field ${!!errors[id] ? "is-invalid" : null}`,
             styles: {
               container: (prov) => ({
                 ...prov,
@@ -60,6 +62,7 @@ export const RenderChildren = ({
             type,
             value: values[id],
             invalid: !!errors[id],
+            className: "input-field",
             onChange: handleChange,
           }}
         />
