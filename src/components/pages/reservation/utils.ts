@@ -1,7 +1,7 @@
 import { NCommonTypes } from "@namespace/commonTypes";
-import { NGlobalConfig } from "@namespace/global-config";
 
 import * as C from "@utils/constants";
+import { TFunction } from "i18next";
 
 const TEMP_OPTIONS: NCommonTypes.TOptions[] = [
   { label: "Poznań", value: "Poznań" },
@@ -9,7 +9,7 @@ const TEMP_OPTIONS: NCommonTypes.TOptions[] = [
 ];
 
 export const createReservationForm = (
-  language: NGlobalConfig.TLangCode
+  translate: TFunction<"common", undefined>
 ): NCommonTypes.TForm[] => [
   {
     id: crypto.randomUUID(),
@@ -20,7 +20,7 @@ export const createReservationForm = (
         id: "name",
         col: 4,
         colType: "md",
-        label: C.TRANSLATE[language].name,
+        label: translate("form.name"),
         type: "text",
         isRequired: true,
       },
@@ -28,7 +28,7 @@ export const createReservationForm = (
         id: "phone",
         col: 4,
         colType: "md",
-        label: C.TRANSLATE[language].phone,
+        label: translate("form.phone"),
         type: "mask",
         mask: C.MASK_TYPE_MOBILE_PHONE,
         maskChar: null,
@@ -38,7 +38,7 @@ export const createReservationForm = (
         id: "email",
         col: 4,
         colType: "md",
-        label: C.TRANSLATE[language].email,
+        label: translate("form.email"),
         type: "email",
         isRequired: true,
       },
@@ -53,7 +53,7 @@ export const createReservationForm = (
         id: "restaurant",
         col: 12,
         colType: "md",
-        label: C.TRANSLATE[language].restaurant,
+        label: translate("form.restaurant"),
         type: "select",
         options: TEMP_OPTIONS,
         isRequired: true,
@@ -69,7 +69,7 @@ export const createReservationForm = (
         id: "date",
         col: 4,
         colType: "md",
-        label: C.TRANSLATE[language].date,
+        label: translate("form.date"),
         type: "date",
         isRequired: true,
       },
@@ -77,7 +77,7 @@ export const createReservationForm = (
         id: "timeFrom",
         col: 4,
         colType: "md",
-        label: C.TRANSLATE[language].timeFrom,
+        label: translate("form.timeFrom"),
         type: "time",
         isRequired: true,
       },
@@ -85,7 +85,7 @@ export const createReservationForm = (
         id: "timeTo",
         col: 4,
         colType: "md",
-        label: C.TRANSLATE[language].timeTo,
+        label: translate("form.timeTo"),
         type: "time",
       },
     ],
@@ -99,7 +99,7 @@ export const createReservationForm = (
         id: "content",
         col: 12,
         colType: "md",
-        label: C.TRANSLATE[language].details,
+        label: translate("form.details"),
         type: "textarea",
       },
     ],

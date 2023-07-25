@@ -8,8 +8,14 @@ import { setLanguage } from "@store/reducers/global-config";
 import { useLanguageChoicerService } from "./service";
 
 export const ChooseLanguage = () => {
-  const { currentLanguage, dispatch, isLangOpen, language, parseLanguage } =
-    useLanguageChoicerService();
+  const {
+    currentLanguage,
+    dispatch,
+    isLangOpen,
+    language,
+    parseLanguage,
+    i18n,
+  } = useLanguageChoicerService();
 
   return (
     <div>
@@ -27,6 +33,7 @@ export const ChooseLanguage = () => {
               <StyledButton
                 onClick={() => {
                   dispatch(setLanguage({ label, value }));
+                  i18n.changeLanguage(value);
                   dispatch(setIsLangOpen(false));
                 }}
               >

@@ -3,10 +3,13 @@ import { useEffect } from "react";
 import { useDetectBrowserLanguage } from "@helpers/use-hooks";
 import { useAppDispatch, useAppSelector } from "@store/config";
 import { getFromLocalStorage } from "@helpers/useful-functions";
-import _ from "lodash";
 import { setLanguage } from "@store/reducers/global-config";
+import { useTranslation } from "react-i18next";
+
+import _ from "lodash";
 
 export const useAppService = () => {
+  const { i18n } = useTranslation();
   const { browserLanguage } = useDetectBrowserLanguage();
   const { language } = useAppSelector(({ globalConfig }) => globalConfig);
 
@@ -24,6 +27,8 @@ export const useAppService = () => {
       !_.isEmpty(getFromLocalStorage("language"))
     )
       return;
+
+    i18n.changeLanguage(browserLanguage.value);
     dispatch(setLanguage(browserLanguage));
   }, [browserLanguage]);
 

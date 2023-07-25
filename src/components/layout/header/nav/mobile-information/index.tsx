@@ -1,26 +1,18 @@
 import { formatPhoneNumber } from "@helpers/useful-functions";
-import { NGlobalConfig } from "@namespace/global-config";
+
 import { PhoneNumbers } from "@utils/enums";
 import { CONSTANTS } from "@utils/index";
+import { useTranslation } from "react-i18next";
 
-interface IMobileInformations {
-  language: NGlobalConfig.TLangCode;
-}
-
-export const MobileInformations = ({ language }: IMobileInformations) => {
+export const MobileInformations = () => {
+  const [translate] = useTranslation();
   return (
     <div className="text-center">
-      <p className="headline-1 navbar-title">
-        {CONSTANTS.TRANSLATE[language].findUs}
-      </p>
+      <p className="headline-1 navbar-title">{translate("findUs")}</p>
 
-      <address className="body-4">
-        {CONSTANTS.TRANSLATE[language].address}
-      </address>
+      <address className="body-4">{translate("address")}</address>
 
-      <p className="body-4 navbar-text">
-        {CONSTANTS.TRANSLATE[language].restaurantOpenHours}
-      </p>
+      <p className="body-4 navbar-text">{translate("restaurantOpenHours")}</p>
 
       <a href="mailto:booking@grilli.com" className="body-4 sidebar-link">
         {CONSTANTS.BOOKING_EMAIL}
@@ -28,7 +20,7 @@ export const MobileInformations = ({ language }: IMobileInformations) => {
 
       <div className="separator"></div>
 
-      <p className="contact-label">{CONSTANTS.BOOK_TABLE_LABEL[language]}</p>
+      <p className="contact-label"> {translate("navigation.bookTable")}</p>
 
       <a
         href={`tel:${formatPhoneNumber(PhoneNumbers.Contact)}`}

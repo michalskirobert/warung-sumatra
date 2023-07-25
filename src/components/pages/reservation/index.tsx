@@ -1,12 +1,11 @@
-import { Button, Col, Form, Row } from "reactstrap";
+import { Form } from "reactstrap";
 
 import { Formik, FormikValues } from "formik";
 
-import { CustomContainer, CustomForm } from "@components/shared";
+import { CustomContainer } from "@components/shared";
 
 import { validationSchema } from "./validation-schema";
 import { createReservationForm } from "./utils";
-import { CONSTANTS } from "@utils/index";
 import { useAppSelector } from "@store/config";
 import { useMemo, useState } from "react";
 import { toast } from "react-toastify";
@@ -14,19 +13,22 @@ import { formatPhoneNumber } from "@helpers/useful-functions";
 import { PhoneNumbers } from "@utils/enums";
 import { HiArrowDown } from "react-icons/hi2";
 import { CiCalendar, CiTimer, CiUser } from "react-icons/ci";
+import { useTranslation } from "react-i18next";
 
 export const Reservate = () => {
+  const [t] = useTranslation("common");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { language } = useAppSelector(({ globalConfig }) => globalConfig);
+
   const form = useMemo(() => {
-    return createReservationForm(language.value);
+    return createReservationForm(t);
   }, [language]);
 
   const send = (values: FormikValues) => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      toast.success(CONSTANTS.TRANSLATE[language.value].sentMessage);
+      toast.success(t("sentMessage"));
     }, 1000);
   };
   return (

@@ -1,0 +1,44 @@
+{
+  "welcome": {
+    "title": "Witaj na {{page}}"
+  },
+  "form": {
+    "name": "Imię",
+    "phone": "Telefon",
+    "email": "E-mail",
+    "details": "Szczegóły",
+    "restaurant": "Restauracja",
+    "date": "Data",
+    "timeFrom": "Czas od",
+    "timeTo": "Czas do"
+  },
+  "send": "Wyślij",
+  "address": "Ul. Osiedle Bolesława Chrobrego 10 street, 60-681 Poznań",
+  "open": "Otwarte",
+  "restaurantOpenHours": "pn-sb: 12:00 - 22:00 | ndz: 12:00 - 20:00",
+  "findUs": "Znajdź nas",
+  "sentMessage": "Wiadomość została pomyślnie wysłana",
+  "weRecommend": "Polecamy",
+  "validationErrorMessages": {
+    "invalid": {
+      "email": "Podany email jest nieprawidłowy",
+      "phone": "Nieprawidłowy format telefonu"
+    },
+    "required": "Wymagane*",
+    "minValue": {
+      "content": "Treść musi zawierać przynajmniej 3 znaki",
+      "name": "Imię musi składać się przynajmniej z 2 znaków",
+      "timeFrom": "Czas od nie może być mniejsze od czasu do"
+    },
+    "maxValue": {
+      "content": "Treść nie może być większa od 250 znaków"
+    }
+  },
+  "navigation": {
+    "dashboard": "Strona głowna",
+    "menu": "Menu",
+    "bookTable": "Zarezerwuj stolik",
+    "aboutUs": "O nas",
+    "contact": "Kontakt"
+  }
+}

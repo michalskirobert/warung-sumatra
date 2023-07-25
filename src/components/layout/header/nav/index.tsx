@@ -1,12 +1,8 @@
-import { AiOutlineClose } from "react-icons/ai";
-
 import Logo from "@assets/images/utils/header/white_logo.png";
 import { createNav } from "./utils";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "@store/config";
 import { CONSTANTS } from "@utils/index";
-import { formatPhoneNumber } from "@helpers/useful-functions";
-import { PhoneNumbers } from "@utils/enums";
 import { Hamburger } from "./hamburger";
 import { BookTable } from "./book-table-button";
 import { MobileInformations } from "./mobile-information";
@@ -50,11 +46,7 @@ export const Nav = ({ isMenuOpen, toggleMenu, isLinkActive }: INavProps) => {
           ))}
         </ul>
 
-        <MobileInformations
-          {...{
-            language: language.value,
-          }}
-        />
+        <MobileInformations />
       </nav>
       <BookTable
         {...{

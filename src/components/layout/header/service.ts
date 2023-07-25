@@ -14,8 +14,10 @@ import { useEffect, useMemo, useState } from "react";
 import { createHeaderData } from "./utils";
 
 import * as C from "@utils/constants";
+import { useTranslation } from "react-i18next";
 
 export const useHeaderService = () => {
+  const [translate] = useTranslation("common");
   const { isMobile } = useDetectDevice();
   const { language } = useAppSelector(({ globalConfig }) => globalConfig);
   const { isMenuOpen, activeTopbar, topbarHide } = useAppSelector(
@@ -31,7 +33,7 @@ export const useHeaderService = () => {
   };
 
   const headerData = useMemo(() => {
-    return createHeaderData(language.value);
+    return createHeaderData(translate);
   }, [language]);
 
   const pathname = useLocation().pathname;

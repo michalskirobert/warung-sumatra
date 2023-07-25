@@ -1,38 +1,33 @@
-import { Button, Col, Form, Row } from "reactstrap";
-
 import { Formik, FormikValues } from "formik";
 
 import { toast } from "react-toastify";
 
 import { createContactForm } from "./utils";
 import { validationSchema } from "./validation-schema";
-import { Image } from "react-bootstrap";
 import { CustomContainer, CustomForm } from "@components/shared";
 import { useAppSelector } from "@store/config";
 
 import { CONSTANTS } from "@utils/index";
 import { useMemo, useState } from "react";
-import { HiArrowDown } from "react-icons/hi2";
-import { CiCalendar, CiTimer, CiUser } from "react-icons/ci";
-import { formatPhoneNumber } from "@helpers/useful-functions";
-import { PhoneNumbers } from "@utils/enums";
+import { useTranslation } from "react-i18next";
 
 export const Contact = () => {
+  const [t] = useTranslation(["contact", "common"]);
+
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { language } = useAppSelector(({ globalConfig }) => globalConfig);
+
   const form = useMemo(() => {
-    return createContactForm(language.value);
+    return createContactForm(t);
   }, [language]);
 
   const send = (values: FormikValues) => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      toast.success(CONSTANTS.TRANSLATE[language.value].sentMessage);
+      toast.success(t("common:sentMessage"));
     }, 1000);
   };
-
-  const contactForm = createContactForm(language.value);
   return (
     <Formik
       {...{
@@ -48,25 +43,21 @@ export const Contact = () => {
             <div className="container">
               <div className="form reservation-form bg-black-10">
                 <form className="form-left" onSubmit={handleSubmit}>
-                  <h2 className="headline-1 text-center">Contact us</h2>
-                  <p className="form-text text-center">
-                    We will try to contact you as fast as possible
-                  </p>
+                  <h2 className="headline-1 text-center">{t("page.header")}</h2>
+                  <p className="form-text text-center">{t("page.subtitle")}</p>
                   <CustomForm
                     {...{
                       errors,
                       values,
                       handleChange,
                       setFieldValue,
-                      form: contactForm,
+                      form,
                     }}
                   />
                   <button type="submit" className="btn btn-secondary">
-                    <span className="text text-1">
-                      {CONSTANTS.TRANSLATE[language.value].send}
-                    </span>
+                    <span className="text text-1">{t("common:send")}</span>
                     <span className="text text-2" aria-hidden="true">
-                      {CONSTANTS.TRANSLATE[language.value].send}
+                      {t("common:send")}
                     </span>
                   </button>
                 </form>

@@ -1,0 +1,43 @@
+{
+  "welcome": {
+    "title": "Witaj na {{framework}}"
+  },
+  "form": {
+    "name": "Nama",
+    "phone": "Telepon",
+    "email": "E-mail",
+    "details": "Detail",
+    "restaurant": "Restoran",
+    "date": "Tanggal",
+    "timeFrom": "Waktu dari",
+    "timeTo": "Waktunya untuk"
+  },
+  "send": "Mengirim",
+  "address": "Osiedle Bolesława Chrobrego 10, 60-681 Poznań",
+  "restaurantOpenHours": "Senin-Sabtu: 12:00 - 22:00 | Minggu: 12:00 - 20:00",
+  "findUs": "Temukan kami",
+  "weRecommend": "Kami merekomendasikan",
+  "sentMessage": "Pesan telah terkirim",
+  "validationErrorMessages": {
+    "invalid": {
+      "email": "Email salah",
+      "phone": "Format telepon salah"
+    },
+    "required": "Diperlukan*",
+    "minValue": {
+      "content": "Konten harus lebih dari 3 karakter",
+      "name": "Nama membutuhkan lebih dari 1 karakter",
+      "timeFrom": "Waktu dari tidak boleh lebih rendah dari waktu ke"
+    },
+    "maxValue": {
+      "content": "Konten tidak boleh lebih dari 250 karakter"
+    }
+  },
+  "navigation": {
+    "dashboard": "Beranda",
+    "menu": "Menu",
+    "bookTable": "Memesan meja",
+    "aboutUs": "Tentang kami",
+    "contact": "Kontak"
+  }
+}

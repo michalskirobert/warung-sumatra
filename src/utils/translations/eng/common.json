@@ -1,0 +1,43 @@
+{
+  "welcome": {
+    "title": "Welcome to {{framework}}"
+  },
+  "form": {
+    "name": "Name",
+    "phone": "Phone",
+    "email": "E-mail",
+    "details": "Details",
+    "restaurant": "Restaurant",
+    "date": "Date",
+    "timeFrom": "Time from",
+    "timeTo": "Time to"
+  },
+  "send": "Send",
+  "address": "Osiedle Bolesława Chrobrego 10 street, 60-681 Poznań",
+  "restaurantOpenHours": "Mon-Sat: 12pm - 10pm | Sun: 12pm - 8pm",
+  "findUs": "Find us",
+  "weRecommend": "We recommend",
+  "sentMessage": "Message has been sent",
+  "validationErrorMessages": {
+    "invalid": {
+      "email": "E-mail is incorrect",
+      "phone": "Incorrect phone format"
+    },
+    "required": "Required*",
+    "minValue": {
+      "content": "Content must be more than 3 characters",
+      "name": "Name needs more than 1 character",
+      "timeFrom": "Time from cannot be lower than time to"
+    },
+    "maxValue": {
+      "content": "Content cannot be more than 250 characters"
+    }
+  },
+  "navigation": {
+    "dashboard": "Home",
+    "menu": "Menu",
+    "bookTable": "Book a table",
+    "aboutUs": "About us",
+    "contact": "Kontak"
+  }
+}

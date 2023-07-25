@@ -1,9 +1,10 @@
 import { NCommonTypes, NGlobalConfig } from "@namespace/index";
 
-import { MASK_TYPE_MOBILE_PHONE, TRANSLATE } from "@utils/constants";
+import { MASK_TYPE_MOBILE_PHONE } from "@utils/constants";
+import { TFunction } from "i18next";
 
 export const createContactForm = (
-  language: NGlobalConfig.TLangCode
+  translate: TFunction<["contact", "common"], undefined>
 ): NCommonTypes.TForm[] => [
   {
     id: crypto.randomUUID(),
@@ -12,14 +13,14 @@ export const createContactForm = (
     subItems: [
       {
         id: "name",
-        label: TRANSLATE[language].name,
+        label: translate("common:form.name"),
         type: "text",
         col: 4,
         colType: "md",
         isRequired: true,
       },
       {
-        label: TRANSLATE[language].phone,
+        label: translate("common:form.phone"),
         type: "mask",
         mask: MASK_TYPE_MOBILE_PHONE,
         maskChar: null,
@@ -32,12 +33,12 @@ export const createContactForm = (
         id: "email",
         col: 4,
         colType: "md",
-        label: TRANSLATE[language].email,
+        label: translate("common:form.email"),
         type: "email",
         isRequired: true,
       },
       {
-        label: TRANSLATE[language].details,
+        label: translate("common:form.details"),
         type: "textarea",
         col: 12,
         colType: "md",

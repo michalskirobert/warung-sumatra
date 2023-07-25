@@ -6,6 +6,7 @@ import { PhoneNumbers } from "@utils/enums";
 import { formatPhoneNumber } from "@helpers/useful-functions";
 import { CONSTANTS } from "@utils/index";
 import { HiLanguage } from "react-icons/hi2";
+import { TFunction } from "i18next";
 
 export interface IMenuPage {
   label: string;
@@ -16,18 +17,18 @@ export interface IMenuPage {
 }
 
 export const createHeaderData = (
-  language: NGlobalConfig.TLangCode
+  translate: TFunction<"common", undefined>
 ): NLayout.THeaderData => ({
   topbar: [
     {
       type: "address",
       icon: <CiLocationOn />,
-      label: CONSTANTS.TRANSLATE[language].address,
+      label: translate("address"),
     },
     {
       type: "div",
       icon: <CiClock1 />,
-      label: CONSTANTS.TRANSLATE[language].restaurantOpenHours,
+      label: translate("restaurantOpenHours"),
     },
     {
       type: "link",
@@ -45,19 +46,19 @@ export const createHeaderData = (
   ],
   nav: [
     {
-      label: CONSTANTS.DASHBOARD_LABEL[language],
+      label: translate("navigation.dashboard"),
       path: CONSTANTS.DASHBOARD_ROUTE,
     },
     {
-      label: CONSTANTS.MENU_LABEL[language],
+      label: translate("navigation.menu"),
       path: CONSTANTS.MENU_ROUTE,
     },
     {
-      label: CONSTANTS.ABOUT_LABEL[language],
+      label: translate("navigation.aboutUs"),
       path: CONSTANTS.ABOUT_ROUTE,
     },
     {
-      label: CONSTANTS.CONTACT_LABEL[language],
+      label: translate("navigation.contact"),
       path: CONSTANTS.CONTACT_ROUTE,
     },
   ],

@@ -83,59 +83,6 @@ export const WEBSITE_BASE_COLOURS = {
   SECONDARY_COLOUR,
 };
 
-//Translations
-export const TRANSLATE = {
-  eng: {
-    name: "Name",
-    phone: "Phone",
-    email: "E-mail",
-    details: "Details",
-    restaurant: "Restaurant",
-    date: "Date",
-    timeFrom: "Time from",
-    timeTo: "Time to",
-    send: "Send",
-    address: "Osiedle Bolesława Chrobrego 10 street, 60-681 Poznań",
-    restaurantOpenHours: "Mon-Sat: 12pm - 10pm | Sun: 12pm - 8pm",
-    findUs: "Find us",
-    weRecommend: "We recommend",
-    sentMessage: "Message has been sent",
-  },
-  bh: {
-    name: "Nama",
-    phone: "Telepon",
-    email: "E-mail",
-    details: "Detail",
-    restaurant: "Restoran",
-    date: "Tanggal",
-    timeFrom: "Waktu dari",
-    timeTo: "Waktunya untuk",
-    send: "Mengirim",
-    address: "Osiedle Bolesława Chrobrego 10, 60-681 Poznań",
-    restaurantOpenHours: "Senin-Sabtu: 12:00 - 22:00 | Minggu: 12:00 - 20:00",
-    findUs: "Temukan kami",
-    weRecommend: "Kami merekomendasikan",
-    sentMessage: "Pesan telah terkirim",
-  },
-  pl: {
-    name: "Imię",
-    phone: "Telefon",
-    email: "E-mail",
-    details: "Szczegóły",
-    restaurant: "Restauracja",
-    date: "Data",
-    timeFrom: "Czas od",
-    timeTo: "Czas do",
-    send: "Wyślij",
-    address: "Ul. Osiedle Bolesława Chrobrego 10 street, 60-681 Poznań",
-    open: "Otwarte",
-    restaurantOpenHours: "pn-sb: 12:00 - 22:00 | ndz: 12:00 - 20:00",
-    findUs: "Znajdź nas",
-    weRecommend: "Polecamy",
-    sentMessage: "Wiadomość została pomyślnie wysłana",
-  },
-};
-
 export const VALIDATIONS = {
   eng: {
     required: "Required*",
