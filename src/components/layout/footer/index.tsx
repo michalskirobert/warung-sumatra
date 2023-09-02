@@ -3,9 +3,22 @@ import { useAppSelector } from "@store/config";
 import Logo from "@assets/images/utils/header/white_logo.png";
 import { formatPhoneNumber } from "@helpers/useful-functions";
 import { PhoneNumbers } from "@utils/enums";
+import { CONSTANTS } from "@utils/index";
+import { SOCIAL_MEDIA_HELPER, createFooterData } from "./utils";
+import { useTranslation } from "react-i18next";
+import { createNav } from "../header/nav/utils";
+import { Link, useLocation } from "react-router-dom";
 
 export const Footer = () => {
-  const { language } = useAppSelector(({ globalConfig }) => globalConfig);
+  const [translate] = useTranslation("common");
+
+  const { version } = useAppSelector(({ init }) => init);
+
+  const location = useLocation();
+
+  const isLinkActive = (path: string) =>
+    path === location.pathname ? "active" : "";
+
   return (
     <footer
       className="footer section has-bg-image text-center"
@@ -22,29 +35,32 @@ export const Footer = () => {
                 width={160}
                 height={50}
                 loading="lazy"
-                alt="grilli home"
+                alt={CONSTANTS.RESTAURANT_NAME}
               />
             </a>
-            <address className="body-4">Poznań, xxx-xx</address>
-            <a href="mailto:booking@grilli.com" className="body-4 contact-link">
-              rezerwacja@warungsumatra.pl
-            </a>
-            <a href="tel:+88123123456" className="body-4 contact-link">
-              Booking Request : {formatPhoneNumber(PhoneNumbers.Contact)}
-            </a>
-            <p className="body-4">Open : 09:00 am - 01:00 pm</p>
-            <div className="wrapper">
+            {createFooterData(translate).map(({ content, type, url }) =>
+              type === "text" ? (
+                <p className="body-4" key={content}>
+                  {content}
+                </p>
+              ) : (
+                <a key={content} href={url} className="body-4 contact-link">
+                  {content}
+                </a>
+              )
+            )}
+            {/* <div className="wrapper">
               <div className="separator" />
               <div className="separator" />
               <div className="separator" />
-            </div>
-            <p className="title-1">Get News &amp; Offers</p>
+            </div> */}
+            {/* <p className="title-1">Get News &amp; Offers</p>
             <p className="label-1">
               Subscribe us &amp; Get <span className="span">25% Off.</span>
             </p>
             <form className="input-wrapper">
               <div className="icon-wrapper">
-                {/* <ion-icon name="mail-outline" aria-hidden="true" /> */}
+                <ion-icon name="mail-outline" aria-hidden="true" />
                 <input
                   type="email"
                   name="email_address"
@@ -59,61 +75,37 @@ export const Footer = () => {
                   Subscribe
                 </span>
               </button>
-            </form>
+            </form> */}
+            <div>Version {version}</div>
           </div>
           <ul className="footer-list">
-            <li>
-              <a href="#" className="label-2 footer-link hover-underline">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" className="label-2 footer-link hover-underline">
-                Menus
-              </a>
-            </li>
-            <li>
-              <a href="#" className="label-2 footer-link hover-underline">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="#" className="label-2 footer-link hover-underline">
-                Our Chefs
-              </a>
-            </li>
-            <li>
-              <a href="#" className="label-2 footer-link hover-underline">
-                Contact
-              </a>
-            </li>
+            {createNav(translate).map(({ label, path }) => (
+              <li key={path}>
+                <Link
+                  {...{
+                    className: `label-2 footer-link hover-underline ${isLinkActive(
+                      path
+                    )}`,
+                    to: path,
+                  }}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
           <ul className="footer-list">
-            <li>
-              <a href="#" className="label-2 footer-link hover-underline">
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a href="#" className="label-2 footer-link hover-underline">
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a href="#" className="label-2 footer-link hover-underline">
-                Twitter
-              </a>
-            </li>
-            <li>
-              <a href="#" className="label-2 footer-link hover-underline">
-                Youtube
-              </a>
-            </li>
-            <li>
-              <a href="#" className="label-2 footer-link hover-underline">
-                Google Map
-              </a>
-            </li>
+            {SOCIAL_MEDIA_HELPER.map(({ content, url }) => (
+              <li key={url}>
+                <a
+                  href={url}
+                  className="label-2 footer-link hover-underline"
+                  target="_blank"
+                >
+                  {content}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

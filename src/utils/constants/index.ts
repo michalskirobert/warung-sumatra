@@ -112,3 +112,8 @@ export const VALIDATIONS = {
     phone: "Format telepon salah",
   },
 };
+
+export const RESTAURANT_SOCIAL_MEDIA_URLS = {
+  INSTAGRAM: "https://www.instagram.com/warung_sumatra_from_2014_/",
+  FACEBOOK: "WarungSumatraPoznan",
+};

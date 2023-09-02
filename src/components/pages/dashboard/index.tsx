@@ -27,9 +27,11 @@ import { HeroSlider } from "./hero";
 import { RECOMMENDED_FOODS } from "./utils";
 import { useAppSelector } from "@store/config";
 import { CONSTANTS } from "@utils/index";
+import { useTranslation } from "react-i18next";
 
 export const Dashboard = () => {
   const { language } = useAppSelector(({ globalConfig }) => globalConfig);
+  const [translate] = useTranslation("dashboard");
   return (
     <main>
       <article>
@@ -39,15 +41,11 @@ export const Dashboard = () => {
           aria-label="service"
         >
           <div className="container">
-            <p className="section-subtitle label-2">
-              Flavors of real Indonesian cousine
-            </p>
-            <h2 className="headline-1 section-title">Our recommendation</h2>
-            <p className="section-text">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry lorem Ipsum has been the industrys standard dummy text
-              ever.
-            </p>
+            <p className="section-subtitle label-2">{translate("subtitle")}</p>
+            <h2 className="headline-1 section-title">
+              {translate("sectionTitle")}
+            </h2>
+            <p className="section-text">{translate("aboutRecommendation")}</p>
 
             <ul className="grid-list">
               {RECOMMENDED_FOODS[language.value].map(
@@ -135,12 +133,14 @@ export const Dashboard = () => {
                 alt="badge"
                 className="abs-img"
               />
-              <p className="section-subtitle label-2">Special Dish</p>
-              <h2 className="headline-1 section-title">Randang</h2>
+              <p className="section-subtitle label-2">
+                {translate("specialOffer")}
+              </p>
+              <h2 className="headline-1 section-title">
+                {translate("specialOfferFood")}
+              </h2>
               <p className="section-text">
-                Lorem Ipsum is simply dummy text of the printingand typesetting
-                industry lorem Ipsum has been the industrys standard dummy text
-                ever since the when an unknown printer took a galley of type.
+                {translate("specialOfferFoodDetails")}
               </p>
               <div className="wrapper">
                 <del className="del body-3">$40.00</del>

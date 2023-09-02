@@ -7,6 +7,7 @@ import { Hamburger } from "./hamburger";
 import { BookTable } from "./book-table-button";
 import { MobileInformations } from "./mobile-information";
 import { CloseMenuButton } from "./close-menu";
+import { useTranslation } from "react-i18next";
 
 interface INavProps {
   isMenuOpen: boolean;
@@ -15,7 +16,10 @@ interface INavProps {
 }
 
 export const Nav = ({ isMenuOpen, toggleMenu, isLinkActive }: INavProps) => {
+  const [translate] = useTranslation("common");
+
   const { language } = useAppSelector(({ globalConfig }) => globalConfig);
+
   return (
     <>
       <a href="#" className="logo">
@@ -29,7 +33,7 @@ export const Nav = ({ isMenuOpen, toggleMenu, isLinkActive }: INavProps) => {
         </a>
 
         <ul className="navbar-list">
-          {createNav(language.value).map(({ label, path }) => (
+          {createNav(translate).map(({ label, path }) => (
             <li key={path} className="navbar-item">
               <Link
                 {...{

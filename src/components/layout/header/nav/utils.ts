@@ -1,24 +1,24 @@
-import { NGlobalConfig } from "@namespace/global-config";
 import { NLayout } from "@namespace/layout";
 import { CONSTANTS } from "@utils/index";
+import { TFunction } from "i18next";
 
 export const createNav = (
-  language: NGlobalConfig.TLangCode
+  translate: TFunction<"common", undefined>
 ): NLayout.TNav[] => [
   {
-    label: CONSTANTS.DASHBOARD_LABEL[language],
+    label: translate("navigation.dashboard"),
     path: CONSTANTS.DASHBOARD_ROUTE,
   },
   {
-    label: CONSTANTS.MENU_LABEL[language],
+    label: translate("navigation.menu"),
     path: CONSTANTS.MENU_ROUTE,
   },
   {
-    label: CONSTANTS.ABOUT_LABEL[language],
+    label: translate("navigation.aboutUs"),
     path: CONSTANTS.ABOUT_ROUTE,
   },
   {
-    label: CONSTANTS.CONTACT_LABEL[language],
+    label: translate("navigation.contact"),
     path: CONSTANTS.CONTACT_ROUTE,
   },
 ];
