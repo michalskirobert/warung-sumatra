@@ -13,6 +13,8 @@ export default function About() {
             src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=2070&q=80"
             alt="Indonesian kitchen and spices"
             className="w-full h-96 object-cover rounded-2xl shadow-2xl"
+            width={2070}
+            height={1380}
           />
           <div className="image-overlay absolute inset-0 rounded-2xl"></div>
         </div>

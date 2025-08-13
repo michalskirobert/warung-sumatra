@@ -12,7 +12,13 @@ export default function Card({ title, description, image }: Props) {
   return (
     <div className="fade-in bg-white rounded-2xl overflow-hidden shadow-2xl card-hover">
       <div className="relative h-64">
-        <Image src={image} alt={title} className="w-full h-full object-cover" />
+        <Image
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+          height={256}
+          width={256}
+        />
         <div className="image-overlay absolute inset-0" />
       </div>
       <div className="p-6">

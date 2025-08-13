@@ -17,6 +17,8 @@ export default function Gallery() {
               src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80"
               alt="Restaurant main dining area"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              width={1000}
+              height={800}
             />
             <div className="image-overlay absolute inset-0" />
             <div className="absolute bottom-4 left-4 text-white">
@@ -31,6 +33,8 @@ export default function Gallery() {
               src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&w=1000&q=80"
               alt="Restaurant bar area"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              width={1000}
+              height={800}
             />
             <div className="image-overlay absolute inset-0" />
             <div className="absolute bottom-4 left-4 text-white">
@@ -45,6 +49,8 @@ export default function Gallery() {
               src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?auto=format&fit=crop&w=1000&q=80"
               alt="Restaurant private dining"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              width={1000}
+              height={800}
             />
             <div className="image-overlay absolute inset-0" />
             <div className="absolute bottom-4 left-4 text-white">
