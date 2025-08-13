@@ -52,9 +52,9 @@ export default function Page() {
     <>
       <Navbar locale={locale} onChangeLanguage={onChangeLanguage} />
       <main>
-        <Hero t={t} />
+        <Hero />
         <Section id="about" title={t("about-title")}>
-          <About t={t} />
+          <About />
         </Section>
         <Section
           id="food"
@@ -82,15 +82,15 @@ export default function Page() {
         </Section>
 
         <Section id="menu" title={t("menu-title")}>
-          <Gallery t={t} />
-          <MenuLists t={t} />
+          <Gallery />
+          <MenuLists />
         </Section>
 
         <Section id="contact" title={t("contact-title")}>
-          <Contact t={t} />
+          <Contact />
         </Section>
       </main>
-      <Footer t={t} />
+      <Footer />
     </>
   );
 }

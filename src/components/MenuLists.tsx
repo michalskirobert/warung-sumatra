@@ -4,7 +4,6 @@ import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 
 type MenuItem = { title: string; price: string; desc: string };
-type Props = { t?: ReturnType<typeof useTranslations> };
 
 function MenuBlock({ title, items }: { title: string; items: MenuItem[] }) {
   return (
@@ -38,51 +37,51 @@ function MenuBlock({ title, items }: { title: string; items: MenuItem[] }) {
   );
 }
 
-export default function MenuLists({ t }: Props) {
-  const $t = t ?? useTranslations();
+export default function MenuLists() {
+  const t = useTranslations();
 
   const main: MenuItem[] = [
     {
-      title: $t("menu-nasi-ayam"),
+      title: t("menu-nasi-ayam"),
       price: "28 zł",
-      desc: $t("menu-nasi-ayam-desc"),
+      desc: t("menu-nasi-ayam-desc"),
     },
     {
-      title: $t("menu-rendang"),
+      title: t("menu-rendang"),
       price: "35 zł",
-      desc: $t("menu-rendang-desc"),
+      desc: t("menu-rendang-desc"),
     },
     {
-      title: $t("menu-ayam-bakar"),
+      title: t("menu-ayam-bakar"),
       price: "32 zł",
-      desc: $t("menu-ayam-bakar-desc"),
+      desc: t("menu-ayam-bakar-desc"),
     },
     {
-      title: $t("menu-mie-goreng"),
+      title: t("menu-mie-goreng"),
       price: "26 zł",
-      desc: $t("menu-mie-goreng-desc"),
+      desc: t("menu-mie-goreng-desc"),
     },
   ];
 
   const appetizers: MenuItem[] = [
     {
-      title: $t("menu-gado-gado"),
+      title: t("menu-gado-gado"),
       price: "22 zł",
-      desc: $t("menu-gado-gado-desc"),
+      desc: t("menu-gado-gado-desc"),
     },
-    { title: $t("menu-satay"), price: "24 zł", desc: $t("menu-satay-desc") },
+    { title: t("menu-satay"), price: "24 zł", desc: t("menu-satay-desc") },
   ];
 
   const desserts: MenuItem[] = [
     {
-      title: $t("menu-es-cendol"),
+      title: t("menu-es-cendol"),
       price: "18 zł",
-      desc: $t("menu-es-cendol-desc"),
+      desc: t("menu-es-cendol-desc"),
     },
     {
-      title: $t("menu-pisang-goreng"),
+      title: t("menu-pisang-goreng"),
       price: "16 zł",
-      desc: $t("menu-pisang-goreng-desc"),
+      desc: t("menu-pisang-goreng-desc"),
     },
   ];
 
@@ -98,12 +97,12 @@ export default function MenuLists({ t }: Props) {
   return (
     <div className="grid lg:grid-cols-2 gap-12">
       <div className="slide-in-left">
-        <MenuBlock title={$t("menu-main-title")} items={main} />
+        <MenuBlock title={t("menu-main-title")} items={main} />
       </div>
 
       <div className="slide-in-right space-y-8">
-        <MenuBlock title={$t("menu-appetizers-title")} items={appetizers} />
-        <MenuBlock title={$t("menu-desserts-title")} items={desserts} />
+        <MenuBlock title={t("menu-appetizers-title")} items={appetizers} />
+        <MenuBlock title={t("menu-desserts-title")} items={desserts} />
       </div>
     </div>
   );

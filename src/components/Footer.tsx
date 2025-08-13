@@ -1,10 +1,9 @@
 "use client";
 
-import type { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
-type Props = { t: ReturnType<typeof useTranslations> };
-
-export default function Footer({ t }: Props) {
+export default function Footer() {
+  const t = useTranslations();
   return (
     <footer className="bg-stone-900 text-stone-300 py-12">
       <div className="container mx-auto px-4 text-center">
