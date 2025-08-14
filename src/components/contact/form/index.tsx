@@ -85,7 +85,7 @@ export const ContactForm = () => {
             content: t("form-submit-btn"),
             type: "submit",
             className: "w-full",
-            isLoading: true,
+            isLoading,
           }}
         />
       </form>

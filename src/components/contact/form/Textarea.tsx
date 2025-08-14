@@ -9,7 +9,10 @@ interface Props extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
 }
 
 export const Textarea = ({ control, name, label, ...props }: Props) => {
-  const { field, fieldState } = useController({ name, control });
+  const {
+    field,
+    fieldState: { invalid, error },
+  } = useController({ name, control });
 
   return (
     <div>
@@ -17,9 +20,13 @@ export const Textarea = ({ control, name, label, ...props }: Props) => {
       <textarea
         {...field}
         {...props}
-        className={`w-full p-4 border border-stone-300 rounded-lg focus:outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-200 transition-all ${props.className}`}
+        className={`w-full p-4 border ${
+          invalid ? "border-red-800" : "border-stone-300"
+        } rounded-lg focus:outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-200 transition-all ${
+          props.className
+        }`}
       />
-      <Feedback message={fieldState.error?.message} />
+      <Feedback message={error?.message} />
     </div>
   );
 };
