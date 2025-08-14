@@ -1,30 +1,57 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
+
+import { Link } from "@i18n/navigation";
+
 import clsx from "clsx";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 
 import logo from "@public/logo/white_logo.png";
 
-type Props = {
-  locale: Locale;
-  onChangeLanguage: (locale: string) => void;
-};
+import { usePathname, useRouter } from "next/navigation";
+import { useRevealOnScroll } from "@hooks/useRevealOnScroll";
+import {
+  getPreferredBrowserLocale,
+  getStoredLocale,
+  storeLocale,
+} from "@src/utils/language";
 
-export default function Navbar({ locale, onChangeLanguage }: Props) {
+export default function Navbar() {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
+
   const t = useTranslations();
+  const locale = useLocale() as Locale;
+  const router = useRouter();
+  const pathname = usePathname();
+
+  useRevealOnScroll(".fade-in, .slide-in-left, .slide-in-right");
 
   useEffect(() => {
+    const stored = getStoredLocale();
+    if (!stored) {
+      const browser = getPreferredBrowserLocale();
+      storeLocale(browser || locale);
+    }
+  }, [locale]);
+
+  const onChangeLanguage = (newLocale: string) => {
+    if (newLocale === locale) return;
+    storeLocale(newLocale as Locale);
+    router.replace(`/${newLocale}${pathname.replace(/^\/(pl|en|id)/, "")}`);
+  };
+
+  useEffect(() => {
+    if (mobileOpen) return;
+
     const onScroll = (): void => setScrolled(window.scrollY > 100);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [mobileOpen]);
 
   const navClass = clsx(
     "fixed top-0 w-full z-40 transition-all duration-300 py-4",
@@ -44,13 +71,7 @@ export default function Navbar({ locale, onChangeLanguage }: Props) {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex gap-2 items-center">
-            <Image
-              src={logo}
-              height={50}
-              width={50}
-              alt="Warung Sumatra"
-              objectFit="contain"
-            />
+            <Image src={logo} height={50} width={50} alt="Warung Sumatra" />
             <span className="text-2xl font-heading font-bold text-amber-100">
               Warung Sumatra
             </span>
@@ -61,7 +82,6 @@ export default function Navbar({ locale, onChangeLanguage }: Props) {
               <Link
                 key={l.href}
                 href={l.href}
-                locale={locale}
                 className="text-amber-100 hover:text-amber-300 transition-colors font-medium"
               >
                 {l.label}

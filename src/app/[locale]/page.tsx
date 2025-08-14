@@ -1,56 +1,27 @@
-"use client";
-
-import { useEffect } from "react";
-import { useLocale, useTranslations } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
-import {
-  getPreferredBrowserLocale,
-  getStoredLocale,
-  storeLocale,
-} from "@utils/language";
-import { useRevealOnScroll } from "@hooks/useRevealOnScroll";
-
 //Images
 import food1 from "@public/foods/jedzenie.jpg";
 import food2 from "@public/foods/jedzenie2.jpg";
 import food3 from "@public/foods/jedzenie3.jpg";
 
 //Components
-import Navbar from "@components/Navbar";
 import Hero from "@components/Hero";
 import Section from "@components/Section";
 import Card from "@components/Card";
 import About from "@components/About";
 import Gallery from "@components/Gallery";
 import MenuLists from "@components/MenuLists";
-import Contact from "@components/Contact";
-import Footer from "@components/Footer";
+import Contact from "@src/components/contact";
+import Footer from "@src/components/layout/Footer";
 
-export default function Page() {
-  const t = useTranslations();
-  const locale = useLocale() as Locale;
-  const router = useRouter();
-  const pathname = usePathname();
+import { getTranslations } from "next-intl/server";
+import NavWrapper from "@src/components/layout/nav/Wrapper";
 
-  useRevealOnScroll(".fade-in, .slide-in-left, .slide-in-right");
-
-  useEffect(() => {
-    const stored = getStoredLocale();
-    if (!stored) {
-      const browser = getPreferredBrowserLocale();
-      storeLocale(browser || locale);
-    }
-  }, [locale]);
-
-  const onChangeLanguage = (newLocale: string) => {
-    if (newLocale === locale) return;
-    storeLocale(newLocale as Locale);
-    router.replace(`/${newLocale}${pathname.replace(/^\/(pl|en|id)/, "")}`);
-  };
+export default async function Page() {
+  const t = await getTranslations();
 
   return (
     <>
-      <Navbar locale={locale} onChangeLanguage={onChangeLanguage} />
+      <NavWrapper />
       <main>
         <Hero />
         <Section id="about" title={t("about-title")}>

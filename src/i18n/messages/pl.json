@@ -64,7 +64,10 @@
   "form-message-label": "Wiadomość",
   "form-message-placeholder": "Twoja wiadomość...",
   "form-submit-btn": "Wyślij Wiadomość",
+  "form-required-field": "To pole jest wymagane",
+  "form-invalid-email": "Nieprawidłowy adres e-mail",
   "form-success": "Demo: Formularz został wysłany! W rzeczywistej wersji wiadomość zostałaby przesłana do restauracji.",
   "footer-tagline": "Autentyczne smaki Indonezji w eleganckim wydaniu",
-  "footer-copyright": "Wszystkie prawa zastrzeżone."
+  "footer-copyright": "Wszystkie prawa zastrzeżone.",
+  "api-status-error": "Wystąpił błąd."
 }

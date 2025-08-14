@@ -65,6 +65,9 @@
   "form-message-placeholder": "Pesan Anda...",
   "form-submit-btn": "Kirim Pesan",
   "form-success": "Demo: Formulir terkirim! Dalam versi nyata pesan akan dikirim ke restoran.",
+  "form-required-field": "Field ini wajib diisi",
+  "form-invalid-email": "Alamat email tidak valid",
   "footer-tagline": "Cita rasa autentik Indonesia dalam penyajian elegan",
-  "footer-copyright": "Semua hak dilindungi."
+  "footer-copyright": "Semua hak dilindungi.",
+  "api-status-error": "Terjadi kesalahan."
 }
