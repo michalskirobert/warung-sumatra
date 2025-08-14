@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendEmail } from "../send-email";
 import { translatedMessages } from "@app/api/translations";
+import { ContactFormData } from "@src/components/contact/types";
 
 export const POST = async (
   req: NextRequest,
   { params }: { params: Promise<{ locale: string }> }
 ) => {
-  const { name, email, message } = await req.json();
+  const { name, email, message } = (await req.json()) as ContactFormData;
 
   const { locale: rawLocale } = await params;
   const locale = rawLocale as Locale;

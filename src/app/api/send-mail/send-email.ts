@@ -1,8 +1,9 @@
 import nodemailer from "nodemailer";
 import { readHtmlTemplate, renderTemplate } from "./helpers";
 import { translatedMessages } from "../translations";
+import { ContactFormData } from "@src/components/contact/types";
 
-export const sendEmail = async (body: any, locale: Locale) => {
+export const sendEmail = async (body: ContactFormData, locale: Locale) => {
   try {
     const { email, message, name } = body;
 
@@ -19,7 +20,7 @@ export const sendEmail = async (body: any, locale: Locale) => {
       name,
       message,
       email,
-      thankYou: translatedMessages.email[locale]?.thankYou
+      thankYou: translatedMessages.email[locale]?.thankYou,
       forYourMessage: translatedMessages.email[locale]?.forYourMessage,
       thisWhatIReceived: translatedMessages.email[locale]?.thisWhatIReceived,
       bestRegards: translatedMessages.email[locale]?.bestRegards,
@@ -57,7 +58,6 @@ export const sendEmail = async (body: any, locale: Locale) => {
 
     await transporter.sendMail(customerMailOptions);
     await transporter.sendMail(receiverMailOptions);
-
 
     return translatedMessages.email[locale]?.emailSent;
   } catch (error) {
