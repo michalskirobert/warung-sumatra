@@ -69,5 +69,6 @@
   "form-invalid-email": "Invalid email address",
   "footer-tagline": "Authentic Indonesian flavors in elegant presentation",
   "footer-copyright": "All rights reserved.",
-  "api-status-error": "An error occurred."
+  "api-status-error": "An error occurred.",
+  "api-status-success": "Operation successful."
 }

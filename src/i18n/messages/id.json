@@ -69,5 +69,6 @@
   "form-invalid-email": "Alamat email tidak valid",
   "footer-tagline": "Cita rasa autentik Indonesia dalam penyajian elegan",
   "footer-copyright": "Semua hak dilindungi.",
-  "api-status-error": "Terjadi kesalahan."
+  "api-status-error": "Terjadi kesalahan.",
+  "api-status-success": "Operasi berhasil."
 }

@@ -24,7 +24,7 @@ export const Textarea = ({ control, name, label, ...props }: Props) => {
           invalid ? "border-red-800" : "border-stone-300"
         } rounded-lg focus:outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-200 transition-all ${
           props.className
-        }`}
+        } ${props.disabled ? "opacity-50 cursor-not-allowed" : ""}`}
       />
       <Feedback message={error?.message} />
     </div>

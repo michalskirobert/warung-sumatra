@@ -1,3 +1,5 @@
-export const INSTANCE_URL = {
-  sendMail: "/api/send-mail",
+export const generateInstanceUrl = (locale: Locale) => {
+  return {
+    sendMail: `/api/send-mail/${locale}`,
+  };
 };

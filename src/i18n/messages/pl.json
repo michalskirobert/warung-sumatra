@@ -69,5 +69,6 @@
   "form-success": "Demo: Formularz został wysłany! W rzeczywistej wersji wiadomość zostałaby przesłana do restauracji.",
   "footer-tagline": "Autentyczne smaki Indonezji w eleganckim wydaniu",
   "footer-copyright": "Wszystkie prawa zastrzeżone.",
-  "api-status-error": "Wystąpił błąd."
+  "api-status-error": "Wystąpił błąd.",
+  "api-status-success": "Operacja zakończona sukcesem."
 }

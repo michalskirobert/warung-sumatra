@@ -1,18 +1,20 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Notification } from "../Notification";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { ContactFormData, NotificationProps } from "../types";
 import axios from "axios";
-import { INSTANCE_URL } from "@app/api/utils";
 import { Input } from "./Input";
 import { Textarea } from "./Textarea";
 import { CustomButton } from "@src/components/shared/custom-button/Button";
 import useGenerateValidationSchema from "./schema";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { generateInstanceUrl } from "@app/api/utils";
 
 export const ContactForm = () => {
   const validationSchema = useGenerateValidationSchema();
+
+  const locale = useLocale();
 
   const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState<NotificationProps>({
@@ -35,7 +37,10 @@ export const ContactForm = () => {
   const onSubmit = async (data: ContactFormData) => {
     try {
       setIsLoading(true);
-      const response = await axios.post<string>(INSTANCE_URL.sendMail, data);
+      const response = await axios.post<string>(
+        generateInstanceUrl(locale as Locale).sendMail,
+        data
+      );
       setNotification({ status: "success", message: response.data });
 
       reset(undefined);
@@ -58,6 +63,7 @@ export const ContactForm = () => {
             label: t("form-name-label"),
             placeholder: t("form-name-placeholder"),
             required: true,
+            disabled: isLoading,
           }}
         />
         <Input
@@ -68,6 +74,7 @@ export const ContactForm = () => {
             label: t("form-email-label"),
             placeholder: t("form-email-placeholder"),
             required: true,
+            disabled: isLoading,
           }}
         />
         <Textarea
@@ -77,6 +84,7 @@ export const ContactForm = () => {
             label: t("form-message-label"),
             placeholder: t("form-message-placeholder"),
             required: true,
+            disabled: isLoading,
           }}
         />
         <CustomButton
