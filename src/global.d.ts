@@ -1,5 +1,7 @@
 import pl from "@i18n/messages/pl.json";
 
+declare type TranslationKey = keyof typeof pl;
+
 declare interface NavItem {
   href: `/${Locale}` | `/${Locale}/#${string}` | `#${string}`;
   labelKey: TranslationKey;
@@ -11,6 +13,5 @@ declare global {
 }
 
 declare module "next-intl" {
-  interface IntlMessages extends Messages {}
-  function useTranslations(): (key: keyof typeof pl) => string;
+  function useTranslations(): (key: keyof IntlMessages) => string;
 }

@@ -2,6 +2,7 @@
 
 import { NURBYTE_WEBPAGE } from "@utils/constants";
 import { useTranslations } from "next-intl";
+
 import Link from "next/link";
 
 export default function Footer() {
