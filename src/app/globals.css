@@ -71,7 +71,6 @@ div {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
-  height: 100vh;
 }
 .navbar-scroll {
   backdrop-filter: blur(15px);

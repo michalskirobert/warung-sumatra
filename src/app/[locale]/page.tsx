@@ -9,7 +9,7 @@ import Section from "@components/Section";
 import Card from "@components/Card";
 import About from "@components/About";
 import Gallery from "@components/Gallery";
-import MenuLists from "@components/MenuLists";
+import MenuLists from "@src/components/menu";
 import Contact from "@src/components/contact";
 import Footer from "@src/components/layout/Footer";
 

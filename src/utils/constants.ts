@@ -4,3 +4,4 @@ export const RESTAURANT_ADDRESS =
 export const RESTAURANT_PHONE = "+48 699 797 030";
 export const RESTAURANT_HOURS = "Mon-Sun: 10am - 10pm";
 export const RESTAURANT_MAP_LINK = "https://maps.app.goo.gl/fc4niARmhKHZUjFe7";
+export const NURBYTE_WEBPAGE = process.env.NEXT_PUBLIC_NURBYTE_URL!;

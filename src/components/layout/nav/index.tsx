@@ -71,41 +71,42 @@ export default function Navbar() {
           if (e.target === e.currentTarget) closeMenu();
         }}
       >
-        <div className="absolute inset-0 batik-pattern bg-stone-800"></div>
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-8">
-          <button
-            aria-label="close"
-            onClick={closeMenu}
-            className="absolute top-8 right-8 text-amber-100 text-3xl"
-          >
-            <XMarkIcon className="h-8 w-8" />
-          </button>
+        <div className="absolute inset-0 batik-pattern bg-stone-800 !h-[100vh]">
+          <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-8">
+            <button
+              aria-label="close"
+              onClick={closeMenu}
+              className="absolute top-8 right-8 text-amber-100 text-3xl"
+            >
+              <XMarkIcon className="h-8 w-8" />
+            </button>
 
-          <Image
-            src={whiteLogo}
-            alt="Warung Sumatra"
-            className="mb-5"
-            height={150}
-            width={150}
-          />
+            <Image
+              src={whiteLogo}
+              alt="Warung Sumatra"
+              className="mb-5"
+              height={150}
+              width={150}
+            />
 
-          <div className="flex flex-col items-center space-y-8 text-center">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={closeMenu}
-                className="text-2xl text-amber-100 hover:text-amber-300 transition-colors font-medium"
-              >
-                {l.label}
-              </Link>
-            ))}
+            <div className="flex flex-col items-center space-y-8 text-center">
+              {links.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  onClick={closeMenu}
+                  className="text-2xl text-amber-100 hover:text-amber-300 transition-colors font-medium"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+            <Language
+              locale={locale}
+              className="mt-12"
+              onChangeLanguage={onChangeLanguage}
+            />
           </div>
-          <Language
-            locale={locale}
-            className="mt-12"
-            onChangeLanguage={onChangeLanguage}
-          />
         </div>
       </div>
     </nav>

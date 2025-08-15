@@ -1,5 +1,6 @@
 "use client";
 
+import { NURBYTE_WEBPAGE } from "@utils/constants";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
@@ -13,14 +14,17 @@ export default function Footer() {
         </div>
         <p className="mb-6 text-lg">{t("footer-tagline")}</p>
         <div className="text-sm text-stone-300">
-          © 2025{" "}
+          © 2025 Warung Sumatra. {t("footer-copyright")}
+        </div>
+        <div className="flex gap-1 text-xs justify-center mt-5">
+          {t("footer-created-by")}
           <Link
-            href="https://nurbyte.com"
-            className="text-amber-100 hover:text-amber-300 transition-colors font-medium"
+            href={NURBYTE_WEBPAGE}
+            className="font-bold text-amber-100 underline hover:text-amber-300 transition-colors"
+            target="_blank"
           >
             NurByte
-          </Link>{" "}
-          & Warung Sumatra {t("footer-copyright")}
+          </Link>
         </div>
       </div>
     </footer>
