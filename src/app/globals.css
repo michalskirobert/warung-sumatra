@@ -65,23 +65,13 @@ div {
 }
 
 .batik-pattern {
-  background-image: radial-gradient(
-      circle at 20% 20%,
-      rgba(101, 67, 33, 0.1) 2px,
-      transparent 2px
-    ),
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(139, 69, 19, 0.1) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      45deg,
-      transparent 40%,
-      rgba(101, 67, 33, 0.05) 50%,
-      transparent 60%
-    );
+  background-image: url("/batik/padang_red.png");
   background-size: 60px 60px, 40px 40px, 30px 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
 }
 .navbar-scroll {
   backdrop-filter: blur(15px);
