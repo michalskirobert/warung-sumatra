@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Warung Sumatra</title>
   </head>
-
   <body
     style="
       margin: 0;
       padding: 0;
       line-height: 1.2;
       background: #fcfcfc;
+      color: #e77000;
       color: lab(60.3514% 40.5624 87.1228);
       font-family: 'Open Sans', sans-serif;
     "
@@ -24,7 +24,8 @@
         padding: 48px 32px;
         background: #fff;
         border-radius: 8px;
-        border-top: 2px solid lab(60.3514% 40.5624 87.1228);
+        border-top: 2px solid #e77000; /* fallback */
+        border-top: 2px solid lab(60.3514% 40.5624 87.1228); /* nowoczesny */
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
           0 2px 4px -2px rgba(0, 0, 0, 0.1);
       "
@@ -32,6 +33,7 @@
       <a
         href="https://warung-sumatra.pl"
         style="
+          color: #e77000;
           color: lab(60.3514% 40.5624 87.1228);
           text-decoration: underline;
           display: block;
@@ -47,7 +49,9 @@
 
       <h1 style="color: #003566; text-align: center; font-size: 28px">
         Otrzymałaś wiadomość od
-        <strong style="color: lab(60.3514% 40.5624 87.1228)">#name</strong>
+        <strong style="color: #e77000; color: lab(60.3514% 40.5624 87.1228)"
+          >#name</strong
+        >
       </h1>
 
       <h2
@@ -60,9 +64,14 @@
       >
         Email:
         <a
-          style="color: lab(60.3514% 40.5624 87.1228); text-decoration: none"
+          style="
+            color: #e77000;
+            color: lab(60.3514% 40.5624 87.1228);
+            text-decoration: none;
+            font-weight: bold;
+          "
           href="mailto:#email"
-          ><strong>#email</strong></a
+          >#email</a
         >
       </h2>
       <p style="font-size: 0.9rem; margin: 0; padding: 0; color: #003566">
