@@ -6,7 +6,7 @@ import {
   RESTAURANT_ADDRESS,
   RESTAURANT_MAP_LINK,
   RESTAURANT_PHONE,
-} from "@src/utils/constants";
+} from "@utils/constants";
 
 import map from "@public/map.jpg";
 import Image from "next/image";

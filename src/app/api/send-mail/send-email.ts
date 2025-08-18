@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 import { readHtmlTemplate, renderTemplate } from "./helpers";
 import { translatedMessages } from "../translations";
-import { ContactFormData } from "@src/components/contact/types";
+import { ContactFormData } from "@components/contact/types";
 
 export const sendEmail = async (body: ContactFormData, locale: Locale) => {
   try {
@@ -46,6 +46,7 @@ export const sendEmail = async (body: ContactFormData, locale: Locale) => {
       from: `Warung Sumatra <${process.env.NEXT_PUBLIC_EMAIL}>`,
       to: email,
       replyTo: email,
+      subject: translatedMessages.email[locale]?.subject || "",
       html: customerHtml,
     };
 
@@ -53,6 +54,7 @@ export const sendEmail = async (body: ContactFormData, locale: Locale) => {
       from: email,
       to: process.env.NEXT_PUBLIC_EMAIL,
       replyTo: email,
+      subject: `Wiadomość od ${name} (${email}), język: ${locale}`,
       html: receiverHtml,
     };
 

@@ -1,20 +1,19 @@
 //Images
-import food1 from "@public/foods/jedzenie.jpg";
-import food2 from "@public/foods/jedzenie2.jpg";
-import food3 from "@public/foods/jedzenie3.jpg";
+import food1 from "@public/foods/bakłażan_rendang.jpeg";
+import food2 from "@public/foods/dorada.jpeg";
+import food3 from "@public/foods/kalaskan.jpeg";
 
 //Components
 import Hero from "@components/Hero";
-import Section from "@components/Section";
+import Section from "@components/shared/Section";
 import Card from "@components/Card";
 import About from "@components/About";
-import Gallery from "@components/Gallery";
-import MenuLists from "@src/components/menu";
-import Contact from "@src/components/contact";
-import Footer from "@src/components/layout/Footer";
+import MenuLists from "@components/menu";
+import Contact from "@components/contact";
+import Footer from "@components/layout/Footer";
 
 import { getTranslations } from "next-intl/server";
-import NavWrapper from "@src/components/layout/nav/Wrapper";
+import NavWrapper from "@components/layout/nav/Wrapper";
 
 export default async function Page() {
   const t = await getTranslations();
@@ -53,7 +52,6 @@ export default async function Page() {
         </Section>
 
         <Section id="menu" title={t("menu-title")}>
-          <Gallery />
           <MenuLists />
         </Section>
 

@@ -4,7 +4,7 @@ import {
   Pyszne_PL,
   UberEats,
   WhatsApp,
-} from "@src/utils/icons";
+} from "@utils/icons";
 import { Iconbutton } from "../shared/custom-button/IconButton";
 import {
   INSTAGRAM_URL,
@@ -12,7 +12,7 @@ import {
   FACEBOOK_URL,
   UBEREATS_URL,
   PYSZNE_PL_URL,
-} from "@src/utils/constants";
+} from "@utils/constants";
 
 export const SocialMedia = () => {
   const handleLink = (url: string) => {

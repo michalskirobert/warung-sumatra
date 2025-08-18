@@ -10,6 +10,7 @@ export const translatedMessages = {
         "for your message. I will get back to you as soon as possible.",
       thisWhatIReceived: "This is what I received from you:",
       bestRegards: "Best regards,",
+      subject: "Your message has been received",
     },
     pl: {
       allFieldsRequired: "Wszystkie pola są wymagane",
@@ -21,6 +22,7 @@ export const translatedMessages = {
         "za Twoją wiadomość. Skontaktuję się z Tobą tak szybko, jak to możliwe.",
       thisWhatIReceived: "Oto, co od Ciebie otrzymałem:",
       bestRegards: "Z poważaniem,",
+      subject: "Twoja wiadomość została dostarczona",
     },
     id: {
       allFieldsRequired: "Semua kolom wajib diisi",
@@ -31,6 +33,7 @@ export const translatedMessages = {
       forYourMessage: "atas pesan Anda. Saya akan menghubungi Anda secepatnya.",
       thisWhatIReceived: "Ini yang saya terima dari Anda:",
       bestRegards: "Salam hormat,",
+      subject: "Pesan Anda telah diterima",
     },
   },
 };

@@ -1,4 +1,4 @@
-import { defaultLocale, localeCookieName, locales } from "@src/i18n/routing";
+import { defaultLocale, localeCookieName, locales } from "@i18n/routing";
 import { setCookie } from "./cookies";
 
 const LS_KEY = "lang";

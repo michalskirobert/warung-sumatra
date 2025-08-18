@@ -1,6 +1,6 @@
-import { Link } from "@src/i18n/navigation";
+import { Link } from "@i18n/navigation";
 import { ButtonProps } from ".";
-import { Spinner } from "@src/utils/icons";
+import { Spinner } from "@utils/icons";
 
 export const OutlinedButton = ({
   content,

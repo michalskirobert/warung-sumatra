@@ -6,7 +6,7 @@ import { ContactFormData, NotificationProps } from "../types";
 import axios from "axios";
 import { Input } from "./Input";
 import { Textarea } from "./Textarea";
-import { CustomButton } from "@src/components/shared/custom-button/Button";
+import { CustomButton } from "@components/shared/custom-button/Button";
 import useGenerateValidationSchema from "./schema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { generateInstanceUrl } from "@app/api/utils";

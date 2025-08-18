@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendEmail } from "../send-email";
 import { translatedMessages } from "@app/api/translations";
-import { ContactFormData } from "@src/components/contact/types";
+import { ContactFormData } from "@components/contact/types";
 
 export const POST = async (
   req: NextRequest,

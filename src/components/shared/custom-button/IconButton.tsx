@@ -1,4 +1,4 @@
-import { Spinner } from "@src/utils/icons";
+import { Spinner } from "@utils/icons";
 import { ButtonProps } from ".";
 
 export const Iconbutton = ({

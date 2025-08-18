@@ -12,7 +12,7 @@ import {
   getPreferredBrowserLocale,
   getStoredLocale,
   storeLocale,
-} from "@src/utils/language";
+} from "@utils/language";
 
 export const useNavService = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
