@@ -33,11 +33,11 @@ export default function About() {
 
         <div className="grid grid-cols-2 gap-6">
           <div className="text-center p-4 bg-white rounded-xl shadow-lg">
-            <div className="text-3xl font-bold text-amber-600 mb-2">15+</div>
+            <div className="text-3xl font-bold text-amber-600 mb-2">10+</div>
             <div className="text-stone-600 font-medium">{t("about-years")}</div>
           </div>
           <div className="text-center p-4 bg-white rounded-xl shadow-lg">
-            <div className="text-3xl font-bold text-amber-600 mb-2">50+</div>
+            <div className="text-3xl font-bold text-amber-600 mb-2">35+</div>
             <div className="text-stone-600 font-medium">
               {t("about-dishes")}
             </div>
