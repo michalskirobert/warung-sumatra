@@ -36,11 +36,13 @@ export default function MenuLists() {
       <div className="slide-in-left space-y-8">
         <MenuBlock
           title={t("menu-bakmie-title")}
+          subtitle={t("menu-bakmie-subtitle")}
           items={bakmie}
           additional={additional}
         />
         <MenuBlock
           title={t("menu-nasi-goreng-title")}
+          subtitle={t("menu-nasi-goreng-subtitle")}
           items={nasiGoreng}
           additional={additional}
         />

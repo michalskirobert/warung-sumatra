@@ -35,7 +35,7 @@ export default function Section({
           >
             {title}
           </h2>
-          <div className="w-24 h-1 bg-amber-600 mx-auto mb-8" />
+          <div className="w-24 h-1 bg-amber-600 mx-auto mb-2 mt-3" />
           {subtitle && (
             <p
               className={clsx(

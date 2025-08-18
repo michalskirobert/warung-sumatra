@@ -46,7 +46,7 @@ export const SocialMedia = () => {
       <Iconbutton
         aria-label="Pyszne.pl"
         onClick={() => handleLink(PYSZNE_PL_URL)}
-        icon={<Pyszne_PL height={50} width={50} />}
+        icon={<Pyszne_PL height={42} width={42} />}
       />
     </>
   );

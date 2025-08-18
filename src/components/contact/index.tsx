@@ -76,7 +76,7 @@ export default function Contact() {
             <h4 className="text-lg font-semibold text-stone-800 mb-4">
               {t("contact-social-title")}
             </h4>
-            <div className="flex space-x-4">
+            <div className="flex space-x-2 flex-wrap">
               <SocialMedia />
             </div>
           </div>

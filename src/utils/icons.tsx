@@ -169,12 +169,5 @@ export const Spinner = (props: React.SVGProps<SVGSVGElement>) =>
   );
 
 export const Pyszne_PL = (props: Omit<Partial<ImageProps>, "src">) => (
-  <Image
-    {...props}
-    width={42}
-    height={42}
-    className="rounded-lg"
-    src={pyszne_pl}
-    alt="Pyszne.pl"
-  />
+  <Image className="rounded-lg" {...props} src={pyszne_pl} alt="Pyszne.pl" />
 );
