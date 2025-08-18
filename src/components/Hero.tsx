@@ -16,6 +16,8 @@ export default function Hero() {
           height={0}
           width={0}
           alt="restaurant"
+          priority
+          placeholder="blur"
         />
         <div
           className="absolute inset-0"

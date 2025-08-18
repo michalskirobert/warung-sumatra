@@ -1,3 +1,7 @@
+import Image, { ImageProps } from "next/image";
+
+import pyszne_pl from "@public/icons/pyszne_pl.png";
+
 export const WhatsApp = (props?: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -163,3 +167,14 @@ export const Spinner = (props: React.SVGProps<SVGSVGElement>) =>
       />
     </svg>
   );
+
+export const Pyszne_PL = (props: Omit<Partial<ImageProps>, "src">) => (
+  <Image
+    {...props}
+    width={42}
+    height={42}
+    className="rounded-lg"
+    src={pyszne_pl}
+    alt="Pyszne.pl"
+  />
+);
