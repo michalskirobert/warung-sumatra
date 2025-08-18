@@ -11,6 +11,8 @@ export const translatedMessages = {
       thisWhatIReceived: "This is what I received from you:",
       bestRegards: "Best regards,",
       subject: "Your message has been received",
+      captchaGeneratingError:
+        "An error occurred while generating the captcha. Please try again.",
     },
     pl: {
       allFieldsRequired: "Wszystkie pola są wymagane",
@@ -23,6 +25,8 @@ export const translatedMessages = {
       thisWhatIReceived: "Oto, co od Ciebie otrzymałem:",
       bestRegards: "Z poważaniem,",
       subject: "Twoja wiadomość została dostarczona",
+      captchaGeneratingError:
+        "Wystąpił błąd podczas generowania captcha. Spróbuj ponownie.",
     },
     id: {
       allFieldsRequired: "Semua kolom wajib diisi",
@@ -34,6 +38,28 @@ export const translatedMessages = {
       thisWhatIReceived: "Ini yang saya terima dari Anda:",
       bestRegards: "Salam hormat,",
       subject: "Pesan Anda telah diterima",
+      captchaGeneratingError:
+        "Terjadi kesalahan saat menghasilkan captcha. Silakan coba lagi.",
+    },
+  },
+  captcha: {
+    en: {
+      generatingError:
+        "An error occurred while generating the captcha. Please try again.",
+      incorrect: "Incorrect CAPTCHA. Please try again.",
+      invalidToken: "Invalid or expired token",
+    },
+    pl: {
+      generatingError:
+        "Wystąpił błąd podczas generowania captcha. Spróbuj ponownie.",
+      incorrect: "Niepoprawne CAPTCHA. Spróbuj ponownie.",
+      invalidToken: "Nieprawidłowy lub wygasły token",
+    },
+    id: {
+      generatingError:
+        "Terjadi kesalahan saat menghasilkan captcha. Silakan coba lagi.",
+      incorrect: "CAPTCHA tidak benar. Silakan coba lagi.",
+      invalidToken: "Token tidak valid atau telah kedaluwarsa",
     },
   },
 };

@@ -16,12 +16,6 @@
   "about-dishes": "Dishes on the Menu",
   "food-title": "Our Specialties",
   "food-subtitle": "Discover the richness of Indonesian cuisine in our unique interpretations",
-  "dish-nasi-title": "Nasi Goreng",
-  "dish-nasi-desc": "Traditional Indonesian fried rice with vegetables, egg, and aromatic spices",
-  "dish-rendang-title": "Rendang",
-  "dish-rendang-desc": "Aromatic beef curry cooked in coconut milk with a rich spice blend",
-  "dish-gado-title": "Gado-Gado",
-  "dish-gado-desc": "Fresh vegetable salad served with traditional peanut satay sauce",
   "menu-title": "Menu",
   "gallery-title": "Our Interior",
   "gallery-main": "Main Hall",
@@ -194,5 +188,6 @@
   "footer-copyright": "All rights reserved.",
   "footer-created-by": "Website created by",
   "api-status-error": "An error occurred.",
-  "api-status-success": "Operation completed successfully."
+  "api-status-success": "Operation completed successfully.",
+  "captcha-required": "Captcha must be completed."
 }

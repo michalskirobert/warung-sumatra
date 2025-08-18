@@ -3,6 +3,9 @@
 import { NURBYTE_WEBPAGE } from "@utils/constants";
 import { useTranslations } from "next-intl";
 
+import nurByteLogo from "@public/nurbyte_logo.png";
+
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -18,13 +21,17 @@ export default function Footer() {
           © 2025 Warung Sumatra. {t("footer-copyright")}
         </div>
         <div className="flex gap-1 text-xs justify-center mt-5">
-          {t("footer-created-by")}
           <Link
             href={NURBYTE_WEBPAGE}
-            className="font-bold text-amber-100 underline hover:text-amber-300 transition-colors"
             target="_blank"
+            className="bg-amber-50/95 rounded-2xl p-1"
           >
-            NurByte
+            <Image
+              src={nurByteLogo}
+              height={80}
+              width={80}
+              alt="Robert Michalski NurByte"
+            />
           </Link>
         </div>
       </div>

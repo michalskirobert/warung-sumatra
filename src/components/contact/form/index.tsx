@@ -6,10 +6,10 @@ import { ContactFormData, NotificationProps } from "../types";
 import axios from "axios";
 import { Input } from "./Input";
 import { Textarea } from "./Textarea";
-import { CustomButton } from "@components/shared/custom-button/Button";
 import useGenerateValidationSchema from "./schema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { generateInstanceUrl } from "@app/api/utils";
+import TextCaptcha from "./TextCaptcha";
 
 export const ContactForm = () => {
   const validationSchema = useGenerateValidationSchema();
@@ -17,26 +17,31 @@ export const ContactForm = () => {
   const locale = useLocale();
 
   const [isLoading, setIsLoading] = useState(false);
-  const [notification, setNotification] = useState<NotificationProps>({
+  const [notification, setNotification] = useState<
+    NotificationProps | undefined
+  >({
     status: undefined,
     message: "",
   });
 
   const t = useTranslations();
 
-  const { control, handleSubmit, reset } = useForm<ContactFormData>({
+  const { control, getValues, trigger, reset } = useForm<ContactFormData>({
     defaultValues: {
       name: "",
       email: "",
       message: "",
     },
-    mode: "all",
     resolver: yupResolver(validationSchema),
   });
 
-  const onSubmit = async (data: ContactFormData) => {
+  const handleValidation = async () => await trigger();
+
+  const onSubmit = async () => {
     try {
       setIsLoading(true);
+      const data = getValues();
+
       const response = await axios.post<string>(
         generateInstanceUrl(locale as Locale).sendMail,
         data
@@ -53,50 +58,48 @@ export const ContactForm = () => {
   };
 
   return (
-    <>
-      <Notification {...notification} />
-      <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          {...{
-            name: "name",
-            control,
-            label: t("form-name-label"),
-            placeholder: t("form-name-placeholder"),
-            required: true,
-            disabled: isLoading,
-          }}
-        />
-        <Input
-          {...{
-            name: "email",
-            type: "email",
-            control,
-            label: t("form-email-label"),
-            placeholder: t("form-email-placeholder"),
-            required: true,
-            disabled: isLoading,
-          }}
-        />
-        <Textarea
-          {...{
-            control,
-            name: "message",
-            label: t("form-message-label"),
-            placeholder: t("form-message-placeholder"),
-            required: true,
-            disabled: isLoading,
-          }}
-        />
-        <CustomButton
-          {...{
-            color: "primary",
-            content: t("form-submit-btn"),
-            type: "submit",
-            className: "w-full",
-            isLoading,
-          }}
-        />
-      </form>
-    </>
+    <TextCaptcha
+      isSubmitting={isLoading}
+      onErrorMessageHandler={setNotification}
+      onVerified={onSubmit}
+      validate={handleValidation}
+    >
+      {({ isVerifying }) => (
+        <form>
+          {notification && <Notification {...notification} />}
+          <Input
+            {...{
+              name: "name",
+              control,
+              label: t("form-name-label"),
+              placeholder: t("form-name-placeholder"),
+              required: true,
+              disabled: isLoading || isVerifying,
+            }}
+          />
+          <Input
+            {...{
+              name: "email",
+              type: "email",
+              control,
+              label: t("form-email-label"),
+              placeholder: t("form-email-placeholder"),
+              required: true,
+              disabled: isLoading || isVerifying,
+            }}
+          />
+          <Textarea
+            {...{
+              control,
+              name: "message",
+              label: t("form-message-label"),
+              placeholder: t("form-message-placeholder"),
+              required: true,
+              disabled: isLoading || isVerifying,
+            }}
+          />
+        </form>
+      )}
+    </TextCaptcha>
   );
 };

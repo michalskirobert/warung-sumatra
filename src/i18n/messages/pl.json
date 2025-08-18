@@ -16,12 +16,6 @@
   "about-dishes": "Dań w Menu",
   "food-title": "Nasze Specjalności",
   "food-subtitle": "Odkryj bogactwo smaków indonezyjskiej kuchni w naszych autorskich interpretacjach",
-  "dish-nasi-title": "Nasi Goreng",
-  "dish-nasi-desc": "Tradycyjny indonezyjski smażony ryż z warzywami, jajkiem i aromatycznymi przyprawami",
-  "dish-rendang-title": "Rendang",
-  "dish-rendang-desc": "Aromatyczne curry wołowe gotowane w mleku kokosowym z bogatą mieszanką przypraw",
-  "dish-gado-title": "Gado-Gado",
-  "dish-gado-desc": "Świeża sałatka z warzyw podawana z tradycyjnym orzechowym sosem satay",
   "menu-title": "Menu",
   "gallery-title": "Nasze Wnętrze",
   "gallery-main": "Sala Główna",
@@ -194,5 +188,6 @@
   "footer-copyright": "Wszystkie prawa zastrzeżone.",
   "footer-created-by": "Strona stworzona przez",
   "api-status-error": "Wystąpił błąd.",
-  "api-status-success": "Operacja zakończona sukcesem."
+  "api-status-success": "Operacja zakończona sukcesem.",
+  "captcha-required": "Pole nie może być puste."
 }

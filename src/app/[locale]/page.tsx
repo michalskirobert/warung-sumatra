@@ -1,7 +1,7 @@
 //Images
-import food1 from "@public/foods/bakłażan_rendang.jpeg";
-import food2 from "@public/foods/dorada.jpeg";
-import food3 from "@public/foods/kalaskan.jpeg";
+import rendang from "@public/foods/bakłażan_rendang.jpeg";
+import dorada from "@public/foods/dorada.jpeg";
+import kalaskan from "@public/foods/kalaskan.jpeg";
 
 //Components
 import Hero from "@components/Hero";
@@ -34,19 +34,19 @@ export default async function Page() {
         >
           <div className="grid md:grid-cols-3 gap-8">
             <Card
-              title={t("dish-nasi-title")}
-              description={t("dish-nasi-desc")}
-              image={food1.src}
+              title={t("menu-other-dishes-baklazan-rendang-title")}
+              description={t("menu-other-dishes-baklazan-rendang-desc")}
+              image={rendang.src}
             />
             <Card
-              title={t("dish-rendang-title")}
-              description={t("dish-rendang-desc")}
-              image={food2.src}
+              title={t("menu-other-dishes-dorada-timur-title")}
+              description={t("menu-other-dishes-dorada-timur-desc")}
+              image={dorada.src}
             />
             <Card
-              title={t("dish-gado-title")}
-              description={t("dish-gado-desc")}
-              image={food3.src}
+              title={t("menu-other-dishes-kurczak-kalasan-title")}
+              description={t("menu-other-dishes-kurczak-kalasan-desc")}
+              image={kalaskan.src}
             />
           </div>
         </Section>

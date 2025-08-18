@@ -16,12 +16,6 @@
   "about-dishes": "Hidangan di Menu",
   "food-title": "Spesialisasi Kami",
   "food-subtitle": "Temukan kekayaan cita rasa masakan Indonesia dalam interpretasi unik kami",
-  "dish-nasi-title": "Nasi Goreng",
-  "dish-nasi-desc": "Nasi goreng tradisional Indonesia dengan sayuran, telur, dan bumbu aromatik",
-  "dish-rendang-title": "Rendang",
-  "dish-rendang-desc": "Curry daging sapi aromatik dimasak dengan santan dan campuran rempah kaya",
-  "dish-gado-title": "Gado-Gado",
-  "dish-gado-desc": "Salad sayuran segar disajikan dengan saus kacang tradisional",
   "menu-title": "Menu",
   "gallery-title": "Interior Kami",
   "gallery-main": "Ruang Utama",
@@ -194,5 +188,6 @@
   "footer-copyright": "Hak cipta dilindungi.",
   "footer-created-by": "Situs dibuat oleh",
   "api-status-error": "Terjadi kesalahan.",
-  "api-status-success": "Operasi berhasil."
+  "api-status-success": "Operasi berhasil.",
+  "captcha-required": "Captcha harus diselesaikan."
 }
