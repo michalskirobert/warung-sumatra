@@ -34,7 +34,6 @@ export default async function Page() {
         <Section id="menu" title={t("menu-title")}>
           <MenuLists />
         </Section>
-
         <Section id="contact" title={t("contact-title")}>
           <Contact />
         </Section>

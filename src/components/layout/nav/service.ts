@@ -51,15 +51,6 @@ export const useNavService = () => {
     setTimeout(() => setIsAnimating(false), 300); // czas trwania animacji w ms
   };
 
-  useEffect(() => {
-    if (mobileOpen) return;
-
-    const onScroll = (): void => setScrolled(window.scrollY > 100);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [mobileOpen]);
-
   const navClass = clsx(
     "fixed top-0 w-full z-40 transition-all duration-300 py-4",
     scrolled && "navbar-scroll"
@@ -72,6 +63,15 @@ export const useNavService = () => {
     { href: "/#food", label: t("nav-food") },
     { href: "/#contact", label: t("nav-contact") },
   ];
+
+  useEffect(() => {
+    if (mobileOpen) return;
+
+    const onScroll = (): void => setScrolled(window.scrollY > 100);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [mobileOpen]);
 
   useEffect(() => {
     if (mobileOpen) {
