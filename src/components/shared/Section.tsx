@@ -29,7 +29,7 @@ export default function Section({
         <div className="text-center mb-16 fade-in">
           <h2
             className={clsx(
-              "text-4xl md:text-5xl font-heading font-bold",
+              "text-4xl md:text-5xl font-heading font-bold font-inter",
               dark ? "text-white" : "text-stone-800"
             )}
           >

@@ -20,7 +20,7 @@ export const Allergens = () => {
   ];
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-xl border border-stone-200">
+    <div className="bg-white rounded-2xl p-8 shadow-xl border border-stone-200 slide-in-right">
       <div className="mb-8 text-center">
         <h3 className="text-3xl font-heading font-bold text-stone-800">
           {t("menu-allergens-title")}

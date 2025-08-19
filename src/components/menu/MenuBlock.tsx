@@ -11,6 +11,7 @@ interface Props {
   additional?: AdditionalProps[];
   additionalSauces?: AdditionalProps[];
   allergenList?: AdditionalProps[];
+  className?: string;
 }
 
 export const MenuBlock = ({
@@ -19,17 +20,22 @@ export const MenuBlock = ({
   items,
   additional,
   additionalSauces,
+  className,
 }: Props) => {
   const t = useTranslations();
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-xl border border-stone-200">
+    <div
+      className={`bg-white rounded-2xl p-8 shadow-xl border border-stone-200 ${className}`}
+    >
       <div className="mb-8 text-center">
-        <h3 className="text-3xl font-heading font-bold text-stone-800">
+        <h3 className="text-3xl font-heading font-bold text-stone-800 font-inter">
           {title}
         </h3>
         {subtitle && (
-          <h4 className="text-sm text-stone-800 mt-1">{subtitle}</h4>
+          <h4 className="text-sm text-stone-800 mt-1 font-poppins">
+            {subtitle}
+          </h4>
         )}
       </div>
       <div className="space-y-6">
@@ -52,9 +58,9 @@ export const MenuBlock = ({
             <p className="text-stone-600">{it.desc}</p>
           </div>
         ))}
-        <div className="flex justify-between">
+        <div className="flex justify-between w-full flex-wrap">
           {!!additional?.length && (
-            <div className="border-t  border-stone-200 pt-4">
+            <div className=" border-stone-200 pt-4">
               <h4 className="text-xl mt-2 font-semibold text-stone-800">
                 {t("menu-additional-to-choose-title")}:
               </h4>
@@ -76,7 +82,7 @@ export const MenuBlock = ({
             </div>
           )}
           {!!additionalSauces?.length && (
-            <div className="border-t  border-stone-200 pt-4">
+            <div className=" border-stone-200 pt-4">
               <h4 className="text-xl mt-2 font-semibold text-stone-800">
                 {t("menu-additional-sauce-to-choose-title")}:
               </h4>

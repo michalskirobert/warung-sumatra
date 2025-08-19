@@ -3,13 +3,18 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
 
 import axios, { AxiosError } from "axios";
-import { CaptchaSkeleton } from "./CaptchaSkeleton";
-import { useLocale, useTranslations } from "next-intl";
-import { CustomButton } from "@shared/custom-button/Button";
 import Image from "next/image";
-import { generateInstanceUrl } from "@app/api/utils";
-import { NotificationProps } from "../types";
+import { useLocale, useTranslations } from "next-intl";
+
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
+
+import { generateInstanceUrl } from "@app/api/utils";
+import { CustomButton } from "@shared/custom-button/Button";
+
+import { NotificationProps } from "../types";
+
+import { CaptchaSkeleton } from "./CaptchaSkeleton";
+import { scrollUpToAlert } from "./utils";
 
 interface CaptchaData {
   token: string;
@@ -101,6 +106,7 @@ export default function TextCaptcha({
       setIsError(true);
     } finally {
       setIsVerifying(false);
+      scrollUpToAlert();
     }
   };
 
@@ -115,7 +121,7 @@ export default function TextCaptcha({
       <div>
         {children({ isVerifying, isError, isFetchingError })}
         <div className="mt-2 text-red-800 flex gap-2 items-center">
-          {t("captcha-fetching-error")}{" "}
+          {t("captcha-fetching-error")}
           <ExclamationTriangleIcon className="inline-block w-5 h-5" />
         </div>
       </div>

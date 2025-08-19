@@ -33,36 +33,52 @@ export default function MenuLists() {
 
   return (
     <div className="grid lg:grid-cols-2 gap-12">
-      <div className="slide-in-left space-y-8">
+      <div className="space-y-8">
         <MenuBlock
+          className="slide-in-left "
           title={t("menu-bakmie-title")}
           subtitle={t("menu-bakmie-subtitle")}
           items={bakmie}
           additional={additional}
         />
         <MenuBlock
+          className="slide-in-left"
           title={t("menu-nasi-goreng-title")}
           subtitle={t("menu-nasi-goreng-subtitle")}
           items={nasiGoreng}
           additional={additional}
         />
-        <MenuBlock title={t("menu-other-dishes-title")} items={otherDishes} />
+        <MenuBlock
+          className="slide-in-left"
+          title={t("menu-other-dishes-title")}
+          items={otherDishes}
+        />
       </div>
 
-      <div className="slide-in-right space-y-8">
+      <div className="space-y-8">
         <MenuBlock
+          className="slide-in-right"
           title={t("menu-soups-title")}
           items={soups}
           additional={additionalSoup}
           subtitle={t("menu-soups-subtitle")}
         />
-        <MenuBlock title={t("menu-appetizers-title")} items={appetizers} />
         <MenuBlock
+          className="slide-in-right"
+          title={t("menu-appetizers-title")}
+          items={appetizers}
+        />
+        <MenuBlock
+          className="slide-in-right"
           title={t("menu-tempura-title")}
           additional={additonalTempura}
           additionalSauces={additionalSauceTempura}
         />
-        <MenuBlock title={t("menu-drinks-title")} items={drinks} />
+        <MenuBlock
+          className="slide-in-right"
+          title={t("menu-drinks-title")}
+          items={drinks}
+        />
         <Allergens />
       </div>
     </div>

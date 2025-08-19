@@ -1,15 +1,19 @@
-import { useLocale, useTranslations } from "next-intl";
-import { Notification } from "../Notification";
-import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { ContactFormData, NotificationProps } from "../types";
 import axios from "axios";
+
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import { useLocale, useTranslations } from "next-intl";
+
+import { generateInstanceUrl } from "@app/api/utils";
+
+import { Notification } from "../Notification";
+import { ContactFormData, NotificationProps } from "../types";
+
 import { Input } from "./Input";
+import TextCaptcha from "./TextCaptcha";
 import { Textarea } from "./Textarea";
 import useGenerateValidationSchema from "./schema";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { generateInstanceUrl } from "@app/api/utils";
-import TextCaptcha from "./TextCaptcha";
 
 export const ContactForm = () => {
   const validationSchema = useGenerateValidationSchema();
@@ -66,7 +70,7 @@ export const ContactForm = () => {
     >
       {({ isVerifying, isFetchingError }) => (
         <form className="flex gap-2 flex-col">
-          {notification && <Notification {...notification} />}
+          <Notification {...notification} />
           <Input
             {...{
               name: "name",

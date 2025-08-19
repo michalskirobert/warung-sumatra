@@ -1,7 +1,10 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+
 import Image from "next/image";
+
+import cooking from "@public/restaurant/cooking.jpg";
 
 export default function About() {
   const t = useTranslations();
@@ -10,7 +13,7 @@ export default function About() {
       <div className="slide-in-left">
         <div className="relative">
           <Image
-            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=2070&q=80"
+            src={cooking.src}
             alt="Indonesian kitchen and spices"
             className="w-full h-96 object-cover rounded-2xl shadow-2xl"
             width={2070}
