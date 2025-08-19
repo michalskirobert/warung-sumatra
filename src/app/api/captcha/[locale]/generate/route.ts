@@ -2,8 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import { CaptchaGenerator } from "captcha-canvas";
 import jwt from "jsonwebtoken";
 import { translatedMessages } from "@app/api/translations";
+import path from "path";
+import { registerFont } from "canvas";
 
 const JWT_SECRET = process.env.JWT_SECRET!;
+
+registerFont(path.resolve("./public/fonts/OpenSans-Regular.ttf"), {
+  family: "OpenSans",
+});
 
 export async function GET(
   _: NextRequest,
