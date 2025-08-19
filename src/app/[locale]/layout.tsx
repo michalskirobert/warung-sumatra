@@ -4,7 +4,7 @@ import { routing } from "@i18n/routing";
 import { getMessages } from "@i18n/getMessages";
 
 import { Metadata } from "next";
-import { inter, montserrat, poppins } from "@app/fonts";
+import { inter, montserrat, permanent_Marker, poppins } from "@app/fonts";
 
 import "../globals.css";
 
@@ -63,7 +63,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body
-        className={` ${inter.variable} ${montserrat.variable} ${poppins.variable} antialiased`}
+        className={` ${inter.variable} ${montserrat.variable} ${poppins.variable} ${permanent_Marker.variable} antialiased`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}

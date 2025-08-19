@@ -189,5 +189,6 @@
   "footer-created-by": "Website created by",
   "api-status-error": "An error occurred.",
   "api-status-success": "Operation completed successfully.",
-  "captcha-required": "Captcha must be completed."
+  "captcha-required": "Captcha must be completed.",
+  "captcha-fetching-error": "An error occurred while fetching the captcha."
 }

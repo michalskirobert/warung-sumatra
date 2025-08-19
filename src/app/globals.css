@@ -64,6 +64,10 @@ div {
   font-family: var(--font-montserrat);
 }
 
+.font-marker {
+  font-family: var(--font-permanent-marker);
+}
+
 .batik-pattern {
   background-image: url("/batik/padang_red.png");
   background-size: 60px 60px, 40px 40px, 30px 30px;

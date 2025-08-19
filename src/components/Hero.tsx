@@ -29,7 +29,7 @@ export default function Hero() {
       </div>
       <div className="container mx-auto px-4 relative z-10 flex items-center min-h-screen">
         <div className="max-w-3xl fade-in">
-          <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 font-marker">
             {t("hero-title")}
           </h1>
           <p className="text-xl md:text-2xl text-stone-200 mb-8 leading-relaxed">

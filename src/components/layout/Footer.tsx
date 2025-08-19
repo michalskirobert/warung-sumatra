@@ -13,11 +13,11 @@ export default function Footer() {
   return (
     <footer className="bg-stone-900 text-stone-300 py-12 bg-[url('/batik/padang_red.png')]">
       <div className="container mx-auto px-4 text-center">
-        <div className="text-3xl font-heading font-bold text-white mb-4">
+        <div className="text-3xl font-heading font-bold text-white mb-4 font-marker text-shadow-lg">
           Warung Sumatra
         </div>
-        <p className="mb-6 text-lg">{t("footer-tagline")}</p>
-        <div className="text-sm text-stone-300">
+        <p className="mb-6 text-lg text-shadow-lg">{t("footer-tagline")}</p>
+        <div className="text-sm text-stone-300 text-shadow-lg">
           © 2025 Warung Sumatra. {t("footer-copyright")}
         </div>
         <div className="flex gap-1 text-xs justify-center mt-5">

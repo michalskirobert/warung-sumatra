@@ -64,8 +64,8 @@ export const ContactForm = () => {
       onVerified={onSubmit}
       validate={handleValidation}
     >
-      {({ isVerifying }) => (
-        <form>
+      {({ isVerifying, isFetchingError }) => (
+        <form className="flex gap-2 flex-col">
           {notification && <Notification {...notification} />}
           <Input
             {...{
@@ -74,7 +74,7 @@ export const ContactForm = () => {
               label: t("form-name-label"),
               placeholder: t("form-name-placeholder"),
               required: true,
-              disabled: isLoading || isVerifying,
+              disabled: isLoading || isVerifying || isFetchingError,
             }}
           />
           <Input
@@ -85,7 +85,7 @@ export const ContactForm = () => {
               label: t("form-email-label"),
               placeholder: t("form-email-placeholder"),
               required: true,
-              disabled: isLoading || isVerifying,
+              disabled: isLoading || isVerifying || isFetchingError,
             }}
           />
           <Textarea
@@ -95,7 +95,7 @@ export const ContactForm = () => {
               label: t("form-message-label"),
               placeholder: t("form-message-placeholder"),
               required: true,
-              disabled: isLoading || isVerifying,
+              disabled: isLoading || isVerifying || isFetchingError,
             }}
           />
         </form>

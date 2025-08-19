@@ -9,6 +9,7 @@ import { CustomButton } from "@shared/custom-button/Button";
 import Image from "next/image";
 import { generateInstanceUrl } from "@app/api/utils";
 import { NotificationProps } from "../types";
+import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 
 interface CaptchaData {
   token: string;
@@ -18,6 +19,7 @@ interface CaptchaData {
 interface CaptchaRenderProps {
   isVerifying: boolean;
   isError: boolean;
+  isFetchingError?: boolean;
 }
 
 interface Props {
@@ -43,14 +45,20 @@ export default function TextCaptcha({
   const [captcha, setCaptcha] = useState<CaptchaData | null>(null);
   const [answer, setAnswer] = useState("");
   const [isError, setIsError] = useState(false);
+  const [isFetchingError, setIsFetchingError] = useState(false);
 
   const [isVerifying, setIsVerifying] = useState(false);
 
   const captchaUrl = generateInstanceUrl(locale as Locale);
 
   const getCaptcha = async () => {
-    const res = await axios.get(captchaUrl.generateCaptcha);
-    setCaptcha(res.data);
+    try {
+      const res = await axios.get(captchaUrl.generateCaptcha);
+      setCaptcha(res.data);
+    } catch (error) {
+      console.error("Error fetching captcha:", error);
+      setIsFetchingError(true);
+    }
   };
 
   const submit = async () => {
@@ -101,6 +109,17 @@ export default function TextCaptcha({
     calledRef.current = true;
     getCaptcha();
   }, []);
+
+  if (isFetchingError)
+    return (
+      <div>
+        {children({ isVerifying, isError, isFetchingError })}
+        <div className="mt-2 text-red-800 flex gap-2 items-center">
+          {t("captcha-fetching-error")}{" "}
+          <ExclamationTriangleIcon className="inline-block w-5 h-5" />
+        </div>
+      </div>
+    );
 
   return (
     <>
