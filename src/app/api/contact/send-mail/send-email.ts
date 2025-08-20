@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 import { readHtmlTemplate, renderTemplate } from "./helpers";
-import { translatedMessages } from "../translations";
+import { translatedMessages } from "../../translations";
 import { ContactFormData } from "@components/contact/types";
 
 export const sendEmail = async (body: ContactFormData, locale: Locale) => {

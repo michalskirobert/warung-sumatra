@@ -48,18 +48,24 @@ export const translatedMessages = {
         "An error occurred while generating the captcha. Please try again.",
       incorrect: "Incorrect CAPTCHA. Please try again.",
       invalidToken: "Invalid or expired token",
+      tokenMissing: "Token is missing",
+      missing: "CAPTCHA is missing",
     },
     pl: {
       generatingError:
         "Wystąpił błąd podczas generowania captcha. Spróbuj ponownie.",
       incorrect: "Niepoprawne CAPTCHA. Spróbuj ponownie.",
       invalidToken: "Nieprawidłowy lub wygasły token",
+      tokenMissing: "Token nie został znaleziony",
+      missing: "CAPTCHA nie została znaleziona",
     },
     id: {
       generatingError:
         "Terjadi kesalahan saat menghasilkan captcha. Silakan coba lagi.",
       incorrect: "CAPTCHA tidak benar. Silakan coba lagi.",
       invalidToken: "Token tidak valid atau telah kedaluwarsa",
+      tokenMissing: "Token tidak ditemukan",
+      missing: "CAPTCHA tidak ditemukan",
     },
   },
 };

@@ -190,5 +190,7 @@
   "api-status-error": "An error occurred.",
   "api-status-success": "Operation completed successfully.",
   "captcha-required": "Captcha must be completed.",
-  "captcha-fetching-error": "An error occurred while fetching the captcha."
+  "captcha-fetching-error": "An error occurred while fetching the captcha.",
+  "captcha-refresh": "Refresh captcha.",
+  "captcha-placeholder": "Enter the code from the image"
 }

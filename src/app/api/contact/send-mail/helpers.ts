@@ -15,6 +15,7 @@ const generatePath = (fileName: string) =>
     "src",
     "app",
     "api",
+    "contact",
     "send-mail",
     "templates",
     `${fileName}.html`

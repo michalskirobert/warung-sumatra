@@ -16,7 +16,7 @@ export const Input = ({ control, name, label, ...props }: Props) => {
   } = useController({ name, control });
 
   return (
-    <div>
+    <div className="w-full">
       <label className="block text-stone-800 font-semibold mb-2">{label}</label>
       <input
         {...field}

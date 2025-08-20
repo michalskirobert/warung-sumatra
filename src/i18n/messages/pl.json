@@ -189,6 +189,8 @@
   "footer-created-by": "Strona stworzona przez",
   "api-status-error": "Wystąpił błąd.",
   "api-status-success": "Operacja zakończona sukcesem.",
-  "captcha-required": "Pole nie może być puste.",
-  "captcha-fetching-error": "Wystąpił błąd podczas ładowania captcha."
+  "captcha-fetching-error": "Wystąpił błąd podczas ładowania captcha.",
+  "captcha-refresh": "Odśwież captcha",
+  "captcha-required": "Pole captcha jest wymagane.",
+  "captcha-placeholder": "Wprowadź kod z obrazka"
 }

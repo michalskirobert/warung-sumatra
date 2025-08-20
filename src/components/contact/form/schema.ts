@@ -11,6 +11,7 @@ const useGenerateValidationSchema = () => {
       .email(t("form-invalid-email"))
       .required(t("form-required-field")),
     message: yup.string().required(t("form-required-field")),
+    captcha: yup.string().required(t("captcha-required")),
   });
 
   return validationSchema;

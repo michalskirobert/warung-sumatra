@@ -1,3 +1,5 @@
+import { ContactFormData } from "../types";
+
 export const scrollUpToAlert = () => {
   const notificationContainer = document.getElementById("notification");
 
@@ -10,4 +12,12 @@ export const scrollUpToAlert = () => {
       notificationContainer.focus({ preventScroll: true });
     }, 0);
   }
+};
+
+export const defaultValues: ContactFormData = {
+  name: "",
+  email: "",
+  message: "",
+  captcha: "",
+  token: "",
 };

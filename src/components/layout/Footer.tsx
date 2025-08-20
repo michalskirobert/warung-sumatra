@@ -24,7 +24,7 @@ export default function Footer() {
           <Link
             href={NURBYTE_WEBPAGE}
             target="_blank"
-            className="bg-amber-50/95 rounded-2xl p-1"
+            className="bg-amber-50/95 rounded-2xl p-1 hover:scale-120 transition-transform duration-300"
           >
             <Image
               src={nurByteLogo}

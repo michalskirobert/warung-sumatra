@@ -1,109 +1,101 @@
-import { useState } from "react";
-import axios from "axios";
-
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
-import { useLocale, useTranslations } from "next-intl";
-
-import { generateInstanceUrl } from "@app/api/utils";
-
 import { Notification } from "../Notification";
-import { ContactFormData, NotificationProps } from "../types";
 
 import { Input } from "./Input";
-import TextCaptcha from "./TextCaptcha";
 import { Textarea } from "./Textarea";
-import useGenerateValidationSchema from "./schema";
+
+import { CustomButton } from "@src/components/shared/custom-button/Button";
+import { Iconbutton } from "@src/components/shared/custom-button/IconButton";
+
+import { ArrowPathIcon } from "@heroicons/react/24/outline";
+import { CaptchaImage } from "./CaptchaImage";
+import { useFormService } from "./service";
 
 export const ContactForm = () => {
-  const validationSchema = useGenerateValidationSchema();
-
-  const locale = useLocale();
-
-  const [isLoading, setIsLoading] = useState(false);
-  const [notification, setNotification] = useState<
-    NotificationProps | undefined
-  >({
-    status: undefined,
-    message: "",
-  });
-
-  const t = useTranslations();
-
-  const { control, getValues, trigger, reset } = useForm<ContactFormData>({
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-    resolver: yupResolver(validationSchema),
-  });
-
-  const handleValidation = async () => await trigger();
-
-  const onSubmit = async () => {
-    try {
-      setIsLoading(true);
-      const data = getValues();
-
-      const response = await axios.post<string>(
-        generateInstanceUrl(locale as Locale).sendMail,
-        data
-      );
-      setNotification({ status: "success", message: response.data });
-
-      reset(undefined);
-    } catch (error) {
-      if (error instanceof Error)
-        setNotification({ status: "error", message: error.message });
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const {
+    control,
+    isLoading,
+    notification,
+    captcha,
+    isFetching,
+    isFetchingError,
+    t,
+    onSubmit,
+    handleSubmit,
+    getCaptcha,
+  } = useFormService();
 
   return (
-    <TextCaptcha
-      isSubmitting={isLoading}
-      onErrorMessageHandler={setNotification}
-      onVerified={onSubmit}
-      validate={handleValidation}
-    >
-      {({ isVerifying, isFetchingError }) => (
-        <form className="flex gap-2 flex-col">
-          <Notification {...notification} />
+    <form className="flex gap-2 flex-col" onSubmit={handleSubmit(onSubmit)}>
+      <Notification {...notification} />
+      <Input
+        {...{
+          name: "name",
+          control,
+          label: t("form-name-label"),
+          placeholder: t("form-name-placeholder"),
+          required: true,
+          disabled: isLoading || isFetchingError,
+        }}
+      />
+      <Input
+        {...{
+          name: "email",
+          type: "email",
+          control,
+          label: t("form-email-label"),
+          placeholder: t("form-email-placeholder"),
+          required: true,
+          disabled: isLoading || isFetchingError,
+        }}
+      />
+      <Textarea
+        {...{
+          control,
+          name: "message",
+          label: t("form-message-label"),
+          placeholder: t("form-message-placeholder"),
+          required: true,
+          disabled: isLoading || isFetchingError,
+        }}
+      />
+      <div>
+        {captcha?.image && (
+          <div className="flex items-center gap-5 mb-2">
+            <CaptchaImage
+              src={captcha.image}
+              isFetching={isFetching}
+              isErrorFetching={isFetchingError}
+            />
+            <Iconbutton
+              {...{
+                icon: <ArrowPathIcon className="w-6 h-6" />,
+                onClick: getCaptcha,
+              }}
+            />
+          </div>
+        )}
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-2 w-full">
           <Input
             {...{
-              name: "name",
+              name: "captcha",
               control,
-              label: t("form-name-label"),
-              placeholder: t("form-name-placeholder"),
+              label: "",
+              className: "w-full",
+              placeholder: t("captcha-placeholder"),
               required: true,
-              disabled: isLoading || isVerifying || isFetchingError,
+              disabled: isLoading || isFetchingError,
             }}
           />
-          <Input
+          <CustomButton
             {...{
-              name: "email",
-              type: "email",
-              control,
-              label: t("form-email-label"),
-              placeholder: t("form-email-placeholder"),
-              required: true,
-              disabled: isLoading || isVerifying || isFetchingError,
+              color: "primary",
+              content: t("form-submit-btn"),
+              className: "sm:w-full !w-1/2",
+              isLoading: isLoading,
             }}
           />
-          <Textarea
-            {...{
-              control,
-              name: "message",
-              label: t("form-message-label"),
-              placeholder: t("form-message-placeholder"),
-              required: true,
-              disabled: isLoading || isVerifying || isFetchingError,
-            }}
-          />
-        </form>
-      )}
-    </TextCaptcha>
+        </div>
+      </div>
+    </form>
   );
 };

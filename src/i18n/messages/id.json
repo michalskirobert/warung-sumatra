@@ -189,6 +189,8 @@
   "footer-created-by": "Situs dibuat oleh",
   "api-status-error": "Terjadi kesalahan.",
   "api-status-success": "Operasi berhasil.",
-  "captcha-required": "Captcha harus diselesaikan.",
-  "captcha-fetching-error": "Terjadi kesalahan saat memuat captcha."
+  "captcha-fetching-error": "Terjadi kesalahan saat memuat captcha.",
+  "captcha-refresh": "Segarkan captcha.",
+  "captcha-placeholder": "Masukkan kode dari gambar",
+  "captcha-required": "Captcha harus diselesaikan."
 }

@@ -18,11 +18,15 @@ export const Notification = ({
         status === "success" ? "green" : "red"
       }-200 rounded-lg p-4 mb-6`}
     >
-      <p
-        className={`text-${status === "success" ? "green" : "red"}-800 text-sm`}
-      >
-        {status && <strong>{t(`api-status-${status}`)}</strong>} {message}
-      </p>
+      {status && (
+        <p
+          className={`text-${
+            status === "success" ? "green" : "red"
+          }-800 text-sm`}
+        >
+          <strong>{t(`api-status-${status}`)}</strong> {message}
+        </p>
+      )}
     </div>
   );
 };
