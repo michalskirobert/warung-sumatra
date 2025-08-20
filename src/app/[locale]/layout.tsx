@@ -14,7 +14,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const messages = await getMessages(locale as Locale);
+  const messages = await getMessages((locale as Locale) || "pl");
 
   return {
     metadataBase: new URL("https://warung-sumatra.pl"),
