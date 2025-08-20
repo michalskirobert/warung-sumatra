@@ -13,6 +13,7 @@ import {
   getStoredLocale,
   storeLocale,
 } from "@utils/language";
+import { throttle } from "@utils/throttle";
 
 export const useNavService = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -67,7 +68,12 @@ export const useNavService = () => {
   useEffect(() => {
     if (mobileOpen) return;
 
-    const onScroll = (): void => setScrolled(window.scrollY > 100);
+    const onScroll = throttle(() => {
+      setScrolled((prev) => {
+        const next = window.scrollY > 100;
+        return prev === next ? prev : next;
+      });
+    }, 50);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);

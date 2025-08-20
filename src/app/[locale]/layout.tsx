@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     siteName: "Warung Sumatra Restaurant",
     images: [
       {
-        url: "/og-image-goreng.jpg",
+        url: "https://warung-sumatra.pl/og-image-goreng.jpg",
         width: 1200,
         height: 630,
         alt: "Warung Sumatra Restaurant",
       },
       {
-        url: "/og-image-soups.jpg",
+        url: "https://warung-sumatra.pl/og-image-soups.jpg",
         width: 1200,
         height: 630,
         alt: "Warung Sumatra Restaurant",
@@ -41,7 +41,10 @@ export const metadata: Metadata = {
     title: "Warung Sumatra",
     description:
       "Explore the delicious menu and cozy atmosphere of Warung Sumatra.",
-    images: ["/og-image-goreng.jpg", "/og-image-soups.jpg"],
+    images: [
+      "https://warung-sumatra.pl/og-image-goreng.jpg",
+      "https://warung-sumatra.pl/og-image-soups.jpg",
+    ],
   },
 };
 

@@ -3,8 +3,8 @@ import { Notification } from "../Notification";
 import { Input } from "./Input";
 import { Textarea } from "./Textarea";
 
-import { CustomButton } from "@src/components/shared/custom-button/Button";
-import { Iconbutton } from "@src/components/shared/custom-button/IconButton";
+import { CustomButton } from "@components/shared/custom-button/Button";
+import { Iconbutton } from "@components/shared/custom-button/IconButton";
 
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
 import { CaptchaImage } from "./CaptchaImage";
