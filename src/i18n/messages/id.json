@@ -192,5 +192,11 @@
   "captcha-fetching-error": "Terjadi kesalahan saat memuat captcha.",
   "captcha-refresh": "Segarkan captcha.",
   "captcha-placeholder": "Masukkan kode dari gambar",
-  "captcha-required": "Captcha harus diselesaikan."
+  "captcha-required": "Captcha harus diselesaikan.",
+  "metadata-title": "Judul Halaman",
+  "metadata-desc": "Deskripsi Halaman",
+  "metadata-keywords": "warung sumatra, masakan indonesia, restoran",
+  "metadata-openGraph-title": "Judul Open Graph",
+  "metadata-openGraph-desc": "Deskripsi Open Graph",
+  "metadata-openGraph-site-name": "Nama Situs Open Graph"
 }

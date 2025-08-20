@@ -192,5 +192,11 @@
   "captcha-required": "Captcha must be completed.",
   "captcha-fetching-error": "An error occurred while fetching the captcha.",
   "captcha-refresh": "Refresh captcha.",
-  "captcha-placeholder": "Enter the code from the image"
+  "captcha-placeholder": "Enter the code from the image",
+  "metadata-title": "Page Title",
+  "metadata-desc": "Page Description",
+  "metadata-keywords": "warung sumatra, indonesian cuisine, restaurant",
+  "metadata-openGraph-title": "Open Graph Title",
+  "metadata-openGraph-desc": "Open Graph Description",
+  "metadata-openGraph-site-name": "Open Graph Site Name"
 }

@@ -192,5 +192,11 @@
   "captcha-fetching-error": "Wystąpił błąd podczas ładowania captcha.",
   "captcha-refresh": "Odśwież captcha",
   "captcha-required": "Pole captcha jest wymagane.",
-  "captcha-placeholder": "Wprowadź kod z obrazka"
+  "captcha-placeholder": "Wprowadź kod z obrazka",
+  "metadata-title": "Warung Sumatra - Autentyczne smaki Indonezji",
+  "metadata-desc": "Oficjalna strona Warung Sumatra. Odkryj nasze menu, zrób rezerwację i dowiedz się więcej o naszej restauracji.",
+  "metadata-keywords": "Warung Sumatra, restauracja indonezyjska, kuchnia indonezyjska, menu, rezerwacja online, dania indonezyjskie, autentyczna kuchnia, Padang, Sumatra",
+  "metadata-openGraph-title": "Warung Sumatra - Autentyczne smaki Indonezji",
+  "metadata-openGraph-site-name": "Warung Sumatra - indonezyjska restauracja",
+  "metadata-openGraph-desc": "Oficjalna strona Warung Sumatra. Odkryj nasze menu, zrób rezerwację i dowiedz się więcej o naszej restauracji."
 }
