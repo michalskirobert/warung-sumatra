@@ -193,10 +193,10 @@
   "captcha-fetching-error": "An error occurred while fetching the captcha.",
   "captcha-refresh": "Refresh captcha.",
   "captcha-placeholder": "Enter the code from the image",
-  "metadata-title": "Page Title",
-  "metadata-desc": "Page Description",
-  "metadata-keywords": "warung sumatra, indonesian cuisine, restaurant",
-  "metadata-openGraph-title": "Open Graph Title",
-  "metadata-openGraph-desc": "Open Graph Description",
-  "metadata-openGraph-site-name": "Open Graph Site Name"
+  "metadata-title": "Warung Sumatra - Authentic Indonesian Restaurant",
+  "metadata-desc": "Official website of Warung Sumatra. Discover our menu, make a reservation, and learn more about our restaurant.",
+  "metadata-keywords": "Warung Sumatra, Indonesian restaurant, Indonesian cuisine, menu, online reservation, Indonesian dishes, authentic cuisine, Padang, Sumatra",
+  "metadata-openGraph-title": "Warung Sumatra - Authentic Flavors of Indonesia",
+  "metadata-openGraph-site-name": "Warung Sumatra - Indonesian Restaurant",
+  "metadata-openGraph-desc": "Official website of Warung Sumatra. Discover our menu, make a reservation, and learn more about our restaurant."
 }

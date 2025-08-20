@@ -193,10 +193,10 @@
   "captcha-refresh": "Segarkan captcha.",
   "captcha-placeholder": "Masukkan kode dari gambar",
   "captcha-required": "Captcha harus diselesaikan.",
-  "metadata-title": "Judul Halaman",
-  "metadata-desc": "Deskripsi Halaman",
-  "metadata-keywords": "warung sumatra, masakan indonesia, restoran",
-  "metadata-openGraph-title": "Judul Open Graph",
-  "metadata-openGraph-desc": "Deskripsi Open Graph",
-  "metadata-openGraph-site-name": "Nama Situs Open Graph"
+  "metadata-title": "Warung Sumatra - Restoran Indonesia",
+  "metadata-desc": "Situs resmi Warung Sumatra. Temukan menu kami, buat reservasi, dan pelajari lebih lanjut tentang restoran kami.",
+  "metadata-keywords": "Warung Sumatra, restoran Indonesia, masakan Indonesia, menu, reservasi online, hidangan Indonesia, masakan otentik, Padang, Sumatra",
+  "metadata-openGraph-title": "Warung Sumatra - Rasa Otentik Indonesia",
+  "metadata-openGraph-site-name": "Warung Sumatra - Restoran Indonesia",
+  "metadata-openGraph-desc": "Situs resmi Warung Sumatra. Temukan menu kami, buat reservasi, dan pelajari lebih lanjut tentang restoran kami."
 }
