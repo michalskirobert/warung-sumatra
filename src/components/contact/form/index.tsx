@@ -34,6 +34,7 @@ export const ContactForm = () => {
           label: t("form-name-label"),
           placeholder: t("form-name-placeholder"),
           required: true,
+          autoComplete: "name",
           disabled: isLoading || isFetchingError,
         }}
       />
@@ -45,6 +46,7 @@ export const ContactForm = () => {
           label: t("form-email-label"),
           placeholder: t("form-email-placeholder"),
           required: true,
+          autoComplete: "email",
           disabled: isLoading || isFetchingError,
         }}
       />
@@ -55,6 +57,7 @@ export const ContactForm = () => {
           label: t("form-message-label"),
           placeholder: t("form-message-placeholder"),
           required: true,
+          autoComplete: "off",
           disabled: isLoading || isFetchingError,
         }}
       />
@@ -81,8 +84,8 @@ export const ContactForm = () => {
               name: "captcha",
               control,
               label: "Captcha",
-              "aria-label": "Captcha",
               className: "w-full",
+              autoComplete: "off",
               placeholder: t("captcha-placeholder"),
               required: true,
               disabled: isLoading || isFetchingError,

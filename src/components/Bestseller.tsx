@@ -11,17 +11,17 @@ const Bestseller = () => {
   return (
     <div className="grid md:grid-cols-3 gap-8">
       <Card
-        title={t("menu-other-dishes-baklazan-rendang-title")}
+        title={`1.${t("menu-other-dishes-baklazan-rendang-title")}`}
         description={t("menu-other-dishes-baklazan-rendang-desc")}
         image={rendang.src}
       />
       <Card
-        title={t("menu-other-dishes-dorada-timur-title")}
+        title={`2.${t("menu-other-dishes-dorada-timur-title")}`}
         description={t("menu-other-dishes-dorada-timur-desc")}
         image={dorada.src}
       />
       <Card
-        title={t("menu-other-dishes-kurczak-kalasan-title")}
+        title={`3.${t("menu-other-dishes-kurczak-kalasan-title")}`}
         description={t("menu-other-dishes-kurczak-kalasan-desc")}
         image={kalaskan.src}
       />

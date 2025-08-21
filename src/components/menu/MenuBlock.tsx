@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { generateId } from "./utils";
 
 export type MenuItemProps = { title: string; price?: string; desc?: string };
 export type AdditionalProps = Omit<MenuItemProps, "desc">;
@@ -61,21 +62,24 @@ export const MenuBlock = ({
         <div className="flex justify-between w-full flex-wrap">
           {!!additional?.length && (
             <div className=" border-stone-200 pt-4">
-              <h4 className="text-xl mt-2 font-semibold text-stone-800">
+              <h4
+                id={generateId(title, "additional")}
+                className="text-xl mt-2 font-semibold text-stone-800"
+              >
                 {t("menu-additional-to-choose-title")}:
               </h4>
-              <ul>
+              <ul aria-labelledby={generateId(title, "additional")}>
                 {additional.map((item) => (
                   <li key={item.title} className="text-stone-600">
                     {item.title}{" "}
-                    {item?.price ? (
+                    {item?.price && (
                       <>
                         -{" "}
                         <span className="text-lg font-bold text-amber-600">
                           {item.price}
                         </span>
                       </>
-                    ) : null}
+                    )}
                   </li>
                 ))}
               </ul>
@@ -83,21 +87,27 @@ export const MenuBlock = ({
           )}
           {!!additionalSauces?.length && (
             <div className=" border-stone-200 pt-4">
-              <h4 className="text-xl mt-2 font-semibold text-stone-800">
+              <h4
+                id={generateId(title, "additional-sauce")}
+                className="text-xl mt-2 font-semibold text-stone-800"
+              >
                 {t("menu-additional-sauce-to-choose-title")}:
               </h4>
-              <ul>
-                {additionalSauces?.map((item) => (
-                  <li key={item.title} className="text-stone-600">
+              <ul aria-labelledby={generateId(title, "additional-sauce")}>
+                {additionalSauces?.map((item, index) => (
+                  <li
+                    key={`${item.title}-${title}-${index}`}
+                    className="text-stone-600"
+                  >
                     {item.title}{" "}
-                    {item?.price ? (
+                    {item?.price && (
                       <>
                         -{" "}
                         <span className="text-lg font-bold text-amber-600">
                           {item.price}
                         </span>
                       </>
-                    ) : null}
+                    )}
                   </li>
                 ))}
               </ul>

@@ -29,7 +29,6 @@ export const CaptchaImage = ({ src, isFetching, isErrorFetching }: Props) => {
       src={src}
       alt="captcha"
       className="mb-2"
-      title="Captcha"
       placeholder="empty"
       width={300}
       height={300}
