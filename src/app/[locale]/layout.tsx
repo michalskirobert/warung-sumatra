@@ -68,6 +68,20 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <head>
+        <style>{`
+      :root {
+        --background: #ffffff;
+        --foreground: #0a0a0a;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-inter), sans-serif;
+        background: var(--background);
+        color: var(--foreground);
+      }
+    `}</style>
+      </head>
       <body
         className={` ${inter.variable} ${montserrat.variable} ${poppins.variable} ${permanent_Marker.variable} antialiased`}
       >
