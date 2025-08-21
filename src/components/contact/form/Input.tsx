@@ -17,10 +17,14 @@ export const Input = ({ control, name, label, ...props }: Props) => {
 
   return (
     <div className="w-full">
-      <label className="block text-stone-800 font-semibold mb-2">{label}</label>
+      <label className="block text-stone-800 font-semibold mb-2" htmlFor={name}>
+        {label}
+      </label>
       <input
         {...field}
         {...props}
+        id={name}
+        aria-label={`${name}-input`}
         className={`w-full p-4 border ${
           invalid ? "border-red-800" : "border-stone-300"
         } rounded-lg focus:outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-200 transition-all ${

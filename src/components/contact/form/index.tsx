@@ -68,6 +68,7 @@ export const ContactForm = () => {
             />
             <Iconbutton
               {...{
+                "aria-label": "Captcha Refresh",
                 icon: <ArrowPathIcon className="w-6 h-6" />,
                 onClick: getCaptcha,
               }}
@@ -79,7 +80,8 @@ export const ContactForm = () => {
             {...{
               name: "captcha",
               control,
-              label: "",
+              label: "Captcha",
+              "aria-label": "Captcha",
               className: "w-full",
               placeholder: t("captcha-placeholder"),
               required: true,

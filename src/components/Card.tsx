@@ -14,7 +14,7 @@ export default function Card({ title, description, image }: Props) {
       <div className="relative h-64">
         <Image
           src={image}
-          alt={title}
+          alt={`${title} - ${description}`}
           className="w-full h-full object-cover"
           height={256}
           width={256}

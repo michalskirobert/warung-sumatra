@@ -11,6 +11,7 @@ export const CustomButton = ({
     <button
       {...restProps}
       disabled={isLoading}
+      aria-label={content}
       className={`${
         isLoading
           ? "flex items-center gap-3 justify-center cursor-not-allowed bg-white text-gray-500 border-1 border-gray-300"

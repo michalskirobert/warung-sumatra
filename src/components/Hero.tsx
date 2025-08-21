@@ -8,7 +8,10 @@ import mainHero from "@public/hero/set_1.jpg";
 export default function Hero() {
   const t = useTranslations();
   return (
-    <section id="home" className="min-h-screen relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen relative overflow-hidden bg-black"
+    >
       <div className="absolute inset-0">
         <Image
           className="object-cover w-full h-full"
@@ -32,9 +35,9 @@ export default function Hero() {
           <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 font-marker">
             {t("hero-title")}
           </h1>
-          <p className="text-xl md:text-2xl text-stone-200 mb-8 leading-relaxed">
+          <h2 className="text-xl md:text-2xl text-stone-200 mb-8 leading-relaxed">
             {t("hero-subtitle")}
-          </p>
+          </h2>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#menu"

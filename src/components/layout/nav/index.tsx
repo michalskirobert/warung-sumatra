@@ -30,7 +30,12 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex gap-2 items-center">
-            <Image src={redLogo} height={50} width={50} alt="Warung Sumatra" />
+            <Image
+              src={redLogo}
+              height={50}
+              width={50}
+              alt="Warung Sumatra - Logo"
+            />
             <span className="text-2xl font-heading font-bold text-amber-100 font-marker">
               Warung Sumatra
             </span>
