@@ -11,7 +11,7 @@ import Link from "next/link";
 export default function Footer() {
   const t = useTranslations();
   return (
-    <footer className="bg-stone-900 text-stone-300 py-12 bg-[url('/batik/padang_red.webp')]">
+    <footer className="bg-stone-900 text-stone-300 py-12 bg-[url('/batik/padang_red.png')]">
       <div className="container mx-auto px-4 text-center">
         <div className="text-3xl font-heading font-bold text-white mb-4 font-marker text-shadow-lg">
           Warung Sumatra

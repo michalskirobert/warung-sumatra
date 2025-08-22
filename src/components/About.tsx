@@ -9,14 +9,14 @@ import cooking from "@public/restaurant/cooking.jpg";
 export default function About() {
   const t = useTranslations();
   return (
-    <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <div className="grid lg:grid-cols-2 gap-15 items-center">
       <div className="slide-in-left">
         <div className="relative">
           <Image
             src={cooking.src}
             alt="Indonesian kitchen and spices"
-            className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-            width={2070}
+            className="w-full h-99 object-cover rounded-2xl shadow-2xl"
+            width={1380}
             height={1380}
           />
           <div className="image-overlay absolute inset-0 rounded-2xl"></div>

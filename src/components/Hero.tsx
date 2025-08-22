@@ -32,10 +32,10 @@ export default function Hero() {
       </div>
       <div className="container mx-auto px-4 relative z-10 flex items-center min-h-screen">
         <div className="max-w-3xl fade-in">
-          <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 font-marker">
+          <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 font-marker text-shadow-lg">
             {t("hero-title")}
           </h1>
-          <h2 className="text-xl md:text-2xl text-stone-200 mb-8 leading-relaxed">
+          <h2 className="text-xl md:text-2xl text-stone-200 mb-8 leading-relaxed text-shadow-lg">
             {t("hero-subtitle")}
           </h2>
           <div className="flex flex-col sm:flex-row gap-4">
