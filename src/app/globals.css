@@ -80,7 +80,7 @@ div {
 }
 
 .batik-pattern {
-  background-image: url("/batik/padang_red.png");
+  background-image: url("/batik/padang_red.avif");
   background-size: 60px 60px, 40px 40px, 30px 30px;
   background-position: center;
   background-repeat: no-repeat;
