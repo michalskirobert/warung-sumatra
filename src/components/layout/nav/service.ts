@@ -68,26 +68,32 @@ export const useNavService = () => {
   useEffect(() => {
     if (mobileOpen) return;
 
-    const onScroll = throttle(() => {
-      setScrolled((prev) => {
-        const next = window.scrollY > 100;
-        return prev === next ? prev : next;
-      });
-    }, 50);
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 100);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [mobileOpen]);
 
   useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "";
+      document.body.style.overflow = originalOverflow;
     }
-
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = originalOverflow;
     };
   }, [mobileOpen]);
 
