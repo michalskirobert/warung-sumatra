@@ -1,12 +1,10 @@
 import { NextIntlClientProvider } from "next-intl";
-import { notFound } from "next/navigation";
-import { routing } from "@i18n/routing";
 import { getMessages } from "@i18n/getMessages";
 
 import { Metadata } from "next";
 import { inter, montserrat, permanent_Marker, poppins } from "@app/fonts";
 
-import "../globals.css";
+import "./globals.css";
 
 export async function generateMetadata({
   params,
@@ -59,10 +57,6 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-
-  if (!routing.locales.includes(locale as Locale)) {
-    notFound();
-  }
 
   const messages = await getMessages(locale as Locale);
 
