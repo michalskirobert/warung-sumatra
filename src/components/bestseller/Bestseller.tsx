@@ -1,4 +1,6 @@
-import Card from "./Card";
+"use client";
+
+import Card from "@src/components/shared/Card";
 
 import rendang from "@public/foods/bakłażan_rendang.jpeg";
 import dorada from "@public/foods/dorada.jpeg";

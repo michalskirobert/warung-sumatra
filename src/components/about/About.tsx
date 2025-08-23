@@ -8,6 +8,7 @@ import cooking from "@public/restaurant/cooking.jpg";
 
 export default function About() {
   const t = useTranslations();
+
   return (
     <div className="grid lg:grid-cols-2 gap-15 items-center">
       <div className="slide-in-left">
@@ -22,7 +23,6 @@ export default function About() {
           <div className="image-overlay absolute inset-0 rounded-2xl"></div>
         </div>
       </div>
-
       <div className="slide-in-right">
         <h3 className="text-3xl font-heading font-bold text-stone-800 mb-6">
           {t("about-story-title")}
