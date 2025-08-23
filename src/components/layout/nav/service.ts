@@ -13,7 +13,6 @@ import {
   getStoredLocale,
   storeLocale,
 } from "@utils/language";
-import { throttle } from "@utils/throttle";
 
 export const useNavService = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
