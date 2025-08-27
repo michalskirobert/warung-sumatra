@@ -13,6 +13,7 @@ interface Props {
   additionalSauces?: AdditionalProps[];
   allergenList?: AdditionalProps[];
   className?: string;
+  shape?: number;
 }
 
 export const MenuBlock = ({
@@ -22,17 +23,19 @@ export const MenuBlock = ({
   additional,
   additionalSauces,
   className,
+  shape = 1,
 }: Props) => {
   const t = useTranslations();
 
   return (
     <div
-      className={`bg-white rounded-2xl p-8 shadow-xl border border-stone-200 ${className}`}
+      className={`bg-white rounded-2xl p-8 shadow-xl border border-stone-200 ${className} relative`}
     >
       <div className="mb-8 text-center">
         <h3 className="text-3xl font-heading font-bold text-stone-800 font-inter">
           {title}
         </h3>
+        <div className="w-[100px] h-3 bg-no-repeat bg-[url('/utils/separator.svg')] mx-auto my-2"></div>
         {subtitle && (
           <h4 className="text-sm text-stone-800 mt-1 font-poppins">
             {subtitle}
@@ -115,6 +118,9 @@ export const MenuBlock = ({
           )}
         </div>
       </div>
+      <div
+        className={`absolute inset-0 h-15 m-2 bg-contain bg-right bg-no-repeat bg-[url('/utils/shape-${shape}.png')]`}
+      ></div>
     </div>
   );
 };

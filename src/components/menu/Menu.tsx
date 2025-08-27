@@ -37,11 +37,13 @@ export default function MenuLists() {
           subtitle={t("menu-nasi-goreng-subtitle")}
           items={nasiGoreng}
           additional={additional}
+          shape={2}
         />
         <MenuBlock
           className="slide-in-left"
           title={t("menu-other-dishes-title")}
           items={otherDishes}
+          shape={3}
         />
       </div>
 
@@ -52,22 +54,26 @@ export default function MenuLists() {
           items={soups}
           additional={additionalSoup}
           subtitle={t("menu-soups-subtitle")}
+          shape={4}
         />
         <MenuBlock
           className="slide-in-right"
           title={t("menu-appetizers-title")}
           items={appetizers}
+          shape={5}
         />
         <MenuBlock
           className="slide-in-right"
           title={t("menu-tempura-title")}
           additional={additonalTempura}
           additionalSauces={additionalSauceTempura}
+          shape={6}
         />
         <MenuBlock
           className="slide-in-right"
           title={t("menu-drinks-title")}
           items={drinks}
+          shape={8}
         />
         <Allergens />
       </div>

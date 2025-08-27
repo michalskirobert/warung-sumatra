@@ -8,7 +8,7 @@ import {
   RESTAURANT_PHONE,
 } from "@utils/constants";
 
-import map from "@public/map.jpg";
+import map from "@public/utils/map.jpg";
 import Image from "next/image";
 import { ContactForm } from "./form";
 

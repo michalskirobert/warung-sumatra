@@ -2,7 +2,7 @@
 
 import Card from "@src/components/shared/Card";
 
-import rendang from "@public/foods/bakłażan_rendang.jpeg";
+import rendang from "@public/foods/bakłażan_rendang.jpeg";
 import dorada from "@public/foods/dorada.jpeg";
 import kalaskan from "@public/foods/kalaskan.jpeg";
 import { useTranslations } from "next-intl";
