@@ -118,9 +118,11 @@ export const MenuBlock = ({
           )}
         </div>
       </div>
-      <div
-        className={`absolute inset-0 h-15 m-2 bg-contain bg-right bg-no-repeat bg-[url('/utils/shape-${shape}.png')]`}
-      ></div>
+      {shape && (
+        <div
+          className={`absolute inset-0 h-15 m-2 bg-contain bg-right bg-no-repeat bg-[url(/utils/shape-${shape}.png)]`}
+        ></div>
+      )}
     </div>
   );
 };
