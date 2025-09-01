@@ -30,6 +30,7 @@ export default function MenuLists() {
           subtitle={t("menu-bakmie-subtitle")}
           items={bakmie}
           additional={additional}
+          shape={1}
         />
         <MenuBlock
           className="slide-in-left"

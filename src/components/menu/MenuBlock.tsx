@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { generateId } from "./utils";
+import Image from "next/image";
 
 export type MenuItemProps = { title: string; price?: string; desc?: string };
 export type AdditionalProps = Omit<MenuItemProps, "desc">;
@@ -23,7 +24,7 @@ export const MenuBlock = ({
   additional,
   additionalSauces,
   className,
-  shape = 1,
+  shape,
 }: Props) => {
   const t = useTranslations();
 
@@ -119,9 +120,13 @@ export const MenuBlock = ({
         </div>
       </div>
       {shape && (
-        <div
-          className={`absolute inset-0 h-15 m-2 bg-contain bg-right bg-no-repeat bg-[url(/utils/shape-${shape}.png)]`}
-        ></div>
+        <Image
+          className="absolute inset-0 ml-auto h-16 sm:h-20 w-fit m-2 object-contain"
+          src={`/utils/shape-${shape}.png`}
+          width={400}
+          height={400}
+          alt={title}
+        />
       )}
     </div>
   );
