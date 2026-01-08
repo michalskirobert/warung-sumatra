@@ -24,7 +24,7 @@
     "captcha-canvas": "^2.4.1",
     "clsx": "2.1.1",
     "jsonwebtoken": "^9.0.2",
-    "next": "15.4.6",
+    "next": "15.4.10",
     "next-intl": "4.3.4",
     "nodemailer": "^7.0.5",
     "react": "19.1.0",
